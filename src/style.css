@@ -1,0 +1,175 @@
+@font-face {
+    font-family: ProximaNova Regular;
+    src: url(../assets/ProximaNova_Regular.ttf);
+}
+
+@font-face {
+    font-family: ProximaNova Semibold;
+    src: url(../assets/ProximaNova_Semibold.ttf);
+}
+
+@font-face {
+    font-family: ProximaNova Light;
+    src: url(../assets/ProximaNova_Light.ttf);
+}
+
+:root {
+    --width-1: 8.33333%;
+    --width-2: 16.66667%;
+    --width-3: 25%;
+    --width-4: 33.33333%;
+    --width-5: 41.66667%;
+    --width-6: 50%;
+    --width-7: 58.33333%;
+    --width-8: 64.66667%;
+    --width-9: 75%;
+    --width-10: 83.33333%;
+    --width-11: 91.66667%;
+    --width-12: 100%;
+}
+
+html {
+    --background-color: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 0%);
+    --border-color: hsl(0, 0%, 72%);
+    --accent-color: hsl(209, 100%, 50%);
+    --panel-color: hsl(0, 0%, 15%);
+    --error-color: hsl(0, 100%, 45%);
+    font-family: 'ProximaNova Regular', sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+html[data-theme='dark'] {
+    --background-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 100%);
+    --border-color: hsl(0, 0%, 72%);
+    --accent-color: hsl(209, 100%, 50%);
+    --panel-color: hsl(0, 0%, 15%);
+    --error-color: hsl(0, 100%, 45%);
+    font-family: 'ProximaNova Regular', sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    padding: 0;
+    cursor: default;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.container {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0 1rem;
+    margin: 0 var(--width-1);
+}
+
+.navbar {
+    width: 100%;
+    max-height: 48px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.navbar__logo {
+    display: inline;
+    position: relative;
+    width: 110px;
+    height: 35px;
+    flex: 0 0 auto;
+    margin: 0 1rem 0 0;
+    align-self: center;
+}
+
+.navbar__logotitle {
+    display: inline;
+    position: absolute;
+    top: 25%;
+    font-size: 0.625rem;
+    font-family: 'ProximaNova Semibold', sans-serif;
+    margin: auto 0 auto 0.5rem;
+    line-height: 1.2;
+}
+
+.navbar__logotitlesmall {
+    font-size: 0.5rem;
+    font-family: 'ProximaNova Regular', sans-serif;
+}
+
+.navbar__menu {
+    height: 48px;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+.navbar__menuitem {
+    position: relative;
+    font-size: 1rem;
+    color: var(--text-color);
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.navbar__menuitem::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0%;
+    background-color: var(--accent-color);
+    height: 2px;
+    transition: width .2s ease;
+}
+
+.navbar__menuitem:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar__darkmodebutton {
+    margin: auto 1rem;
+}
+
+.navbar__darkmodebuttonicon > * {
+    transition: fill .2s ease-out, stroke .2s ease-out;
+}
+
+.navbar__darkmodebuttonicon:hover .stroke {
+    stroke: var(--accent-color);
+}
+
+.navbar__darkmodebuttonicon:hover .fill {
+    fill: var(--accent-color);
+}
