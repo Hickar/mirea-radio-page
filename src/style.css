@@ -33,8 +33,10 @@ html {
     --text-color: hsl(0, 0%, 0%);
     --border-color: hsl(0, 0%, 72%);
     --accent-color: hsl(209, 100%, 50%);
+    --accent-color-hover: hsl(209, 100%, 40%);
     --panel-color: hsl(0, 0%, 15%);
     --error-color: hsl(0, 100%, 45%);
+    --artist-color: hsl(0, 0%, 100%);
     font-family: 'ProximaNova Regular', sans-serif;
     font-size: 16px;
     line-height: 1.2;
@@ -50,6 +52,7 @@ html[data-theme='dark'] {
     --accent-color: hsl(209, 100%, 50%);
     --panel-color: hsl(0, 0%, 15%);
     --error-color: hsl(0, 100%, 45%);
+    --artist-color: hsl(0, 0%, 100%);
     font-family: 'ProximaNova Regular', sans-serif;
     font-size: 16px;
     line-height: 1.2;
@@ -75,6 +78,7 @@ button {
     background: transparent;
     cursor: pointer;
     box-sizing: border-box;
+    padding: 0;
 }
 
 ul, ol {
@@ -82,9 +86,14 @@ ul, ol {
     cursor: default;
 }
 
-.flex {
+.flex_row {
     display: flex;
     flex-flow: row nowrap;
+}
+
+.flex_col {
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .container {
@@ -92,7 +101,6 @@ ul, ol {
     box-sizing: border-box;
     height: 100%;
     padding: 0 1rem;
-    margin: 0 var(--width-1);
 }
 
 .navbar {
@@ -101,6 +109,13 @@ ul, ol {
     position: fixed;
     left: 0;
     top: 0;
+    margin: 0;
+    background-color: var(--background-color);
+    z-index: 5;
+}
+
+.navbar__inner {
+    margin: 0 var(--width-1);
 }
 
 .navbar__logo {
@@ -159,6 +174,7 @@ ul, ol {
 }
 
 .navbar__darkmodebutton {
+    padding: 0;
     margin: auto 1rem;
 }
 
@@ -172,4 +188,203 @@ ul, ol {
 
 .navbar__darkmodebuttonicon:hover .fill {
     fill: var(--accent-color);
+}
+
+.section {
+    display: block;
+    margin: 0 var(--width-1);
+}
+
+.section__header {
+    margin-top: 3rem;
+    min-height: 6rem;
+    height: 1px;
+}
+
+.header {
+    display: inline-block;
+    width: 100%;
+    font-family: 'ProximaNova Semibold', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin: 1.25rem auto;
+    text-align: center;
+}
+
+.player {
+    background-color: var(--panel-color);
+    border-radius: 8px;
+}
+
+.player__controls {
+    min-height: 5rem;
+    height: 1px;
+}
+
+.player__controlsinnerleft {
+    width: calc(50% + 2rem);
+    justify-content: space-between;
+}
+
+.player__controlsinnerright {
+    justify-content: flex-end;
+    margin: 0 0 0 auto;
+}
+
+.player__trackinfocontainer {
+    display: table;
+    max-width: 100px;
+    height: 100%;
+}
+
+.player__trackinfo {
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.player__trackartist {
+    display: inline;
+    font-size: 1rem;
+    color: var(--border-color);
+}
+
+.player__trackname {
+    display: inline;
+    font-size: 1.25rem;
+    color: var(--artist-color);
+}
+
+.player__volumeslider {
+    justify-content: center;
+    align-items: center;
+}
+
+.volumeicon {
+    margin: 0 0 0 1rem;
+}
+
+.volumeslider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    cursor: pointer;
+    border-radius: 16px;
+    margin: 0;
+}
+
+.volumeslider::-webkit-slider-thumb {
+    background-color: var(--accent-color);
+    cursor: pointer;
+    border: none;
+}
+
+.volumeslider::-moz-range-thumb {
+    background-color: var(--accent-color);
+    cursor: pointer;
+    border: none;
+}
+
+.player__playbutton .fill {
+    transition: fill .2s ease;
+}
+
+.player__playbutton:hover .fill {
+    fill: var(--accent-color-hover);
+}
+
+.player__fullscreenbutton .fill {
+    transition: .2s fill ease;
+}
+
+.player__fullscreenbutton:hover .fill {
+    fill: #363636;
+}
+
+.section__schedule,
+.section__contacts {
+    border-bottom: 1px var(--border-color) solid;
+}
+
+.section__headertext {
+    font-family: 'ProximaNova Semibold', sans-serif;
+    font-size: 1.875rem;
+    text-align: center;
+    margin: 3rem 0 1rem 0;
+}
+
+.schedule__text {
+    font-family: 'ProximaNova Regular', sans-serif;
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 1rem 0 3rem 0;
+    line-height: 1.2;
+}
+
+.link {
+    color: var(--accent-color);
+}
+
+.link:hover {
+    color: var(--accent-color-hover);
+}
+
+.contacts {
+    background-color: var(--panel-color);
+    border-radius: 8px;
+}
+
+.contacts__panel {
+    display: block;
+    width: 50%;
+}
+
+.contacts__panellink {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.contacts__panellinktext {
+    margin: .5rem auto 0 auto;
+    font-size: 1rem;
+    color: white;
+}
+
+.contacts__panellinktext_big {
+    font-family: 'ProximaNova Semibold', sans-serif;
+    font-size: 1.125rem;
+}
+
+.contacts__panellink::after {
+    content: "";
+    position: absolute;
+    height: 70%;
+    left: 50%;
+    top: 15%;
+    width: 2px;
+    background-color: white;
+    z-index: 5;
+    border-radius: 1rem;
+}
+
+.mirealogotext_big {
+    font-family: 'ProximaNova Semibold', sans-serif;
+    color: white;
+    font-size: 3rem;
+}
+
+.mirealogotext_small {
+    font-family: 'ProximaNova Regular', sans-serif;
+    color: white;
+    font-size: 1rem;
+}
+
+.about__text {
+    font-family: "ProximaNova Regular", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--text-color);
 }

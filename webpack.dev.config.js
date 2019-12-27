@@ -72,7 +72,7 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
     new CopyWebpackPlugin([
-      { from: 'src/images/', to: 'images/' }
+      { from: 'assets', to: 'assets' }
     ])
   ]
-}
+};
