@@ -119,10 +119,8 @@ ul, ol {
 }
 
 .navbar__logo {
-    display: inline;
+    display: flex;
     position: relative;
-    width: 110px;
-    height: 35px;
     flex: 0 0 auto;
     margin: 0 1rem 0 0;
     align-self: center;
@@ -130,8 +128,6 @@ ul, ol {
 
 .navbar__logotitle {
     display: inline;
-    position: absolute;
-    top: 25%;
     font-size: 0.625rem;
     font-family: 'ProximaNova Semibold', sans-serif;
     margin: auto 0 auto 0.5rem;
@@ -222,19 +218,13 @@ ul, ol {
 }
 
 .player__controlsinnerleft {
-    width: calc(50% + 2rem);
+    width: calc(50% + 1.5rem);
     justify-content: space-between;
 }
 
 .player__controlsinnerright {
     justify-content: flex-end;
     margin: 0 0 0 auto;
-}
-
-.player__trackinfocontainer {
-    display: table;
-    max-width: 100px;
-    height: 100%;
 }
 
 .player__trackinfo {
@@ -257,33 +247,104 @@ ul, ol {
 .player__volumeslider {
     justify-content: center;
     align-items: center;
+    padding-left: 1rem;
 }
 
 .volumeicon {
-    margin: 0 0 0 1rem;
+    padding-left: 1rem;
 }
 
 .volumeslider {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    padding: .75rem 0;
+    margin: 0;
+}
+
+.volumeslider:focus {
+    outline: none;
+}
+
+.volumeslider::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.volumeslider::-webkit-slider-runnable-track {
+    width: 100%;
     height: 3px;
     background-color: var(--accent-color);
-    cursor: pointer;
     border-radius: 16px;
-    margin: 0;
+    transition: .2s background-color ease;
+}
+
+.volumeslider::-webkit-slider-runnable-track:hover {
+    background-color: var(--accent-color-hover);
+}
+
+.volumeslider::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 16px;
+    transition: .2s background-color ease;
+}
+
+.volumeslider::-moz-range-track:hover {
+    background-color: var(--accent-color-hover);
+}
+
+.volumeslider::-ms-track {
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 16px;
+    transition: .2s background-color ease;
+}
+
+.volumeslider::-ms-track:hover {
+    background-color: var(--accent-color-hover);
 }
 
 .volumeslider::-webkit-slider-thumb {
     background-color: var(--accent-color);
     cursor: pointer;
     border: none;
+    transition: .2s background-color ease;
+}
+
+.volumeslider::-webkit-slider-thumb:hover {
+    background-color: var(--accent-color-hover);
 }
 
 .volumeslider::-moz-range-thumb {
     background-color: var(--accent-color);
     cursor: pointer;
     border: none;
+    transition: .2s background-color ease;
+}
+
+.volumeslider::-moz-range-thumb:hover {
+    background-color: var(--accent-color-hover);
+}
+
+.volumeslider::-ms-thumb {
+    background-color: var(--accent-color);
+    cursor: pointer;
+    border: none;
+    transition: .2s background-color ease;
+}
+
+.volumeslider::-ms-thumb:hover {
+    background-color: var(--accent-color-hover);
+}
+
+.player__playbutton {
+    padding-left: 1rem;
 }
 
 .player__playbutton .fill {
@@ -294,6 +355,12 @@ ul, ol {
     fill: var(--accent-color-hover);
 }
 
+.player__playbutton svg {
+    width: 48px;
+    height: 48px;
+    overflow: visible;
+}
+
 .player__fullscreenbutton .fill {
     transition: .2s fill ease;
 }
@@ -302,24 +369,21 @@ ul, ol {
     fill: #363636;
 }
 
-.section__schedule,
-.section__contacts {
-    border-bottom: 1px var(--border-color) solid;
-}
-
 .section__headertext {
     font-family: 'ProximaNova Semibold', sans-serif;
     font-size: 1.875rem;
     text-align: center;
-    margin: 3rem 0 1rem 0;
+    margin: 3rem 0 1.5rem 0;
 }
 
 .schedule__text {
     font-family: 'ProximaNova Regular', sans-serif;
     font-size: 1.25rem;
     text-align: center;
-    margin: 1rem 0 3rem 0;
+    padding: 0 0 3rem 0;
+    margin: 0;
     line-height: 1.2;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .link {
@@ -331,6 +395,7 @@ ul, ol {
 }
 
 .contacts {
+    position: relative;
     background-color: var(--panel-color);
     border-radius: 8px;
 }
@@ -353,12 +418,19 @@ ul, ol {
     color: white;
 }
 
+/*.contacts__panellink svg {*/
+/*    width: 100%;*/
+/*    height: 1px;*/
+/*    padding-bottom: 100%;*/
+/*    overflow: visible;*/
+/*}*/
+
 .contacts__panellinktext_big {
     font-family: 'ProximaNova Semibold', sans-serif;
     font-size: 1.125rem;
 }
 
-.contacts__panellink::after {
+.contacts__panel::after {
     content: "";
     position: absolute;
     height: 70%;
@@ -387,4 +459,170 @@ ul, ol {
     font-size: 1.25rem;
     line-height: 1.2;
     color: var(--text-color);
+}
+
+@media screen and (max-width: 996px) {
+    .section {
+        margin: 0 var(--width-1);
+    }
+
+    .section__header {
+        margin-top: 3rem;
+        min-height: 6rem;
+        height: 1px;
+    }
+
+    .about__text {
+        font-family: "ProximaNova Regular", sans-serif;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        color: var(--text-color);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section,
+    .navbar__darkmodebutton {
+        margin: 0;
+    }
+
+    .section__header {
+        margin-top: 3rem;
+        min-height: 6rem;
+        height: 1px;
+    }
+
+    .section__headertext {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 1rem 0;
+    }
+
+    .section__player,
+    .section__contacts {
+        padding: 0;
+    }
+
+    .player,
+    .contacts {
+        border-radius: 0;
+    }
+
+    .schedule__text {
+        font-size: 1.125rem;
+        text-align: left;
+        padding-bottom: 1.5rem;
+    }
+
+    .about__text {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .header {
+        font-size: 1rem;
+        line-height: 1.2;
+        margin: 1.25rem auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section {
+        margin: 0;
+    }
+
+    .navbar__logotitle {
+        display: none;
+    }
+
+    .navbar__menuitem {
+        font-size: .8rem;
+        margin: 0 .75rem;
+    }
+
+    .player__trackinfo {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        margin-top: -1.5rem;
+        left: 0;
+    }
+
+    .player__trackartist {
+        display: inline;
+        font-size: .7rem;
+        color: var(--border-color);
+    }
+
+    .player__trackname {
+        display: inline;
+        font-size: .9rem;
+        color: var(--artist-color);
+    }
+
+    .player__volumeslider {
+        padding-left: 0;
+    }
+
+    .volumeslider {
+        display: none;
+    }
+
+    .volumeicon {
+        padding-left: 0;
+    }
+
+    .player__playbutton {
+        padding-left: 0;
+    }
+
+    .player__playbutton svg {
+        width: 40px;
+        height: 40px;
+        overflow: visible;
+    }
+
+    .contacts__panellink {
+        padding: 2rem 0;
+    }
+
+    .contacts__panellinktext {
+        font-size: .7rem;
+        margin: 0;
+    }
+
+    .contacts__panellinktext_big {
+        font-size: .9rem;
+    }
+
+    .mirealogo {
+        width: 125px;
+        height: 84px;
+    }
+
+    .radioroomlogo {
+        width: 36px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .section__header {
+        margin-top: 3rem;
+    }
+
+    .schedule__text {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .about__text {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .header {
+        font-size: .8rem;
+        line-height: 1.2;
+        margin: 1rem auto;
+    }
 }
