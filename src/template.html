@@ -57,29 +57,34 @@
         <div class="player">
             <div class="player__panel">
                 <canvas width="1168" height="420" class="player__panelcanvas"></canvas>
-                <audio src="http://s0.radioheart.ru:8000/RH20507" id="audio" crossorigin="anonymous">
+                <audio src="http://s0.radioheart.ru:8000/RH20507" id="audio" crossorigin="anonymous" autoplay>
                     <source src="http://s0.radioheart.ru:8000/RH20507" type="audio/mp3">
                 </audio>
             </div>
             <div class="player__controls container flex_row">
                 <div class="player__controlsinnerleft flex_row">
                     <div class="player__trackinfo flex_col">
-                        <div class="player__trackartist">Cut Chemist</div>
-                        <div class="player__trackname">Metrorail Thru Space</div>
+                        <div class="player__trackartist"></div>
+                        <div class="player__trackname"></div>
                     </div>
                     <div class="player__volumeslider flex_row">
-                        <input name="volume" id="volume" type="range" list="volume-vals" class="volumeslider" step="0.01" min="-1" max="1" value="0.5">
+                        <input name="volume" id="volume" type="range" list="volume-vals" class="volumeslider" step="0.01" min="-1" max="1" value="1">
                         <datalist id="volume-vals">
-                            <option value="0" label="min">
-                            <option value="2" label="max">
+                            <option value="-1" label="min">
+                            <option value="1" label="max">
                         </datalist>
-                        <svg class="volumeicon" width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 16.125L1 7.875L4.85714 7.875L10 1L10 23L4.85714 16.125L1 16.125Z" fill="#B8B8B8" stroke="#B8B8B8" stroke-linejoin="round"/><path d="M13.5801 16.7286C13.4302 16.9605 13.4966 17.27 13.7286 17.4199C13.9605 17.5698 14.27 17.5034 14.4199 17.2714L13.5801 16.7286ZM14.4199 5.72855C14.27 5.49665 13.9605 5.43018 13.7286 5.5801C13.4966 5.73002 13.4302 6.03955 13.5801 6.27145L14.4199 5.72855ZM14.4199 17.2714C15.7774 15.1715 16.5 13.3563 16.5 11.5C16.5 9.64373 15.7774 7.82847 14.4199 5.72855L13.5801 6.27145C14.8892 8.29653 15.5 9.91877 15.5 11.5C15.5 13.0812 14.8892 14.7035 13.5801 16.7286L14.4199 17.2714Z" fill="#B8B8B8"/><path d="M17.6464 19.6464C17.4512 19.8417 17.4512 20.1583 17.6464 20.3536C17.8417 20.5488 18.1583 20.5488 18.3536 20.3536L17.6464 19.6464ZM18.3536 3.64645C18.1583 3.45118 17.8417 3.45118 17.6464 3.64645C17.4512 3.84171 17.4512 4.15829 17.6464 4.35355L18.3536 3.64645ZM18.3536 20.3536C20.4685 18.2386 21.5 15.0992 21.5 12C21.5 8.90076 20.4685 5.76143 18.3536 3.64645L17.6464 4.35355C19.5315 6.23857 20.5 9.09924 20.5 12C20.5 14.9008 19.5315 17.7614 17.6464 19.6464L18.3536 20.3536Z" fill="#B8B8B8"/><path d="M22.6941 22.6045C22.4757 22.7734 22.4355 23.0875 22.6045 23.3059C22.7734 23.5243 23.0875 23.5645 23.3059 23.3955L22.6941 22.6045ZM23.3059 0.604493C23.0875 0.43555 22.7734 0.475668 22.6045 0.6941C22.4355 0.912533 22.4757 1.22656 22.6941 1.39551L23.3059 0.604493ZM23.3059 23.3955C24.7422 22.2846 25.787 20.5542 26.4727 18.5653C27.1602 16.5714 27.5 14.2808 27.5 12C27.5 9.71917 27.1602 7.4286 26.4727 5.43468C25.787 3.44577 24.7422 1.71537 23.3059 0.604493L22.6941 1.39551C23.9245 2.34713 24.8797 3.88236 25.5273 5.76063C26.1732 7.6339 26.5 9.81208 26.5 12C26.5 14.1879 26.1732 16.3661 25.5273 18.2394C24.8797 20.1176 23.9245 21.6529 22.6941 22.6045L23.3059 23.3955Z" fill="#B8B8B8"/></svg>
+                        <svg class="volumeicon" width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 16.125L1 7.875L4.85714 7.875L10 1L10 23L4.85714 16.125L1 16.125Z" fill="#B8B8B8" stroke="#B8B8B8" stroke-linejoin="round"/>
+                            <path d="M13.5801 16.7286C13.4302 16.9605 13.4966 17.27 13.7286 17.4199C13.9605 17.5698 14.27 17.5034 14.4199 17.2714L13.5801 16.7286ZM14.4199 5.72855C14.27 5.49665 13.9605 5.43018 13.7286 5.5801C13.4966 5.73002 13.4302 6.03955 13.5801 6.27145L14.4199 5.72855ZM14.4199 17.2714C15.7774 15.1715 16.5 13.3563 16.5 11.5C16.5 9.64373 15.7774 7.82847 14.4199 5.72855L13.5801 6.27145C14.8892 8.29653 15.5 9.91877 15.5 11.5C15.5 13.0812 14.8892 14.7035 13.5801 16.7286L14.4199 17.2714Z" fill="#B8B8B8"/>
+                            <path d="M17.6464 19.6464C17.4512 19.8417 17.4512 20.1583 17.6464 20.3536C17.8417 20.5488 18.1583 20.5488 18.3536 20.3536L17.6464 19.6464ZM18.3536 3.64645C18.1583 3.45118 17.8417 3.45118 17.6464 3.64645C17.4512 3.84171 17.4512 4.15829 17.6464 4.35355L18.3536 3.64645ZM18.3536 20.3536C20.4685 18.2386 21.5 15.0992 21.5 12C21.5 8.90076 20.4685 5.76143 18.3536 3.64645L17.6464 4.35355C19.5315 6.23857 20.5 9.09924 20.5 12C20.5 14.9008 19.5315 17.7614 17.6464 19.6464L18.3536 20.3536Z" fill="#B8B8B8"/>
+                            <path d="M22.6941 22.6045C22.4757 22.7734 22.4355 23.0875 22.6045 23.3059C22.7734 23.5243 23.0875 23.5645 23.3059 23.3955L22.6941 22.6045ZM23.3059 0.604493C23.0875 0.43555 22.7734 0.475668 22.6045 0.6941C22.4355 0.912533 22.4757 1.22656 22.6941 1.39551L23.3059 0.604493ZM23.3059 23.3955C24.7422 22.2846 25.787 20.5542 26.4727 18.5653C27.1602 16.5714 27.5 14.2808 27.5 12C27.5 9.71917 27.1602 7.4286 26.4727 5.43468C25.787 3.44577 24.7422 1.71537 23.3059 0.604493L22.6941 1.39551C23.9245 2.34713 24.8797 3.88236 25.5273 5.76063C26.1732 7.6339 26.5 9.81208 26.5 12C26.5 14.1879 26.1732 16.3661 25.5273 18.2394C24.8797 20.1176 23.9245 21.6529 22.6941 22.6045L23.3059 23.3955Z" fill="#B8B8B8"/>
+                        </svg>
                     </div>
-                    <button data-playing="false" role="switch" aria-checked="false" class="player__playbutton">
-                        <svg width="48" height="48" viewBox="0 0 48 48" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button data-playing="true" role="switch" aria-checked="false" class="player__playbutton">
+                        <svg class="playButton" width="48" height="48" viewBox="0 0 48 48" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle class="fill" cx="24" cy="24" r="24" fill="#0085FF"/>
-                            <path d="M37 24L17.5 35.2583L17.5 12.7417L37 24Z" fill="white"/>
-                            <path d="M18 13H22V35H18V13Z M26 13H30V35H26V13Z" fill="transparent"/>
+                            <path id="playIcon" d="M37 24L17.5 35.2583L17.5 12.7417L37 24Z" fill="transparent"/>
+                            <path id="pauseIcon" d="M18 13H22V35H18V13Z M26 13H30V35H26V13Z" fill="white"/>
                         </svg>
                     </button>
                 </div>

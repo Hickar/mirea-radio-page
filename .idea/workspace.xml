@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2abd3a-a410-4860-bbf0-c8b5ad4e133e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/scripts/player.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/player.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/template.html" afterDir="false" />
     </list>
@@ -82,7 +81,8 @@
       <workItem from="1577701639622" duration="4045000" />
       <workItem from="1577735737209" duration="1137000" />
       <workItem from="1577737880764" duration="6303000" />
-      <workItem from="1577895836504" duration="9047000" />
+      <workItem from="1577895836504" duration="16102000" />
+      <workItem from="1578490239171" duration="251000" />
     </task>
     <servers />
   </component>
@@ -102,6 +102,10 @@
       <screen x="0" y="23" width="1440" height="809" />
     </state>
     <state x="100" y="123" width="1240" height="609" key="DiffContextDialog/0.23.1440.809@0.23.1440.809" timestamp="1576672391007" />
+    <state x="500" y="145" key="RollbackChangesDialog" timestamp="1578320915692">
+      <screen x="0" y="23" width="1440" height="809" />
+    </state>
+    <state x="500" y="145" key="RollbackChangesDialog/0.23.1440.809@0.23.1440.809" timestamp="1578320915692" />
     <state x="236" y="66" key="SettingsEditor" timestamp="1577472188408">
       <screen x="0" y="23" width="1440" height="809" />
     </state>
