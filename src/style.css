@@ -65,6 +65,8 @@ body {
     margin: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+    position: relative;
+    z-index: 0;
 }
 
 a {
@@ -230,18 +232,23 @@ ul, ol {
 .player__trackinfo {
     vertical-align: middle;
     justify-content: center;
+    max-width: 12rem;
+    flex-basis: 12rem;
+    overflow: hidden;
 }
 
 .player__trackartist {
     display: inline;
-    font-size: 1rem;
+    font-size: .8rem;
     color: var(--border-color);
+    white-space: nowrap;
 }
 
 .player__trackname {
     display: inline;
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--artist-color);
+    white-space: nowrap;
 }
 
 .player__volumeslider {
@@ -251,7 +258,24 @@ ul, ol {
 }
 
 .volumeicon {
-    padding-left: 1rem;
+    position: relative;
+    margin-left: 1rem;
+    flex: 0 0 auto;
+}
+
+.volumeicon .fill {
+    transition: .2s fill ease;
+}
+
+.volumeicon:hover .fill {
+    fill: #363636;
+}
+
+.volumeButtonOverlay,
+.playButtonOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .volumeslider {
@@ -345,6 +369,7 @@ ul, ol {
 
 .player__playbutton {
     padding-left: 1rem;
+    margin-left: auto;
 }
 
 .player__playbutton .fill {
@@ -516,6 +541,16 @@ ul, ol {
         line-height: 1.2;
         margin: 1.25rem auto;
     }
+
+    .mirealogo {
+        width: 188px;
+        height: 126px;
+    }
+
+    .radioroomlogo {
+        width: 54px;
+        height: 68px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -538,6 +573,7 @@ ul, ol {
         text-align: center;
         margin-top: -1.5rem;
         left: 0;
+        max-width: none;
     }
 
     .player__trackartist {
@@ -561,7 +597,7 @@ ul, ol {
     }
 
     .volumeicon {
-        padding-left: 0;
+        margin-left: 0;
     }
 
     .player__playbutton {
