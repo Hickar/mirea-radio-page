@@ -10,6 +10,7 @@ const player = () => {
                     document.querySelector(".player__trackname").innerHTML = trackName;
                 })
             });
+        return;
     };
     setInterval(updateMusic(), 30000);
 

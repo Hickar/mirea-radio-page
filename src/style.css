@@ -49,6 +49,10 @@ html {
     transition: .2s fill ease, .2s stroke ease, .2s color ease, .2s background-color ease;
 }
 
+*:focus {
+    outline: none;
+}
+
 html[data-theme='dark'] {
     --background-color: hsl(0, 0%, 15%);
     --text-color: hsl(0, 0%, 100%);
@@ -86,6 +90,7 @@ button {
     cursor: pointer;
     box-sizing: border-box;
     padding: 0;
+    outline: none;
 }
 
 ul, ol {
@@ -186,7 +191,7 @@ ul, ol {
 
 .navbar__darkmodebutton {
     padding: 0;
-    margin: auto 1rem;
+    margin: 0 1.25rem 0 1rem;
 }
 
 .navbar__darkmodebuttonicon > * {
@@ -233,7 +238,7 @@ ul, ol {
 }
 
 .player__controlsinnerleft {
-    width: calc(50% + 1.5rem);
+    width: calc(50% + 2.5rem);
     justify-content: space-between;
 }
 
@@ -287,6 +292,8 @@ ul, ol {
 .volumeButtonOverlay,
 .playButtonOverlay {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
@@ -348,10 +355,16 @@ ul, ol {
 }
 
 .volumeslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 16px;
     background-color: var(--accent-color);
     cursor: pointer;
     border: none;
     transition: .2s background-color ease;
+    margin-top: -3px;
 }
 
 .volumeslider::-webkit-slider-thumb:hover {
@@ -373,6 +386,7 @@ ul, ol {
     background-color: var(--accent-color);
     cursor: pointer;
     border: none;
+    margin: 0;
     transition: .2s background-color ease;
 }
 
@@ -382,7 +396,7 @@ ul, ol {
 
 .player__playbutton {
     position: relative;
-    padding-left: 1rem;
+    padding: 0 1rem;
     margin-left: auto;
 }
 
@@ -495,6 +509,14 @@ ul, ol {
     font-size: 1.25rem;
     line-height: 1.2;
     color: var(--text-color);
+    padding: 0 0 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.licence__text {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--text-color);
 }
 
 @media screen and (max-width: 996px) {
@@ -543,15 +565,13 @@ ul, ol {
         border-radius: 0;
     }
 
-    .schedule__text {
-        font-size: 1.125rem;
-        text-align: left;
-        padding-bottom: 1.5rem;
-    }
-
-    .about__text {
+    .schedule__text,
+    .about__text,
+    .licence__text {
         font-size: 1rem;
         line-height: 1.2;
+        text-align: left;
+        padding-bottom: 1.5rem;
     }
 
     .header {
@@ -583,6 +603,10 @@ ul, ol {
     .navbar__menuitem {
         font-size: .8rem;
         margin: 0 .75rem;
+    }
+
+    .player__controlsinnerleft {
+        width: calc(50% + 2.25rem);
     }
 
     .player__trackinfo {
@@ -618,10 +642,6 @@ ul, ol {
         margin-left: 0;
     }
 
-    .player__playbutton {
-        padding-left: 0;
-    }
-
     .player__playbutton svg {
         width: 40px;
         height: 40px;
@@ -655,16 +675,6 @@ ul, ol {
 @media screen and (max-width: 360px) {
     .section__header {
         margin-top: 3rem;
-    }
-
-    .schedule__text {
-        font-size: 1rem;
-        text-align: left;
-    }
-
-    .about__text {
-        font-size: 1rem;
-        line-height: 1.2;
     }
 
     .header {

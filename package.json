@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --config webpack.dev.config.js",
-    "start": "webpack-dev-server --config webpack.dev.config.js --open",
+    "server": "webpack-dev-server --config webpack.dev.config.js --open",
     "build": "webpack --config webpack.prod.config.js"
   },
   "repository": "https://github.com/Hickar/mirea-radio-page.git",
@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.7.6",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-hot-loader": "^1.4.4",
     "css-loader": "^3.4.0",
@@ -26,6 +27,7 @@
     "mini-css-extract-plugin": "^0.8.2",
     "path": "^0.12.7",
     "style-loader": "^1.0.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10",

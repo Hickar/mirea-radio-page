@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="description" content="">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -16,11 +17,10 @@
 </head>
 <body>
 <div class="wrapper">
-    <div id="Player" class="anchor"></div>
     <header class="navbar">
         <div class="section">
             <div class="container flex_row">
-                <a href="#" class="navbar__logo">
+                <a href="https://mirearadio.ru" class="navbar__logo">
                     <svg width="30" height="35" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle class="fill" cx="23" cy="8.5" r="2" fill="#000"/>
                         <path class="fill" d="M5 31.5h4v2a1 1 0 01-1 1H6a1 1 0 01-1-1v-2zM21 31.5h4v2a1 1 0 01-1 1h-2a1 1 0 01-1-1v-2z" fill="#000"/>
@@ -33,7 +33,7 @@
                     </h1>
                 </a>
                 <nav class="navbar__menu flex_row">
-                    <a href="#Player" class="navbar__menuitem">Плеер</a>
+                    <a href="#" class="navbar__menuitem">Плеер</a>
                     <a href="#Schedule" class="navbar__menuitem">Расписание</a>
                     <a href="#About" class="navbar__menuitem">О нас</a>
                 </nav>
@@ -57,7 +57,7 @@
         <div class="player">
             <div class="player__panel">
                 <canvas width="1168" height="420" class="player__panelcanvas"></canvas>
-                <audio src="http://s0.radioheart.ru:8000/RH20507" id="audio" crossorigin="anonymous" autoplay>
+                <audio src="http://s0.radioheart.ru:8000/RH20507" id="audio" crossorigin="anonymous">
                     <source src="http://s0.radioheart.ru:8000/RH20507" type="audio/mp3">
                 </audio>
             </div>
@@ -85,12 +85,12 @@
                             </svg>
                         </button>
                     </div>
-                    <button data-volume="" data-playing="true" role="switch" aria-checked="false" class="player__playbutton">
+                    <button data-volume="" data-playing="false" role="switch" aria-checked="false" class="player__playbutton">
                         <div class="playButtonOverlay"></div>
                         <svg class="playButton" width="48" height="48" viewBox="0 0 48 48" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle class="fill" cx="24" cy="24" r="24" fill="#0085FF"/>
-                            <path id="playIcon" d="M37 24L17.5 35.2583L17.5 12.7417L37 24Z" fill="transparent"/>
-                            <path id="pauseIcon" d="M18 13H22V35H18V13Z M26 13H30V35H26V13Z" fill="white"/>
+                            <path id="playIcon" d="M37 24L17.5 35.2583L17.5 12.7417L37 24Z" fill="white"/>
+                            <path id="pauseIcon" d="M18 13H22V35H18V13Z M26 13H30V35H26V13Z" fill="transparent"/>
                         </svg>
                     </button>
                 </div>
@@ -111,11 +111,11 @@
     <div id="Schedule" class="anchor"></div>
     <div class="section section__schedule container">
         <h2 class="section__headertext">Расписание</h2>
-        <p class="schedule__text">Федеральные новости по будням в конце каждого часа.<br><br>
-            Информационные блоки по будням:<br>
-            Большой перерыв: 12.10 — 13.00<br>
-            Повтор блока после 5й пары: 18.10 — 19.00<br><br>
-            Авторские передачи и новости вуза — на нашей странице <a class="link" href="https://vk.com/mirea.radio">Вконтакте</a>
+        <p class="schedule__text">Передачи звучат по будням с 8.00 до 23.00 каждые десять минут:<br><br>
+            Обновляемые федеральные новости в начале часа. Далее:<br>
+            Гаджет-Новости, новости спорта, футбольный дайджест, Дорожные Новости и экономический обзор.<br><br>
+            Авторские передачи и новости вуза — на нашей странице <a class="link" href="https://vk.com/mirea.radio">Вконтакте</a><br><br>
+            Информационный партнёр Радиорубки <a class="link" href="https://www.report-inform.ru">ИА Репорт-Информ</a>
         </p>
     </div>
     <div class="section section__contacts container">
@@ -161,11 +161,24 @@
         <h2 class="section__headertext">О нас</h2>
         <div class="container about">
             <p class="about__text">
-                Радиорубка РТУ МИРЭА — творческий коллектив Российского Технологического Университета.<br><br>
-                Вещание посредством радиоканала Радиорубка РТУ МИРЭА не является коммерческим.<br><br>
-                Все материалы, в т.ч. музыкальные композиции и радиопередачи на радиоканале Радиорубки РТУ МИРЭА и на сопутствующих информационных ресурсах представлены в ознакомительных целях.<br><br>
-                На радиопередачи собственного производства Радиорубки распространяется действие добровольной лицензии Creative Commons 4.0<br><br>
-                Вы можете свободно использовать любые материалы, опубликованные Радиорубкой РТУ МИРЭА, не внося в них изменения, указывая авторство и сохраняя условия <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ru">лицензии.</a><br>
+                Радиорубка это студенческая интернет-радиостанция, созданная в институте РТС РТУ МИРЭА.<br>
+                Мы - первая студенческая радиостанция прямого эфира в Москве.<br>
+                Вещаем с октября 2018 года.<br>
+                Все желающие могут послушать отборную музыку, радиопередачи и авторские передачи в хорошем качестве.<br><br>
+                Также, Радиорубка это платформа, цель которой - вывести студенческие средства массовой информации на качественно новый уровень.<br>
+                Мы предоставляем студентам возможность творить и развиваться во всех областях медиа: от журналистики и дикторства, до видеопроизводства и звукорежиссёрссуры.<br>
+            </p>
+        </div>
+    </div>
+    <div class="section section__license">
+        <h2 class="section__headertext">Лицензионная информация</h2>
+        <div class="container licence">
+            <p class="licence__text">
+                Радиорубка РТУ МИРЭА — творческий коллектив Российского Технологического Университета.<br>
+                Вещание посредством радиоканала Радиорубка РТУ МИРЭА является некоммерческим.<br>
+                Все материалы, в т.ч. музыкальные композиции и радиопередачи на радиоканале Радиорубки РТУ МИРЭА и на сопутствующих информационных ресурсах представлены в ознакомительных целях.<br>
+                На радиопередачи собственного производства Радиорубки распространяется действие добровольной лицензии Creative Commons 4.0<br>
+                Вы можете свободно использовать материалы, опубликованные Радиорубкой РТУ МИРЭА, не внося в них изменения, указывая авторство и сохраняя условия <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ru">лицензии.</a><br><br>
             </p>
         </div>
     </div>
