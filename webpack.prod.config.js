@@ -65,9 +65,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-        filename: 'index.html',
-        template: 'src/template.html',
-        favicon: 'assets/favicon.ico'
+      filename: 'index.html',
+      template: 'src/template.html',
+      title: 'Радиорубка РТУ МИРЭА',
+      favicon: 'assets/favicon.ico'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
@@ -75,11 +76,11 @@ module.exports = {
       chunkFilename: '[id].css',
     })
   ],
-  optimization: {
-    minimizer: [
-        new uglifyJsPlugin({
-          test: /\.js(\?.*)?$/i
-        })
-    ]
-  }
+  // optimization: {
+  //   minimizer: [
+  //       new uglifyJsPlugin({
+  //         test: /\.js(\?.*)?$/i
+  //       })
+  //   ]
+  // }
 };

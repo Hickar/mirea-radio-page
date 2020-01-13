@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -61,12 +62,14 @@ module.exports = {
   ]
 },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-        filename: 'index.html',
-        template: 'src/template.html'
+      filename: 'index.html',
+      template: 'src/template.html',
+      title: 'Радиорубка РТУ МИРЭА',
+      favicon: 'assets/favicon.ico'
       }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',
       chunkFilename: '[id].css',

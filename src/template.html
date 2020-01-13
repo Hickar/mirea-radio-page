@@ -1,18 +1,25 @@
 <!doctype html>
-<html lang="en" data-theme="">
+<html lang="ru" data-theme="">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="description" content="">
+    <meta name="description" content="Радиорубка это студенческая интернет-радиостанция, созданная в институте РТС РТУ МИРЭА.
+Мы - первая студенческая радиостанция прямого эфира в Москве.
+Вещаем с октября 2018 года.">
+    <meta name="keywords" content="Радиорубка, РТУ, МИРЭА, Радиостанция, Институт РТС, Студенческая радиостанция, Российский технологический университет"/>
+    <meta name="url" content="https://www.mirearadio.ru" />
+    <meta name="language" content="RU">
+    <meta name="robots" content="index, follow" />
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta property="og:locale" content="ru-RU" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="Радиорубка РТУ МИРЭА" />
+    <meta property="og:description" content="Радиорубка это студенческая интернет-радиостанция, созданная в институте РТС РТУ МИРЭА.
+Мы - первая студенческая радиостанция прямого эфира в Москве.
+Вещаем с октября 2018 года." />
+    <meta property="og:site_name" content="Радиорубка РТУ МИРЭА" />
     <title>Радиорубка РТУ</title>
 </head>
 <body>
@@ -68,12 +75,8 @@
                         <div class="player__trackname"></div>
                     </div>
                     <div class="player__volumeslider flex_row">
-                        <input name="volume" id="volume" type="range" list="volume-vals" class="volumeslider" step="0.01" min="-1" max="1" value="1">
-                        <datalist id="volume-vals">
-                            <option value="-1" label="min">
-                            <option value="1" label="max">
-                        </datalist>
-                        <button data-state="unmute" class="volumeicon">
+                        <input name="volume" id="volume" type="range" class="volumeslider" min="0" max="100" value="100">
+                        <button class="volumeicon">
                             <div class="volumeButtonOverlay"></div>
                             <svg class="volumeButton" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="fill" width="32" height="32" rx="4" fill="transparent"/>
@@ -85,7 +88,7 @@
                             </svg>
                         </button>
                     </div>
-                    <button data-volume="" data-playing="false" role="switch" aria-checked="false" class="player__playbutton">
+                    <button data-playing="false" role="switch" aria-checked="false" class="player__playbutton">
                         <div class="playButtonOverlay"></div>
                         <svg class="playButton" width="48" height="48" viewBox="0 0 48 48" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle class="fill" cx="24" cy="24" r="24" fill="#0085FF"/>
@@ -142,7 +145,7 @@
             </div>
             <div class="contacts__panel">
                 <a href="https://vk.com/mirea.radio" class="contacts__panellink" target="_blank">
-                    <svg class="radioroomlogo" width="78" height="90" viewBox="0 0 78 90" fill="none" preserveAspectRatio="true" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="radioroomlogo" width="78" height="90" viewBox="0 0 78 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 26.1a4 4 0 014-4h70a4 4 0 014 4v54.4a4 4 0 01-4 4H4a4 4 0 01-4-4V26.1zm46.8 27.2a18.2 18.2 0 11-36.4 0 18.2 18.2 0 0136.4 0zm13-7.8a5.2 5.2 0 100-10.4 5.2 5.2 0 000 10.4z" fill="#fff"/>
                         <circle cx="59.8" cy="22.1" r="5.2" fill="#fff"/>
                         <path d="M13 81.9h10.4v6.8c0 .6-.4 1-1 1H14a1 1 0 01-1-1v-6.8zM54.6 81.9H65v6.8c0 .6-.4 1-1 1h-8.4a1 1 0 01-1-1v-6.8z" fill="#fff"/>
@@ -179,6 +182,7 @@
                 Все материалы, в т.ч. музыкальные композиции и радиопередачи на радиоканале Радиорубки РТУ МИРЭА и на сопутствующих информационных ресурсах представлены в ознакомительных целях.<br>
                 На радиопередачи собственного производства Радиорубки распространяется действие добровольной лицензии Creative Commons 4.0<br>
                 Вы можете свободно использовать материалы, опубликованные Радиорубкой РТУ МИРЭА, не внося в них изменения, указывая авторство и сохраняя условия <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ru">лицензии.</a><br><br>
+                Материалы, предоставленные информационными партнёрами Радиорубки РТУ МИРЭА распространяются в ознакомительных целях и являются интеллектуальной собственностью авторов. Условия предоставления и распространения материалов партнёров Радиорубки регулируются непосредственно с правообладателями.<br><br>
             </p>
         </div>
     </div>

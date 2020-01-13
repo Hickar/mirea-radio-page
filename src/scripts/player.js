@@ -1,73 +1,73 @@
-const player = () => {
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const audioElement = document.getElementById("audio");
+const source = audioContext.createMediaElementSource(audioElement);
+source.connect(audioContext.destination);
+const gainNode = audioContext.createGain();
 
-    const updateMusic = () => {
-        fetch("http://s0.radioheart.ru:8000/json.xsl?mount=/RH20507")
-            .then((response) => {
-                response.json().then(data => {
-                    let artistName, trackName;
-                    [artistName, trackName] = data.mounts[0].title.split("-");
-                    document.querySelector(".player__trackartist").innerHTML = artistName;
-                    document.querySelector(".player__trackname").innerHTML = trackName;
-                })
-            });
-        return;
-    };
-    setInterval(updateMusic(), 30000);
+source.connect(gainNode).connect(audioContext.destination);
 
-    document.querySelector(".playButtonOverlay").addEventListener("click", () => {
-        const button = document.querySelector(".player__playbutton");
-        if (button.dataset.playing === "true") {
-            document.getElementById("pauseIcon").setAttribute("fill", "transparent");
-            document.getElementById("playIcon").setAttribute("fill", "white");
-        } else if (button.dataset.playing === "false") {
-            document.getElementById("playIcon").setAttribute("fill", "transparent");
-            document.getElementById("pauseIcon").setAttribute("fill", "white");
-        }
-    });
+class Player {
+    audioElement = document.getElementById("audio");
+    volumeSlider = document.querySelector(".volumeslider");
+    volume;
+    isPlaying = false;
+    isMute = false;
 
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    const audioContext = new AudioContext();
-    const audioElement = document.getElementById("audio");
-    const track = audioContext.createMediaElementSource(audioElement);
-    track.connect(audioContext.destination);
-
-    document.querySelector(".playButtonOverlay").addEventListener("click", () => {
-        const button = document.querySelector(".player__playbutton");
+    play() {
         if (audioContext.state === "suspended") {
             audioContext.resume();
         }
 
-        if (button.dataset.playing === "false") {
-            audioElement.play();
-            button.dataset.playing = "true";
-        } else if (button.dataset.playing === "true") {
-            audioElement.pause();
-            button.dataset.playing = "false";
+        if (this.isPlaying === false) {
+            this.audioElement.play();
+            document.getElementById("playIcon").setAttribute("fill", "transparent");
+            document.getElementById("pauseIcon").setAttribute("fill", "white");
+            this.isPlaying = true;
+        } else if (this.isPlaying === true) {
+            this.audioElement.pause();
+            document.getElementById("pauseIcon").setAttribute("fill", "transparent");
+            document.getElementById("playIcon").setAttribute("fill", "white");
+            this.isPlaying = false;
         }
-    }, false);
+    }
 
-    const gainNode = audioContext.createGain();
-
-    document.querySelector(".volumeslider").addEventListener("input", (e) => {
-        gainNode.gain.value = e.target.value;
-    }, false);
-
-    document.querySelector(".volumeButtonOverlay").addEventListener("click", () => {
-        const button = document.querySelector(".volumeicon");
-        if (button.dataset.state === "unmute") {
-            button.dataset.volume = parseFloat(gainNode.gain.value).toFixed(2);
-            gainNode.gain.value = -1;
-            button.dataset.state = "mute";
-            document.querySelector(".volumeslider").value = -1;
-        } else if (button.dataset.state === "mute") {
-            gainNode.gain.value = button.dataset.volume;
-            button.dataset.state = "unmute";
-            document.querySelector(".volumeslider").value = button.dataset.volume;
+    mute() {
+        if (this.isMute === false) {
+            this.volume = parseFloat(gainNode.gain.value).toFixed(2);
+            gainNode.gain.value = 0;
+            this.isMute = true;
+            this.volumeSlider.value = 0;
+        } else if (this.isMute === true) {
+            gainNode.gain.value = this.volume;
+            this.isMute = false;
+            this.volumeSlider.value = this.volume;
         }
-    }, false);
+    }
 
-    track.connect(gainNode).connect(audioContext.destination);
-};
+    updatesourceInfo() {
+        fetch("http://s0.radioheart.ru:8000/json.xsl?mount=/RH20507")
+            .then((response) => {
+                response.json().then(data => {
+                    let artistName, sourceName;
+                    [artistName, sourceName] = data.mounts[0].title.split("-");
+                    document.querySelector(".player__trackartist").innerHTML = artistName;
+                    document.querySelector(".player__trackname").innerHTML = sourceName;
+                })
+            });
+        fetch("http://s0.radioheart.ru:8000/RH20507").then(response => {
+            console.log(response);
+        });
+    }
 
+    changeVolume() {
+        const fraction = parseInt(this.volumeSlider.value) / parseInt(this.volumeSlider.max);
+        gainNode.gain.value = fraction * fraction;
+    }
+}
 
-export default player;
+const player = new Player();
+
+document.querySelector(".playButtonOverlay").addEventListener("click", () => player.play());
+document.querySelector(".volumeButtonOverlay").addEventListener("click", () => player.mute());
+document.querySelector(".volumeslider").addEventListener("input", () => player.changeVolume());
+setInterval(player.updatesourceInfo(), 30000);

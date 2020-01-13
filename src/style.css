@@ -217,6 +217,13 @@ ul, ol {
     height: 1px;
 }
 
+.section__headertext {
+    font-family: 'ProximaNova Semibold', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 3rem 0 1.5rem 0;
+}
+
 .header {
     display: inline-block;
     width: 100%;
@@ -420,13 +427,6 @@ ul, ol {
 
 .player__fullscreenbutton:hover .fill {
     fill: #363636;
-}
-
-.section__headertext {
-    font-family: 'ProximaNova Semibold', sans-serif;
-    font-size: 1.875rem;
-    text-align: center;
-    margin: 3rem 0 1.5rem 0;
 }
 
 .schedule__text {
