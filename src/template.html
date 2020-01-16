@@ -21,6 +21,11 @@
 Вещаем с октября 2018 года." />
     <meta property="og:site_name" content="Радиорубка РТУ МИРЭА" />
     <title>Радиорубка РТУ</title>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?163"></script>
+    <script type="text/javascript">
+        VK.Widgets.CommunityMessages("vk_community_messages", 172270969, {expanded: "0",disableExpandChatSound: "1",disableNewMessagesSound: "1",tooltipButtonText: "Есть вопрос? Напиши нам!"});
+        VK.Widgets.Subscribe("vk_subscribe", {soft: 1}, -172270969);
+    </script>
 </head>
 <body>
 <div class="wrapper">
@@ -62,9 +67,9 @@
     </div>
     <div class="section section__player container">
         <div class="player">
-            <div class="player__panel">
-                <canvas width="1168" height="420" class="player__panelcanvas"></canvas>
-                <audio src="http://s0.radioheart.ru:8000/RH20507" id="audio" crossorigin="anonymous">
+            <div class="player__spectrum">
+                <canvas width="1168" height="420" class="player__canvas"></canvas>
+                <audio id="audio" crossorigin="anonymous">
                     <source src="http://s0.radioheart.ru:8000/RH20507" type="audio/mp3">
                 </audio>
             </div>
@@ -75,7 +80,7 @@
                         <div class="player__trackname"></div>
                     </div>
                     <div class="player__volumeslider flex_row">
-                        <input name="volume" id="volume" type="range" class="volumeslider" min="0" max="100" value="100">
+                        <input name="volume" id="volume" type="range" class="volumeslider" min="0" max="1" step="0.01" value="0.5">
                         <button class="volumeicon">
                             <div class="volumeButtonOverlay"></div>
                             <svg class="volumeButton" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,8 +122,8 @@
         <p class="schedule__text">Передачи звучат по будням с 8.00 до 23.00 каждые десять минут:<br><br>
             Обновляемые федеральные новости в начале часа. Далее:<br>
             Гаджет-Новости, новости спорта, футбольный дайджест, Дорожные Новости и экономический обзор.<br><br>
-            Авторские передачи и новости вуза — на нашей странице <a class="link" href="https://vk.com/mirea.radio">Вконтакте</a><br><br>
-            Информационный партнёр Радиорубки <a class="link" href="https://www.report-inform.ru">ИА Репорт-Информ</a>
+            Авторские передачи и новости вуза — на нашей странице <a class="link" href="https://vk.com/mirea.radio" target="_blank">Вконтакте</a><br><br>
+            Информационный партнёр Радиорубки <a class="link" href="https://www.report-inform.ru" target="_blank">ИА Репорт-Информ</a>
         </p>
     </div>
     <div class="section section__contacts container">
@@ -181,11 +186,23 @@
                 Вещание посредством радиоканала Радиорубка РТУ МИРЭА является некоммерческим.<br>
                 Все материалы, в т.ч. музыкальные композиции и радиопередачи на радиоканале Радиорубки РТУ МИРЭА и на сопутствующих информационных ресурсах представлены в ознакомительных целях.<br>
                 На радиопередачи собственного производства Радиорубки распространяется действие добровольной лицензии Creative Commons 4.0<br>
-                Вы можете свободно использовать материалы, опубликованные Радиорубкой РТУ МИРЭА, не внося в них изменения, указывая авторство и сохраняя условия <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ru">лицензии.</a><br><br>
+                Вы можете свободно использовать материалы, опубликованные Радиорубкой РТУ МИРЭА, не внося в них изменения, указывая авторство и сохраняя условия <a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ru" target="_blank">лицензии.</a><br><br>
                 Материалы, предоставленные информационными партнёрами Радиорубки РТУ МИРЭА распространяются в ознакомительных целях и являются интеллектуальной собственностью авторов. Условия предоставления и распространения материалов партнёров Радиорубки регулируются непосредственно с правообладателями.<br><br>
             </p>
         </div>
     </div>
+    <div id="vk_community_messages"></div>
 </div>
+<!--<script type="text/javascript">-->
+<!--    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
+<!--        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})-->
+<!--    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");-->
+
+<!--    ym(55537495, "init", {-->
+<!--        clickmap:true,-->
+<!--        trackLinks:true,-->
+<!--        accurateTrackBounce:true-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>

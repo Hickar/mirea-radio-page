@@ -239,6 +239,20 @@ ul, ol {
     border-radius: 8px;
 }
 
+.player__spectrum {
+    overflow: hidden;
+    margin: 0 1rem;
+    border-top-left-radius: 8px;
+    -webkit-border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+}
+
+.player__canvas {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .player__controls {
     min-height: 5rem;
     height: 1px;
@@ -421,6 +435,10 @@ ul, ol {
     overflow: visible;
 }
 
+.player__fullscreenbutton {
+    display: none;
+}
+
 .player__fullscreenbutton .fill {
     transition: .2s fill ease;
 }
@@ -519,6 +537,10 @@ ul, ol {
     color: var(--text-color);
 }
 
+.wcm_button {
+    background-color: #0084FF !important;
+}
+
 @media screen and (max-width: 996px) {
     .section {
         margin: 0 var(--width-1);
@@ -603,6 +625,11 @@ ul, ol {
     .navbar__menuitem {
         font-size: .8rem;
         margin: 0 .75rem;
+    }
+
+    .player__spectrum {
+        height: 240px;
+        margin: 0 1rem 1.75rem 1rem;
     }
 
     .player__controlsinnerleft {
