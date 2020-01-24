@@ -3,10 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const uglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
+  devtool: 'source-map',
   devServer: {
     contentBase: './dist',
     hot: true
@@ -21,9 +23,9 @@ module.exports = {
     }
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/'
+    filename: '[name].[hash].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: ''
   },
   module: {
     rules: [
@@ -67,11 +69,18 @@ module.exports = {
       template: 'src/template.html',
       title: 'Радиорубка РТУ МИРЭА',
       favicon: 'assets/favicon.ico'
-      }),
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',
       chunkFilename: '[id].css',
     })
-  ]
+  ],
+  // optimization: {
+  //   minimizer: [
+  //       new uglifyJsPlugin({
+  //         test: /\.js(\?.*)?$/i
+  //       })
+  //   ]
+  // }
 };
