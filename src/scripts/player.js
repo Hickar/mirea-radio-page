@@ -1,6 +1,9 @@
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+window.requestAnimationFrame =
+    window.requestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.msRequestAnimationFrame;
 
 class Player {
     constructor(url) {
@@ -81,7 +84,6 @@ class Player {
                     document.querySelector(".player__trackname").innerHTML = trackName;
                 })
             });
-        setInterval(() => this.updateTrackInfo(), 20000);
     }
 }
 
@@ -90,7 +92,8 @@ class Spectrum {
         this.analyser = audioContext.createAnalyser();
         this.canvas = document.querySelector("canvas");
         this.player = player;
-        player.source.connect(this.analyser).connect(audioContext.destination);
+        player.source.connect(this.analyser);
+        this.analyser.connect(audioContext.destination);
 
         if (window.innerWidth <= 480) this.analyser.fftSize = 128;
         else this.analyser.fftSize = 256;
@@ -160,3 +163,4 @@ document.querySelector(".playButtonOverlay").addEventListener("click", () => {
 });
 document.querySelector(".volumeButtonOverlay").addEventListener("click", () => player.mute());
 document.querySelector(".volumeslider").addEventListener("input", () => player.changeVolume());
+setInterval(player.updateTrackInfo, 20000);

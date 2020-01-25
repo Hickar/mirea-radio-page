@@ -3,13 +3,19 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const fs = require('fs');
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   devServer: {
     contentBase: './dist',
-    hot: true
+    hot: true,
+    https: {
+      key: fs.readFileSync('private.key'),
+      cert: fs.readFileSync('private.crt'),
+      ca: fs.readFileSync('private.pem')
+    }
   },
   resolve: {
     alias: {
@@ -23,7 +29,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/'
+    publicPath: ''
   },
   module: {
     rules: [
