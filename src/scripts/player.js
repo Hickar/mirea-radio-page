@@ -1,3 +1,5 @@
+import { drawSVG, isEmpty } from "./utils";
+
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 window.requestAnimationFrame =
     window.requestAnimationFrame ||
@@ -7,14 +9,19 @@ window.requestAnimationFrame =
 
 class Player {
     constructor(url) {
-        this.url = url;
-        this.audioElement = document.getElementById("audio");
+        this.audioElement = document.getElementById("audio") || new Audio(url);
+        this.audioElement.src = url;
         this.source = audioContext.createMediaElementSource(this.audioElement);
-
         this.volumeSlider = document.querySelector(".volumeslider");
         this.volume = this.volumeSlider.value;
         this.isPlaying = false;
         this.isMute = false;
+    }
+
+    init() {
+        this.updateTrackInfo();
+        setInterval(this.updateTrackInfo(), 20000);
+        this.audioElement.volume = this.volume;
     }
 
     play() {
@@ -22,22 +29,17 @@ class Player {
             audioContext.resume();
         }
 
-        audioContext.resume();
-        this.audioElement.src = this.url;
         this.audioElement.load();
+        this.audioElement.currentTime = 0;
         this.audioElement.play();
         document.getElementById("playIcon").setAttribute("fill", "transparent");
         document.getElementById("pauseIcon").setAttribute("fill", "white");
-        this.isPlaying = true;
     }
 
     pause() {
         this.audioElement.pause();
-        this.audioElement.src = null;
-        this.audioElement.currentTime = 0;
         document.getElementById("pauseIcon").setAttribute("fill", "transparent");
         document.getElementById("playIcon").setAttribute("fill", "white");
-        this.isPlaying = false;
     }
 
     toggle() {
@@ -46,21 +48,21 @@ class Player {
         } else if (this.isPlaying === true) {
             this.pause();
         }
+        document.querySelector(".player__playbutton").classList.toggle(".player__playbutton_active");
+        this.isPlaying = !this.isPlaying;
     }
 
     mute() {
         if (this.isMute === false) {
             this.volume = this.audioElement.volume;
             this.audioElement.volume = 0;
-            this.isMute = true;
             this.volumeSlider.value = 0;
-            this.muteCheck();
         } else if (this.isMute === true) {
             this.audioElement.volume = this.volume;
-            this.isMute = false;
             this.volumeSlider.value = this.volume;
-            this.muteCheck();
         }
+        this.isMute = !this.isMute;
+        this.muteCheck();
     }
 
     changeVolume() {
@@ -69,8 +71,32 @@ class Player {
     }
 
     muteCheck() {
-        if (this.audioElement.volume === 0) document.querySelector(".volumecrossline").setAttribute("stroke", "#B8B8B8");
-        else document.querySelector(".volumecrossline").setAttribute("stroke", "transparent");
+        // switch (true) {
+        //     case (this.audioElement.volume === 0): {
+        //         document.getElementById("crossline").setAttribute("stroke", "#B8B8B8");
+        //         break;
+        //     }
+        //     case (this.audioElement.volume > 0 && this.audioElement.volume <= 33): {
+        //         document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
+        //         document.getElementById("v_level2").setAttribute("fill", "transparent");
+        //         document.getElementById("v_level3").setAttribute("fill", "transparent");
+        //         break;
+        //     }
+        //     case (this.audioElement.volume > 33 && this.audioElement.volume <= 66): {
+        //         document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
+        //         document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
+        //         document.getElementById("v_level3").setAttribute("fill", "transparent");
+        //         break;
+        //     }
+        //     case (this.audioElement.volume > 66 && this.audioElement.volume <= 100): {
+        //         document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
+        //         document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
+        //         document.getElementById("v_level3").setAttribute("fill", "#B8B8B8");
+        //         break;
+        //     }
+        // }
+        if (this.audioElement.volume === 0) document.getElementById("crossline").setAttribute("stroke", "#B8B8B8");
+        else document.getElementById("crossline").setAttribute("stroke", "transparent");
     }
 
     updateTrackInfo() {
@@ -79,9 +105,12 @@ class Player {
                 response.json().then(data => {
                     let artistName, trackName;
                     [artistName, trackName] = data.mounts[0].title.split("-");
-                    if (trackName === '') trackName = "Без названия";
-                    document.querySelector(".player__trackartist").innerHTML = artistName;
-                    document.querySelector(".player__trackname").innerHTML = trackName;
+                    isEmpty(artistName) ?
+                        document.querySelector(".player__trackartist").innerHTML = "Неизвестный исполнитель":
+                        document.querySelector(".player__trackartist").innerHTML = artistName;
+                    isEmpty(trackName) ?
+                        document.querySelector(".player__trackname").innerHTML = "Без названия":
+                        document.querySelector(".player__trackname").innerHTML = trackName;
                 })
             });
     }
@@ -96,19 +125,59 @@ class Spectrum {
         this.analyser.connect(audioContext.destination);
 
         if (window.innerWidth <= 480) this.analyser.fftSize = 128;
-        else this.analyser.fftSize = 256;
+        else this.analyser.fftSize = 512;
 
         this.width = this.canvas.parentElement.clientWidth;
-        this.canvas.setAttribute("width", this.width);
-
         this.height = this.canvas.parentElement.clientHeight;
+        this.dpi = window.devicePixelRatio || 1;
+
         this.bufferLength = this.analyser.frequencyBinCount;
         this.dataArray = new Uint8Array(this.bufferLength);
         this.ctx = this.canvas.getContext("2d");
+    }
 
-        this.barWidth = ((this.width / this.bufferLength) * 2.5);
-        this.barHeight = 0;
-        this.x = 0;
+    init() {
+        this.resize();
+        this.draw();
+    }
+
+    draw() {
+        const center = {
+            x: this.canvas.width / (2 * this.dpi),
+            y: this.canvas.height / (2 * this.dpi)
+        };
+
+        const gradient = this.ctx.createLinearGradient(-138 / 2, -138 / 2, 138 / 2, 138 / 2);
+        gradient.addColorStop(.9, "hsl(40, 60%, 50%)");
+        gradient.addColorStop(.5, "hsl(330, 100%, 50%)");
+        gradient.addColorStop(.1, "hsl(286, 87%, 34%)");
+
+        const circuits = document.getElementById("circuits"),
+            outlines = document.getElementById("outlines"),
+            bottom = document.getElementById("bottom"),
+            top = document.getElementById("top"),
+            central = document.getElementById("center"),
+            logo = document.getElementById("logo"),
+            wing = document.getElementById("wing");
+
+        drawSVG(circuits, this.ctx, center.x, center.y);
+        drawSVG(outlines, this.ctx, center.x, center.y + 26);
+        drawSVG(bottom, this.ctx, center.x, center.y + (bottom.height / 2));
+        drawSVG(top, this.ctx, center.x, center.y - (top.height / 2) + 25);
+
+        for (let i = 40; i > 0; i -= 10) {
+            drawSVG(wing, this.ctx, center.x - (Math.cos(Math.PI * i / 180) * (this.dataArray[i * 4] + 50) / 2), center.y - (Math.sin(Math.PI * i / 180) * this.dataArray[i * 4] / 2), i);
+            drawSVG(wing, this.ctx, center.x + (Math.cos(Math.PI * -i / 180) * (this.dataArray[i * 4] + 50) / 2), center.y + (Math.sin(Math.PI * -i / 180) * this.dataArray[i * 4] / 2), -i);
+        }
+
+        drawSVG(central, this.ctx, center.x, center.y);
+        drawSVG(logo, this.ctx, center.x, center.y);
+    }
+
+    resize() {
+        [this.canvas.width, this.canvas.height] = [this.canvas.parentElement.clientWidth * this.dpi, this.canvas.parentElement.clientHeight * this.dpi];
+        this.ctx.scale(this.dpi, this.dpi);
+        this.draw();
     }
 
     stopRender() {
@@ -121,23 +190,9 @@ class Spectrum {
                 requestAnimationFrame(() => this.renderFrame()) :
                 this.stopRender();
 
-            this.x = 0;
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             this.analyser.getByteFrequencyData(this.dataArray);
-            this.ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--panel-color');
-            this.ctx.fillRect(0, 0, this.width, this.height);
-
-            for (let i = 0; i < this.bufferLength; i++) {
-                this.barHeight = this.dataArray[i];
-
-                const r = 50;
-                const g = 50;
-                const b = this.barHeight + (25 * (i/this.bufferLength));
-
-                this.ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-                this.ctx.fillRect(this.x, this.height - this.barHeight, this.barWidth, this.barHeight);
-
-                this.x += this.barWidth + 1;
-            }
+            this.draw();
         } catch(e) {
             console.error(e.toString());
         }
@@ -148,19 +203,19 @@ const player = new Player("https://s0.radioheart.ru:8000/RH20507");
 const spectrum = new Spectrum(player);
 
 document.addEventListener("DOMContentLoaded", () => {
-    player.updateTrackInfo();
+    player.init();
+    spectrum.init();
 });
 
-document.querySelector(".player__spectrum").addEventListener("resize", (e) => {
-    console.log(`e.target: ${e.target}`);
-   [canvas.width, canvas.height] = [canvas.parentElement.clientWidth, canvas.parentElement.clientHeight];
-    canvas.setAttribute("width", canvas.width);
+window.addEventListener("resize", () => {
+    spectrum.resize();
 });
 
-document.querySelector(".playButtonOverlay").addEventListener("click", () => {
+document.querySelector(".player__playbutton").addEventListener("click", () => {
     player.toggle();
     spectrum.renderFrame();
 });
-document.querySelector(".volumeButtonOverlay").addEventListener("click", () => player.mute());
+
+document.querySelector(".volumebutton").addEventListener("click", () => player.mute());
+
 document.querySelector(".volumeslider").addEventListener("input", () => player.changeVolume());
-setInterval(player.updateTrackInfo, 20000);

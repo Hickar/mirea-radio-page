@@ -1,15 +1,21 @@
 @font-face {
-    font-family: ProximaNova Regular;
+    font-family: ProximaNova;
+    font-weight: 400;
+    font-display: swap;
     src: url(../assets/ProximaNova_Regular.ttf);
 }
 
 @font-face {
-    font-family: ProximaNova Semibold;
+    font-family: ProximaNova;
+    font-weight: 700;
+    font-display: swap;
     src: url(../assets/ProximaNova_Semibold.ttf);
 }
 
 @font-face {
-    font-family: ProximaNova Light;
+    font-family: ProximaNova;
+    font-weight: 100;
+    font-display: swap;
     src: url(../assets/ProximaNova_Light.ttf);
 }
 
@@ -32,45 +38,58 @@ html {
     --background-color: hsl(0, 0%, 100%);
     --text-color: hsl(0, 0%, 0%);
     --border-color: hsl(0, 0%, 72%);
-    --accent-color: hsl(209, 100%, 50%);
-    --accent-color-hover: hsl(209, 100%, 40%);
+    --accent-color: hsl(330, 100%, 50%);
+    --accent-color-hover: hsl(330, 100%, 40%);
     --panel-color: hsl(0, 0%, 15%);
     --error-color: hsl(0, 100%, 45%);
-    --artist-color: hsl(0, 0%, 100%);
-    font-family: 'ProximaNova Regular', sans-serif;
+    --white: hsl(0, 0%, 100%);
+    font-family: "ProximaNova", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.3;
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
 
-* {
-    transition: .2s fill ease, .2s stroke ease, .2s color ease, .2s background-color ease;
-    -moz-transition: .2s fill ease, .2s stroke ease, .2s color ease, .2s background-color ease;
-    -webkit-transition: .2s fill ease, .2s stroke ease, .2s color ease, .2s background-color ease;
-    -o-transition: .2s fill ease, .2s stroke ease, .2s color ease, .2s background-color ease;
+svg {
+    pointer-events: none;
+    transition: .2s fill ease, .2s stroke ease;
+    -moz-transition: .2s fill ease, .2s stroke ease;
+    -webkit-transition: .2s fill ease, .2s stroke ease;
+    -o-transition: .2s fill ease, .2s stroke ease;
+}
+
+.text {
+    transition: .2s color ease, .2s background-color ease;
+    -moz-transition: .2s color ease, .2s background-color ease;
+    -webkit-transition: .2s color ease, .2s background-color ease;
+    -o-transition: .2s color ease, .2s background-color ease;
+}
+
+body, .navbar, .section {
+    transition: .2s background-color ease;
+    -moz-transition: .2s background-color ease;
+    -webkit-transition: .2s background-color ease;
+    -o-transition: .2s background-color ease;
+}
+
+.hidden {
+    display: none;
 }
 
 *:focus {
     outline: none;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
     --background-color: hsl(0, 0%, 15%);
     --text-color: hsl(0, 0%, 100%);
     --border-color: hsl(0, 0%, 72%);
-    --accent-color: hsl(209, 100%, 50%);
-    --accent-color-hover: hsl(209, 100%, 40%);
+    --accent-color: hsl(330, 100%, 40%);
+    --accent-color-hover: hsl(327, 100%, 35%);
     --panel-color: hsl(0, 0%, 0%);
-    --error-color: hsl(0, 100%, 45%);
-    --artist-color: hsl(0, 0%, 100%);
-    font-family: 'ProximaNova Regular', sans-serif;
-    font-size: 16px;
-    line-height: 1.2;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+    --white: hsl(0, 0%, 100%);
 }
 
 body {
@@ -119,11 +138,13 @@ ul, ol {
 }
 
 .navbar {
+    box-sizing: border-box;
     width: 100%;
     max-height: 48px;
     position: fixed;
     left: 0;
     top: 0;
+    padding: 0 var(--width-1);
     margin: 0;
     background-color: var(--background-color);
     z-index: 5;
@@ -152,16 +173,13 @@ ul, ol {
 .navbar__logotitle {
     display: inline;
     font-size: 0.625rem;
-    font-family: 'ProximaNova Semibold', sans-serif;
+    font-weight: 700;
     margin: auto 0 auto 0.5rem;
     line-height: 1.2;
-    color: var(--text-color);
 }
 
 .navbar__logotitlesmall {
     font-size: 0.5rem;
-    font-family: 'ProximaNova Regular', sans-serif;
-    color: var(--text-color);
 }
 
 .navbar__menu {
@@ -173,13 +191,12 @@ ul, ol {
 .navbar__menuitem {
     position: relative;
     font-size: 1rem;
-    color: var(--text-color);
     display: inline-block;
     margin: 0 1rem;
 }
 
 .navbar__menuitem::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     bottom: -3px;
@@ -213,31 +230,42 @@ ul, ol {
 
 .section {
     display: block;
-    margin: 0 var(--width-1);
+    padding: 0 var(--width-1);
+}
+
+.section__panel {
+    margin: 6rem 0;
+    padding: 0 1rem;
+    border-radius: .5rem;
+    box-shadow: 6px 6px 6px rgba(55, 55, 55, .2), -6px -6px 6px rgba(210, 210, 210, .2);
+}
+
+.section__player,
+.section__contacts,
+.section__license {
+    background-color: var(--panel-color);
+    color: white;
 }
 
 .section__header {
     margin-top: 3rem;
-    color: var(--text-color);
 }
 
 .section__headertext {
-    font-family: 'ProximaNova Semibold', sans-serif;
     font-size: 1.5rem;
+    font-weight: 700;
     text-align: center;
-    margin: 3rem 0 1.5rem 0;
-    color: var(--text-color);
+    padding: 2rem 0 1.5rem 0;
+    margin: 0;
 }
 
 .header {
     display: inline-block;
     width: 100%;
-    font-family: 'ProximaNova Semibold', sans-serif;
+    font-weight: 700;
     font-size: 1.25rem;
-    line-height: 1.2;
     margin: 1.25rem auto;
     text-align: center;
-    color: var(--text-color);
 }
 
 .player {
@@ -247,7 +275,7 @@ ul, ol {
 
 .player__spectrum {
     overflow: hidden;
-    margin: 0 1rem;
+    padding: 0;
     height: 420px;
     border-top-left-radius: 8px;
     -webkit-border-top-left-radius: 8px;
@@ -293,37 +321,28 @@ ul, ol {
 .player__trackname {
     display: inline;
     font-size: 1rem;
-    color: var(--artist-color);
+    color: var(--white);
     white-space: nowrap;
 }
 
-.player__volumeslider {
+.player__volume {
     justify-content: center;
     align-items: center;
     padding-left: 1rem;
 }
 
-.volumeicon {
+.volumebutton {
     position: relative;
     margin-left: 1rem;
     flex: 0 0 auto;
 }
 
-.volumeicon .fill {
+.volumebutton .fill {
     transition: .2s fill ease;
 }
 
-.volumeicon:hover .fill {
+.volumebutton:hover .fill {
     fill: #363636;
-}
-
-.volumeButtonOverlay,
-.playButtonOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 .volumeslider {
@@ -428,6 +447,14 @@ ul, ol {
     margin-left: auto;
 }
 
+.player__playbutton_active .play {
+    fill: transparent;
+}
+
+.player__playbutton_active .pause {
+    fill: var(--white);
+}
+
 .player__playbutton .fill {
     transition: fill .2s ease;
 }
@@ -439,6 +466,8 @@ ul, ol {
 .player__playbutton svg {
     width: 48px;
     height: 48px;
+    fill: var(--accent-color);
+    stroke: transparent;
     overflow: visible;
 }
 
@@ -455,14 +484,10 @@ ul, ol {
 }
 
 .schedule__text {
-    font-family: 'ProximaNova Regular', sans-serif;
     font-size: 1.25rem;
     text-align: center;
     padding: 0 0 3rem 0;
     margin: 0;
-    line-height: 1.2;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
 }
 
 .link {
@@ -475,8 +500,8 @@ ul, ol {
 
 .contacts {
     position: relative;
-    background-color: var(--panel-color);
     border-radius: 8px;
+    flex-wrap: wrap;
 }
 
 .contacts__panel {
@@ -493,13 +518,13 @@ ul, ol {
 
 .contacts__panellinktext {
     margin: .5rem auto 0 auto;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: white;
 }
 
 .contacts__panellinktext_big {
-    font-family: 'ProximaNova Semibold', sans-serif;
-    font-size: 1.125rem;
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .contacts__panel::after {
@@ -510,7 +535,7 @@ ul, ol {
     top: 15%;
     width: 2px;
     background-color: white;
-    z-index: 5;
+    z-index: 4;
     border-radius: 1rem;
 }
 
@@ -519,41 +544,24 @@ ul, ol {
 }
 
 .mirealogotext_big {
-    font-family: 'ProximaNova Semibold', sans-serif;
+    font-weight: 700;
     color: white;
     font-size: 3rem;
 }
 
 .mirealogotext_small {
-    font-family: 'ProximaNova Regular', sans-serif;
     color: white;
     font-size: 1rem;
 }
 
-.about__text {
-    font-family: "ProximaNova Regular", sans-serif;
-    font-size: 1.25rem;
-    line-height: 1.2;
-    color: var(--text-color);
-    padding: 0 0 3rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
+.about__text,
 .licence__text {
     font-size: 1.25rem;
-    line-height: 1.2;
-    color: var(--text-color);
-}
-
-.wcm_button {
-    background-color: #0084FF !important;
+    padding: 0 0 2rem 0;
+    margin: 0;
 }
 
 @media screen and (max-width: 996px) {
-    .section {
-        margin: 0 var(--width-1);
-    }
-
     .section__header {
         margin-top: 3rem;
     }
@@ -563,15 +571,15 @@ ul, ol {
     }
 
     .about__text {
-        font-family: "ProximaNova Regular", sans-serif;
         font-size: 1.25rem;
-        line-height: 1.2;
-        color: var(--text-color);
     }
 }
 
 @media screen and (max-width: 768px) {
-    .section,
+    .navbar {
+        padding: 0;
+    }
+
     .navbar__darkmodebutton {
         margin: 0;
     }
@@ -599,14 +607,12 @@ ul, ol {
     .about__text,
     .licence__text {
         font-size: 1rem;
-        line-height: 1.2;
         text-align: left;
         padding-bottom: 1.5rem;
     }
 
     .header {
         font-size: 1rem;
-        line-height: 1.2;
         margin: 1.25rem auto;
     }
 
@@ -626,17 +632,12 @@ ul, ol {
 }
 
 @media screen and (max-width: 480px) {
-    .section {
-        margin: 0;
-    }
-
     .section__header {
         margin-top: 3rem;
     }
 
     .header {
         font-size: .8rem;
-        line-height: 1.2;
         margin: 1rem auto;
     }
 
@@ -670,13 +671,11 @@ ul, ol {
     .player__trackartist {
         display: inline;
         font-size: .7rem;
-        color: var(--border-color);
     }
 
     .player__trackname {
         display: inline;
         font-size: .9rem;
-        color: var(--artist-color);
     }
 
     .player__volumeslider {
@@ -728,7 +727,6 @@ ul, ol {
 
     .header {
         font-size: .8rem;
-        line-height: 1.2;
         margin: 1rem auto;
     }
 }

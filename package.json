@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --config webpack.dev.config.js",
-    "server": "webpack-dev-server --config webpack.dev.config.js --open",
+    "start": "webpack-dev-server --config webpack.dev.config.js --open",
     "build": "webpack --config webpack.prod.config.js"
   },
   "repository": "https://github.com/Hickar/mirea-radio-page.git",

@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2abd3a-a410-4860-bbf0-c8b5ad4e133e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scripts/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/src/scripts/darkmodeButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/src/scripts/player.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/src/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/src/template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/webpack.dev.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/webpack.prod.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mirea-radio-page/yarn.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssl.conf" beforeDir="false" afterPath="$PROJECT_DIR$/ssl.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.dev.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.dev.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +57,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -130,6 +122,25 @@
       <workItem from="1579771609493" duration="2127000" />
       <workItem from="1579799298388" duration="40000" />
       <workItem from="1579799359444" duration="8906000" />
+      <workItem from="1583346541582" duration="4270000" />
+      <workItem from="1583695350584" duration="4664000" />
+      <workItem from="1583762159253" duration="10000" />
+      <workItem from="1583841250524" duration="438000" />
+      <workItem from="1583858726085" duration="143000" />
+      <workItem from="1583947234041" duration="7271000" />
+      <workItem from="1584006826310" duration="6311000" />
+      <workItem from="1584345858223" duration="236000" />
+      <workItem from="1584349424335" duration="1110000" />
+      <workItem from="1584455444511" duration="31000" />
+      <workItem from="1584455497678" duration="3192000" />
+      <workItem from="1584640020737" duration="2569000" />
+      <workItem from="1584697660517" duration="7743000" />
+      <workItem from="1584780763624" duration="11180000" />
+      <workItem from="1584968761928" duration="2119000" />
+      <workItem from="1584989376800" duration="209000" />
+      <workItem from="1585057592005" duration="2852000" />
+      <workItem from="1585138534848" duration="5727000" />
+      <workItem from="1585216238358" duration="19000" />
     </task>
     <servers />
   </component>
@@ -140,12 +151,24 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.crt" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -164,10 +187,10 @@
       <screen x="0" y="23" width="1440" height="809" />
     </state>
     <state x="408" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.809@0.23.1440.809" timestamp="1579799333925" />
-    <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578691034077">
+    <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583347126390">
       <screen x="0" y="23" width="1440" height="809" />
     </state>
-    <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.809@0.23.1440.809" timestamp="1578691034077" />
+    <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.809@0.23.1440.809" timestamp="1583347126390" />
     <state x="100" y="123" width="1240" height="609" key="DiffContextDialog" timestamp="1576672391007">
       <screen x="0" y="23" width="1440" height="809" />
     </state>
@@ -184,9 +207,13 @@
       <screen x="0" y="23" width="1440" height="809" />
     </state>
     <state x="402" y="191" width="635" height="472" key="find.popup/0.23.1440.809@0.23.1440.809" timestamp="1578944282162" />
-    <state x="385" y="156" width="670" height="676" key="search.everywhere.popup" timestamp="1578941440403">
+    <state x="385" y="194" width="670" height="675" key="run.anything.popup" timestamp="1584974148107">
       <screen x="0" y="23" width="1440" height="809" />
     </state>
-    <state x="385" y="156" width="670" height="676" key="search.everywhere.popup/0.23.1440.809@0.23.1440.809" timestamp="1578941440403" />
+    <state x="385" y="194" width="670" height="675" key="run.anything.popup/0.23.1440.809@0.23.1440.809" timestamp="1584974148107" />
+    <state x="385" y="156" width="670" height="676" key="search.everywhere.popup" timestamp="1584722690470">
+      <screen x="0" y="23" width="1440" height="809" />
+    </state>
+    <state x="385" y="156" width="670" height="676" key="search.everywhere.popup/0.23.1440.809@0.23.1440.809" timestamp="1584722690470" />
   </component>
 </project>

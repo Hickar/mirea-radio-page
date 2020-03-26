@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
     <meta name="description" content="Первая Студенческая Интернет-Радиостанция Москвы. Сделано в институте РТС">
     <meta name="keywords" content="Радиорубка, РТУ, МИРЭА, Радиостанция, Институт РТС, Студенческая радиостанция, Российский технологический университет"/>
     <meta name="url" content="https://www.mirearadio.ru" />
@@ -29,78 +32,81 @@
 <body>
 <div class="wrapper">
     <header class="navbar">
-        <div class="section">
-            <div class="container flex_row">
-                <a href="https://mirearadio.ru" class="navbar__logo">
-                    <svg width="30" height="35" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle class="fill" cx="23" cy="8.5" r="2" fill="#000"/>
-                        <path class="fill" d="M5 31.5h4v2a1 1 0 01-1 1H6a1 1 0 01-1-1v-2zM21 31.5h4v2a1 1 0 01-1 1h-2a1 1 0 01-1-1v-2z" fill="#000"/>
-                        <path class="stroke" stroke="#000" d="M22.748 7.932l-12-7"/>
-                        <circle class="fill" cx="11" cy="1" r="1" fill="#000"/>
-                        <path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M4 8.5a4 4 0 00-4 4v16a4 4 0 004 4h22a4 4 0 004-4v-16a4 4 0 00-4-4H4zm14 12a7 7 0 11-14 0 7 7 0 0114 0zm7-5a2 2 0 11-4 0 2 2 0 014 0z" fill="#000"/>
-                    </svg>
-                    <h1 class="navbar__logotitle">
-                        РАДИОРУБКА<br><span class="navbar__logotitlesmall">РТУ МИРЭА</span>
-                    </h1>
-                </a>
-                <nav class="navbar__menu flex_row">
-                    <a href="#" class="navbar__menuitem">Плеер</a>
-                    <a href="#Schedule" class="navbar__menuitem">Расписание</a>
-                    <a href="#About" class="navbar__menuitem">О нас</a>
-                </nav>
-                <button class="navbar__darkmodebutton">
-                    <svg class="navbar__darkmodebuttonicon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect class="stroke" x=".5" y=".5" width="23" height="23" rx="3.5" stroke="#B8B8B8"/>
-                        <path class="stroke fill" d="M14.13 18.63A6.7 6.7 0 017.37 12a6.7 6.7 0 016.76-6.63 6.3 6.3 0 011.54.14c-3.77.8-5.71 3.64-5.71 6.51 0 2.85 1.9 5.64 5.58 6.45-.42.1-.86.16-1.41.16z" fill="#B8B8B8" stroke="#B8B8B8" stroke-width=".75"/>
-                    </svg>
-                </button>
-            </div>
+        <div class="container flex_row">
+            <a href="https://mirearadio.ru" class="navbar__logo">
+                <svg width="30" height="35" viewBox="0 0 30 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="fill" cx="23" cy="8.5" r="2" fill="#000"/>
+                    <path class="fill" d="M5 31.5h4v2a1 1 0 01-1 1H6a1 1 0 01-1-1v-2zM21 31.5h4v2a1 1 0 01-1 1h-2a1 1 0 01-1-1v-2z" fill="#000"/>
+                    <path class="stroke" stroke="#000" d="M22.748 7.932l-12-7"/>
+                    <circle class="fill" cx="11" cy="1" r="1" fill="#000"/>
+                    <path class="fill" fill-rule="evenodd" clip-rule="evenodd" d="M4 8.5a4 4 0 00-4 4v16a4 4 0 004 4h22a4 4 0 004-4v-16a4 4 0 00-4-4H4zm14 12a7 7 0 11-14 0 7 7 0 0114 0zm7-5a2 2 0 11-4 0 2 2 0 014 0z" fill="#000"/>
+                </svg>
+                <h1 class="navbar__logotitle text">
+                    РАДИОРУБКА<br><span class="navbar__logotitlesmall">РТУ МИРЭА</span>
+                </h1>
+            </a>
+            <nav class="navbar__menu flex_row">
+                <a href="#" class="navbar__menuitem text">Плеер</a>
+                <a href="#Schedule" class="navbar__menuitem text">Расписание</a>
+                <a href="#About" class="navbar__menuitem text">О нас</a>
+            </nav>
+            <button class="navbar__darkmodebutton">
+                <svg class="navbar__darkmodebuttonicon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="stroke" x=".5" y=".5" width="23" height="23" rx="3.5" stroke="#B8B8B8"/>
+                    <path class="stroke fill" d="M14.13 18.63A6.7 6.7 0 017.37 12a6.7 6.7 0 016.76-6.63 6.3 6.3 0 011.54.14c-3.77.8-5.71 3.64-5.71 6.51 0 2.85 1.9 5.64 5.58 6.45-.42.1-.86.16-1.41.16z" fill="#B8B8B8" stroke="#B8B8B8" stroke-width=".75"/>
+                </svg>
+            </button>
         </div>
     </header>
     <div class="section section__header">
-        <h2 class="header">
+        <h2 class="header text">
             Первая Студенческая Интернет-Радиостанция Москвы<br>Сделано в институте РТС
         </h2>
     </div>
-    <div class="section section__player container">
-        <div class="player">
+    <div class="section section__player">
+        <div class="player container">
             <div class="player__spectrum">
-                <canvas width="1168" height="420" class="player__canvas"></canvas>
+                <canvas width="" height="" class="player__canvas"></canvas>
+                <img class="hidden" src="assets/circuits.svg" id="circuits" alt="">
+                <img class="hidden" src="assets/outlines.svg" id="outlines" alt="">
+                <img class="hidden" src="assets/top.svg" id="top" alt="">
+                <img class="hidden" src="assets/bottom.svg" id="bottom" alt="">
+                <img class="hidden" src="assets/center.svg" id="center" alt="">
+                <img class="hidden" src="assets/logo.svg" id="logo" alt="">
+                <img class="hidden" src="assets/wing.svg" id="wing" alt="">
                 <audio id="audio" crossorigin="anonymous">
                     <source src="" type="audio/mp3">
                 </audio>
             </div>
-            <div class="player__controls container flex_row">
+            <div class="player__controls flex_row">
                 <div class="player__controlsinnerleft flex_row">
                     <div class="player__trackinfo flex_col">
-                        <div class="player__trackartist"></div>
-                        <div class="player__trackname"></div>
+                        <div class="player__trackartist text"></div>
+                        <div class="player__trackname text"></div>
                     </div>
-                    <div class="player__volumeslider flex_row">
+                    <div class="player__volume flex_row">
                         <input name="volume" id="volume" type="range" class="volumeslider" min="0" max="1" step="0.01" value="0.5">
-                        <button class="volumeicon">
-                            <div class="volumeButtonOverlay"></div>
+                        <button aria-label="mute" class="volumebutton">
                             <svg class="volumeButton" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="fill" width="32" height="32" rx="4" fill="transparent"/>
                                 <path d="M7 20.1V12h3.9L16 5v22l-5.1-6.9H7z" fill="#B8B8B8" stroke="#B8B8B8" stroke-linejoin="round"/>
-                                <path d="M17.6 20.7a.5.5 0 00.8.6l-.8-.6zm.8-11a.5.5 0 00-.8.6l.8-.6zm0 11.6c1.5-2 2.4-3.9 2.4-5.8s-.9-3.8-2.4-5.8l-.8.6c1.5 2 2.1 3.6 2.1 5.2s-.6 3.2-2.1 5.2l.8.6z" fill="#B8B8B8"/>
-                                <path d="M19.6 22.6a.5.5 0 00.8.8l-.8-.8zm.8-15a.5.5 0 00-.8.8l.8-.8zm0 15.8a11.4 11.4 0 000-15.8l-.8.8a10.4 10.4 0 010 14.2l.8.8z" fill="#B8B8B8"/>
-                                <path d="M21.7 24.6a.5.5 0 10.6.8l-.6-.8zm.6-19a.5.5 0 10-.6.8l.6-.8zm0 19.8c2.7-2.1 4-6 4-9.9 0-3.8-1.3-7.8-4-9.9l-.6.8c2.3 1.9 3.6 5.4 3.6 9.1 0 3.7-1.3 7.2-3.6 9.1l.6.8z" fill="#B8B8B8"/>
-                                <path class="volumecrossline" stroke="transparent" stroke-width="1.5" stroke-linecap="round" d="M29 4.1L5.1 28"/>
+                                <path id="v_level1" d="M17.6 20.7a.5.5 0 00.8.6l-.8-.6zm.8-11a.5.5 0 00-.8.6l.8-.6zm0 11.6c1.5-2 2.4-3.9 2.4-5.8s-.9-3.8-2.4-5.8l-.8.6c1.5 2 2.1 3.6 2.1 5.2s-.6 3.2-2.1 5.2l.8.6z" fill="#B8B8B8"/>
+                                <path id="v_level2" d="M19.6 22.6a.5.5 0 00.8.8l-.8-.8zm.8-15a.5.5 0 00-.8.8l.8-.8zm0 15.8a11.4 11.4 0 000-15.8l-.8.8a10.4 10.4 0 010 14.2l.8.8z" fill="#B8B8B8"/>
+                                <path id="v_level3" d="M21.7 24.6a.5.5 0 10.6.8l-.6-.8zm.6-19a.5.5 0 10-.6.8l.6-.8zm0 19.8c2.7-2.1 4-6 4-9.9 0-3.8-1.3-7.8-4-9.9l-.6.8c2.3 1.9 3.6 5.4 3.6 9.1 0 3.7-1.3 7.2-3.6 9.1l.6.8z" fill="#B8B8B8"/>
+                                <path id="crossline" stroke="transparent" stroke-width="1.5" stroke-linecap="round" d="M29 4.1L5.1 28"/>
                             </svg>
                         </button>
                     </div>
-                    <button class="player__playbutton" data-playing="false" role="switch" aria-checked="false" type="button">
-                        <div class="playButtonOverlay"></div>
+                    <button aria-label="play" class="player__playbutton" data-playing="false" role="switch" aria-checked="false" type="button">
                         <svg class="playButton" width="48" height="48" viewBox="0 0 48 48" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle class="fill" cx="24" cy="24" r="24" fill="#0085FF"/>
-                            <path id="playIcon" d="M37 24L17.5 35.2583L17.5 12.7417L37 24Z" fill="white"/>
-                            <path id="pauseIcon" d="M18 13H22V35H18V13Z M26 13H30V35H26V13Z" fill="transparent"/>
+                            <circle class="fill" cx="24" cy="24" r="24"/>
+                            <path class="play" id="playIcon" d="M37 24L17.5 35.2583L17.5 12.7417L37 24Z" fill="white"/>
+                            <path class="pause" id="pauseIcon" d="M18 13H22V35H18V13Z M26 13H30V35H26V13Z" fill="transparent"/>
                         </svg>
                     </button>
                 </div>
                 <div class="player__controlsinnerright flex_row">
-                    <button class="player__fullscreenbutton">
+                    <button aria-label="fullscreen" class="player__fullscreenbutton">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect class="fill" width="32" height="32" rx="4" fill="transparent"/>
                             <path d="M12 4V6H8C6.89543 6 6 6.89543 6 8V12H4V8C4 5.79086 5.79086 4 8 4H12Z" fill="#B8B8B8"/>
@@ -115,44 +121,133 @@
     </div>
     <div id="Schedule" class="anchor"></div>
     <div class="section section__schedule container">
-        <h2 class="section__headertext">Расписание</h2>
-        <p class="schedule__text">Передачи звучат по будням с 8.00 до 23.00 каждые десять минут:<br><br>
-            Обновляемые федеральные новости в начале часа. Далее:<br>
-            Гаджет-Новости, новости спорта, футбольный дайджест, Дорожные Новости и экономический обзор.<br><br>
-            Авторские передачи и новости вуза — на нашей странице <a class="link" href="https://vk.com/mirea.radio" target="_blank">Вконтакте</a><br><br>
-            Информационный партнёр Радиорубки <a class="link" href="https://www.report-inform.ru" target="_blank">ИА Репорт-Информ</a>
-        </p>
+        <div class="section__panel">
+            <h2 class="section__headertext text">Расписание</h2>
+            <p class="schedule__text text">Передачи звучат по будням с 8.00 до 23.00 каждые десять минут:<br><br>
+                Обновляемые федеральные новости в начале часа. Далее:<br>
+                Гаджет-Новости, новости спорта, футбольный дайджест, Дорожные Новости и экономический обзор.<br><br>
+                Авторские передачи и новости вуза — на нашей странице <a class="link" href="https://vk.com/mirea.radio" target="_blank">Вконтакте</a><br><br>
+                Информационный партнёр Радиорубки <a class="link" href="https://www.report-inform.ru" target="_blank">ИА Репорт-Информ</a>
+            </p>
+        </div>
     </div>
     <div class="section section__contacts container">
-        <h2 class="section__headertext">Переходи по ссылкам</h2>
+        <h2 class="section__headertext text">Переходи по ссылкам</h2>
         <div class="contacts flex_row">
             <div class="contacts__panel">
                 <a href="https://rts.mirea.ru/" class="contacts__panellink" target="_blank">
-                    <svg class="mirealogo" width="250" height="168" viewBox="0 0 250 168" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="80.7975" cy="80.7975" r="76.7975" stroke="white" stroke-width="8"/>
-                        <circle cx="80.7975" cy="80.7975" r="61.6479" stroke="white" stroke-width="8"/>
-                        <circle cx="80.7975" cy="80.7975" r="46.4984" stroke="white" stroke-width="8"/>
-                        <path class="fill" d="M122.769 80.7975H80.7975V122.386C80.7267 122.32 80.654 122.255 80.579 122.191C79.4659 121.241 77.9446 120.549 75.912 120.21L75.5833 122.183C77.338 122.475 78.4995 123.045 79.2801 123.712C80.0575 124.376 80.5181 125.188 80.7886 126.067L80.7975 126.096V137.536C80.7267 137.47 80.654 137.405 80.579 137.341C79.4659 136.39 77.9446 135.698 75.912 135.359L75.5833 137.332C77.338 137.625 78.4995 138.195 79.2801 138.862C80.0575 139.526 80.5181 140.337 80.7886 141.216L80.7975 141.245V152.685C80.7267 152.619 80.654 152.555 80.579 152.491C79.4659 151.54 77.9446 150.848 75.912 150.509L75.5833 152.482C77.338 152.774 78.4995 153.345 79.2801 154.011C80.0575 154.675 80.5181 155.487 80.7886 156.366L80.7975 156.395V161.595H161.595V83.4091C161.851 83.3974 162.072 83.3892 162.266 83.3892V81.3892C162.059 81.3892 161.831 81.3968 161.595 81.4071V80.7975H156.22C155.656 80.5218 155.134 80.1391 154.682 79.6093C154.015 78.8287 153.445 77.6673 153.152 75.9125L151.179 76.2413C151.507 78.2072 152.165 79.6949 153.068 80.7975H141.07C140.506 80.5218 139.985 80.1391 139.532 79.6093C138.866 78.8287 138.295 77.6673 138.003 75.9125L136.03 76.2413C136.358 78.2072 137.016 79.6949 137.919 80.7975H125.921C125.356 80.5218 124.835 80.1391 124.383 79.6093C123.716 78.8287 123.146 77.6673 122.853 75.9125L120.88 76.2413C121.208 78.2072 121.866 79.6949 122.769 80.7975Z" fill="#252525"/>
-                        <circle cx="80.7975" cy="80.7975" r="21.4525" stroke="white" stroke-width="1.5"/>
-                        <path d="M68.1128 93.2308C64.972 90.027 63.0354 85.6384 63.0354 80.7974C63.0354 70.9877 70.9877 63.0354 80.7974 63.0354C90.6071 63.0354 98.5594 70.9877 98.5594 80.7974C98.5594 85.6384 96.6228 90.027 93.4821 93.2308" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M70.1403 89.6785C67.9294 87.2286 66.5879 84.0104 66.5879 80.4857C66.5879 72.8102 72.9498 66.5879 80.7975 66.5879C88.6453 66.5879 95.0071 72.8102 95.0071 80.4857C95.0071 84.0104 93.6656 87.2286 91.4547 89.6785" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M71.0283 99.4476L70.3271 99.1816C70.1962 99.5266 70.3358 99.9156 70.6562 100.099L71.0283 99.4476ZM90.5665 99.4476L90.9386 100.099C91.2591 99.9156 91.3987 99.5266 91.2678 99.1816L90.5665 99.4476ZM80.7974 73.6926L81.4987 73.4266C81.3882 73.1353 81.109 72.9426 80.7974 72.9426C80.4858 72.9426 80.2067 73.1353 80.0962 73.4266L80.7974 73.6926ZM71.7296 99.7135L81.4987 73.9586L80.0962 73.4266L70.3271 99.1816L71.7296 99.7135ZM80.0962 73.9586L89.8653 99.7135L91.2678 99.1816L81.4987 73.4266L80.0962 73.9586ZM70.6562 100.099C77.1035 103.783 84.4914 103.783 90.9386 100.099L90.1944 98.7964C84.2083 102.217 77.3866 102.217 71.4004 98.7964L70.6562 100.099Z" fill="white"/>
-                        <path d="M70.6209 98.8179C70.2731 99.043 70.1736 99.5073 70.3986 99.855C70.6237 100.203 71.088 100.302 71.4358 100.077L70.6209 98.8179ZM86.126 89.6785L86.5335 90.3082C86.8126 90.1276 86.9395 89.7849 86.8453 89.4661C86.7512 89.1473 86.4584 88.9285 86.126 88.9285V89.6785ZM75.4688 89.6785L75.0387 89.0641C74.7706 89.2518 74.6551 89.5918 74.7535 89.904C74.8519 90.2162 75.1415 90.4285 75.4688 90.4285V89.6785ZM84.7799 84.0762C85.1193 83.8387 85.2018 83.371 84.9643 83.0317C84.7267 82.6924 84.2591 82.6098 83.9197 82.8474L84.7799 84.0762ZM71.4358 100.077L86.5335 90.3082L85.7186 89.0488L70.6209 98.8179L71.4358 100.077ZM86.126 88.9285H75.4688V90.4285H86.126V88.9285ZM75.8989 90.2929L84.7799 84.0762L83.9197 82.8474L75.0387 89.0641L75.8989 90.2929Z" fill="white"/>
-                        <text x="84" y="117" stroke="#252525" stroke-width="2" class="mirealogotext_big" fill="white">МИРЭА</text>
-                        <text x="87" y="133" class="mirealogotext_small" fill="white">Российский</text>
-                        <text x="87" y="150" class="mirealogotext_small" fill="white">Технологический</text>
-                        <text x="87" y="167" class="mirealogotext_small" fill="white">Университет</text>
+                    <svg class="mirealogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 387 246" width="387">
+                        <defs>
+                            <style>
+                                .cls-1, .cls-13, .cls-4 {
+                                    fill: #fff;
+                                }
+
+                                .cls-14, .cls-2, .cls-3 {
+                                    fill: none;
+                                    stroke-width: 1.5px;
+                                }
+
+                                .cls-2, .cls-3 {
+                                    stroke: #fff;
+                                }
+
+                                .cls-3 {
+                                    stroke-linecap: round;
+                                }
+
+                                .cls-13, .cls-14, .cls-4 {
+                                    isolation: isolate;
+                                }
+
+                                .cls-4 {
+                                    font-size: 17.57px;
+                                }
+
+                                .cls-5 {
+                                    letter-spacing: -0.04em;
+                                }
+
+                                .cls-6 {
+                                    letter-spacing: -0.06em;
+                                }
+
+                                .cls-7 {
+                                    letter-spacing: -0.02em;
+                                }
+
+                                .cls-8 {
+                                    letter-spacing: 0.01em;
+                                }
+
+                                .cls-9 {
+                                    letter-spacing: -0.04em;
+                                }
+
+                                .cls-10 {
+                                    letter-spacing: 0em;
+                                }
+
+                                .cls-11 {
+                                    letter-spacing: -0.01em;
+                                }
+
+                                .cls-12 {
+                                    letter-spacing: -0.03em;
+                                }
+
+                                .cls-13, .cls-14 {
+                                    font-size: 70.27px;
+                                    font-weight: 700;
+                                    letter-spacing: 0.01em;
+                                }
+
+                                .cls-14 {
+                                    stroke: #252525;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Mirea_Logo">
+                            <path class="cls-1" d="M117.81,191.82v-7.6h0a7,7,0,0,0-2.2-3.5c-.3-.3-.6-.4-.9-.7a62.2,62.2,0,1,1,65.1-67.5,9.87,9.87,0,0,0,1.9,3.7,17.41,17.41,0,0,0,2.2,1.8h7.9A73.9,73.9,0,1,0,44,118c-.2,40.5,33.1,73.8,73.8,73.8Z"/>
+                            <circle class="cls-2" cx="117.21" cy="118.02" r="31.5"/>
+                            <path class="cls-3" d="M98.61,136.12a26,26,0,0,1,18.6-44.3,26.05,26.05,0,0,1,26.1,26.1,25.71,25.71,0,0,1-7.5,18.2"/>
+                            <path class="cls-3" d="M101.51,131a20.54,20.54,0,0,1-5.3-13.5c0-11.3,9.4-20.3,20.8-20.3s20.8,9.1,20.8,20.3a19.76,19.76,0,0,1-5.3,13.5"/>
+                            <path class="cls-1" d="M102.91,145.22l-1-.4a1.31,1.31,0,0,0,.4,1.3Zm28.7,0,.6,1c.4-.3.7-.9.4-1.3Zm-14.4-37.6,1-.4a1.06,1.06,0,0,0-2,0Zm-13.3,38,14.3-37.8-2-.7-14.3,37.8Zm12.3-37.6,14.3,37.8,2-.7-14.3-37.8Zm-13.8,38.2a29.25,29.25,0,0,0,29.7,0l-1-1.9a27.08,27.08,0,0,1-27.5,0Z"/>
+                            <path class="cls-1" d="M102.31,144.32a1.08,1.08,0,0,0,1.2,1.8Zm22.1-13.3.6.9a1,1,0,0,0,.4-1.2,1.09,1.09,0,0,0-1-.7v1ZM110,131l-.6-.9a1,1,0,0,0-.4,1.2,1.09,1.09,0,0,0,1,.7v-1Zm13.1-8.2a1.08,1.08,0,0,0-1.2-1.8Zm-19.7,23.4,22.1-14.3-1.2-1.9-22.1,14.3Zm21-16.1h-15.6v2.2h15.6Zm-14.4,1.8,13-9.1-1.3-1.8-13,9.1Z"/>
+                            <text class="cls-4" transform="translate(129.22 197.12)"><tspan class="cls-5">Р</tspan><tspan x="10.95" y="0">оссийский </tspan></text>
+                            <text class="cls-4" transform="translate(129.22 219.08)"><tspan class="cls-6">Т</tspan><tspan class="cls-7" x="9.74" y="0">е</tspan><tspan x="19.13" y="0">хн</tspan><tspan class="cls-7" x="37.61" y="0">о</tspan><tspan class="cls-8" x="47" y="0">л</tspan><tspan x="57.45" y="0">огический </tspan></text>
+                            <text class="cls-4" transform="translate(129.22 241.03)"><tspan class="cls-9">У</tspan><tspan class="cls-10" x="10.37" y="0">ни</tspan><tspan class="cls-11" x="29.88" y="0">в</tspan><tspan x="39.02" y="0">ерси</tspan><tspan class="cls-11" x="77.16" y="0">т</tspan><tspan class="cls-12" x="85.01" y="0">е</tspan><tspan x="94.19" y="0">т</tspan></text>
+                            <text class="cls-13" transform="translate(124.83 178.95)">МИРЭА</text>
+                            <text class="cls-14" transform="translate(124.83 178.95)">МИРЭА</text>
+                            <path class="cls-1" d="M117.81,214.62v-7.7h0a7,7,0,0,0-2.2-3.5c-.3-.3-.6-.4-.9-.7a84.83,84.83,0,1,1,87.6-90.5,9.94,9.94,0,0,0,1.9,4,17.41,17.41,0,0,0,2.2,1.8h7.8a96.59,96.59,0,1,0-96.4,96.6Z"/>
+                            <path class="cls-1" d="M117.81,235.72v-7.6h0a7,7,0,0,0-2.2-3.5c-.3-.3-.6-.4-.9-.7a106.17,106.17,0,0,1-103.1-108.6c1.3-56.2,46.8-102,103-103.6,58.2-1.7,106.4,43.7,109.2,100.7a8.68,8.68,0,0,0,1.9,3.6,17.41,17.41,0,0,0,2.2,1.8h7.7A117.79,117.79,0,0,0,115.91,0C52.51,1,.81,52.82,0,116.32a117.72,117.72,0,0,0,117.8,119.4h0Z"/>
+                        </g>
                     </svg>
                 </a>
             </div>
             <div class="contacts__panel">
                 <a href="https://vk.com/mirea.radio" class="contacts__panellink" target="_blank">
-                    <svg class="radioroomlogo" width="78" height="90" viewBox="0 0 78 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 26.1a4 4 0 014-4h70a4 4 0 014 4v54.4a4 4 0 01-4 4H4a4 4 0 01-4-4V26.1zm46.8 27.2a18.2 18.2 0 11-36.4 0 18.2 18.2 0 0136.4 0zm13-7.8a5.2 5.2 0 100-10.4 5.2 5.2 0 000 10.4z" fill="#fff"/>
-                        <circle cx="59.8" cy="22.1" r="5.2" fill="#fff"/>
-                        <path d="M13 81.9h10.4v6.8c0 .6-.4 1-1 1H14a1 1 0 01-1-1v-6.8zM54.6 81.9H65v6.8c0 .6-.4 1-1 1h-8.4a1 1 0 01-1-1v-6.8z" fill="#fff"/>
-                        <path stroke="#fff" d="M59.5 19.9L28.3 1.7"/>
-                        <circle cx="28.6" cy="2.6" r="2.6" fill="#fff"/>
+                    <svg class="radioroomlogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107 123" width="107">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #fff;
+                                }
+
+                                .cls-2 {
+                                    fill: none;
+                                    stroke: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Radioroom_Icon">
+                            <path class="cls-1" d="M101.6,30.4H5.5A5.55,5.55,0,0,0,0,35.9v74.7a5.55,5.55,0,0,0,5.5,5.5h96.1a5.55,5.55,0,0,0,5.5-5.5V35.9A5.55,5.55,0,0,0,101.6,30.4ZM39.3,98.3a25,25,0,1,1,25-25A25,25,0,0,1,39.3,98.3ZM82.1,62.6a7.1,7.1,0,1,1,7.1-7.1A7.06,7.06,0,0,1,82.1,62.6Z"/>
+                            <circle class="cls-1" cx="82.1" cy="30.4" r="7.1"/>
+                            <path class="cls-1" d="M17.8,112.6H32.1v9.3a1.31,1.31,0,0,1-1.4,1.4H19.2a1.31,1.31,0,0,1-1.4-1.4Z"/>
+                            <path class="cls-1" d="M75,112.6H89.3v9.3a1.31,1.31,0,0,1-1.4,1.4H76.4a1.31,1.31,0,0,1-1.4-1.4Z"/>
+                            <line class="cls-2" x1="81.7" y1="27.4" x2="38.8" y2="2.4"/>
+                            <circle class="cls-1" cx="39.3" cy="3.6" r="3.6"/>
+                        </g>
                     </svg>
                     <p class="contacts__panellinktext">
                         <span class="contacts__panellinktext_big">Радиорубка</span><br>РТУ МИРЭА<br><br>Наша страница ВКонтакте
@@ -163,9 +258,9 @@
     </div>
     <div id="About" class="anchor"></div>
     <div class="section section__about">
-        <h2 class="section__headertext">О нас</h2>
-        <div class="container about">
-            <p class="about__text">
+        <div class="section__panel">
+            <h2 class="section__headertext text">О нас</h2>
+            <p class="about__text text">
                 Радиорубка это студенческая интернет-радиостанция, созданная в институте РТС РТУ МИРЭА.<br>
                 Мы - первая студенческая радиостанция прямого эфира в Москве.<br>
                 Вещаем с октября 2018 года.<br>
@@ -176,9 +271,9 @@
         </div>
     </div>
     <div class="section section__license">
-        <h2 class="section__headertext">Лицензионная информация</h2>
+        <h2 class="section__headertext text">Лицензионная информация</h2>
         <div class="container licence">
-            <p class="licence__text">
+            <p class="licence__text text">
                 Радиорубка РТУ МИРЭА — творческий коллектив Российского Технологического Университета.<br>
                 Вещание посредством радиоканала Радиорубка РТУ МИРЭА является некоммерческим.<br>
                 Все материалы, в т.ч. музыкальные композиции и радиопередачи на радиоканале Радиорубки РТУ МИРЭА и на сопутствующих информационных ресурсах представлены в ознакомительных целях.<br>
