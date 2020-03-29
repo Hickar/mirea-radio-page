@@ -200,7 +200,7 @@ ul, ol {
     position: absolute;
     right: 0;
     bottom: -3px;
-    width: 0%;
+    width: 0;
     background-color: var(--accent-color);
     height: 2px;
     transition: width .2s ease;
@@ -216,15 +216,15 @@ ul, ol {
     margin: 0 1.25rem 0 1rem;
 }
 
-.navbar__darkmodebuttonicon > * {
+.navbar__darkmodebuttonicon * {
     transition: fill .2s ease-out, stroke .2s ease-out;
 }
 
-.navbar__darkmodebuttonicon:hover .stroke {
+.navbar__darkmodebutton:hover .stroke {
     stroke: var(--accent-color);
 }
 
-.navbar__darkmodebuttonicon:hover .fill {
+.navbar__darkmodebutton:hover .fill {
     fill: var(--accent-color);
 }
 
@@ -234,10 +234,27 @@ ul, ol {
 }
 
 .section__panel {
-    margin: 6rem 0;
+    position: relative;
     padding: 0 1rem;
     border-radius: .5rem;
     box-shadow: 6px 6px 6px rgba(55, 55, 55, .2), -6px -6px 6px rgba(210, 210, 210, .2);
+}
+
+.section__delimiter {
+    width: 100%;
+    height: 40px;
+    margin: 1rem 0;
+}
+
+.line {
+    fill: url(#linear-gradient);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    isolation: isolate;
+}
+
+.section__delimiter:nth-of-type(2n) {
+    transform: rotate(180deg);
 }
 
 .section__player,
@@ -268,19 +285,10 @@ ul, ol {
     text-align: center;
 }
 
-.player {
-    background-color: var(--panel-color);
-    border-radius: 8px;
-}
-
 .player__spectrum {
     overflow: hidden;
     padding: 0;
     height: 420px;
-    border-top-left-radius: 8px;
-    -webkit-border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
 }
 
 .player__canvas {
@@ -289,6 +297,7 @@ ul, ol {
 }
 
 .player__controls {
+    padding: 0 1rem;
     min-height: 5rem;
     height: 1px;
 }
@@ -573,6 +582,16 @@ ul, ol {
     .about__text {
         font-size: 1.25rem;
     }
+
+    .mirealogo {
+        width: 290px;
+        height: 184px;
+    }
+
+    .radioroomlogo {
+        width: 80px;
+        height: 92px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -590,7 +609,7 @@ ul, ol {
 
     .section__headertext {
         font-size: 1.5rem;
-        margin: 1.5rem 0 1rem 0;
+        padding: 1.5rem 0 1rem 0;
     }
 
     .section__player,
@@ -620,18 +639,42 @@ ul, ol {
         height: 300px;
     }
 
+    .contacts__panel {
+        width: 100%;
+    }
+
+    .contacts__panel::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        left: 10%;
+        top: 50%;
+        width: 80%;
+        background-color: white;
+        z-index: 4;
+        border-radius: 1rem;
+    }
+
     .mirealogo {
-        width: 188px;
-        height: 126px;
+        width: 387px;
+        height: 246px;
     }
 
     .radioroomlogo {
-        width: 54px;
-        height: 68px;
+        width: 107px;
+        height: 123px;
     }
 }
 
 @media screen and (max-width: 480px) {
+    .text {
+        line-height: 1.5;
+    }
+
+    .section {
+        padding: 0 1rem;
+    }
+
     .section__header {
         margin-top: 3rem;
     }
@@ -648,6 +691,10 @@ ul, ol {
     .navbar__menuitem {
         font-size: .8rem;
         margin: 0 .75rem;
+    }
+
+    .player__controls {
+        padding: 0;
     }
 
     .player__spectrum {
@@ -678,7 +725,7 @@ ul, ol {
         font-size: .9rem;
     }
 
-    .player__volumeslider {
+    .player__volume {
         padding-left: 0;
     }
 
@@ -686,7 +733,7 @@ ul, ol {
         display: none;
     }
 
-    .volumeicon {
+    .volumebutton {
         margin-left: 0;
     }
 
@@ -701,22 +748,22 @@ ul, ol {
     }
 
     .contacts__panellinktext {
-        font-size: .7rem;
+        font-size: 1rem;
         margin: 0;
     }
 
     .contacts__panellinktext_big {
-        font-size: .9rem;
+        font-size: 1.2rem;
     }
 
     .mirealogo {
-        width: 125px;
-        height: 84px;
+        width: 290px;
+        height: 184px;
     }
 
     .radioroomlogo {
-        width: 36px;
-        height: 45px;
+        width: 80px;
+        height: 92px;
     }
 }
 
