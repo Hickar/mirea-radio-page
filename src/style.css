@@ -528,12 +528,13 @@ ul, ol {
 .contacts__panellinktext {
     margin: .5rem auto 0 auto;
     font-size: 1.2rem;
-    color: white;
+    fill: white;
 }
 
 .contacts__panellinktext_big {
     font-weight: 700;
     font-size: 1.5rem;
+    fill: white;
 }
 
 .contacts__panel::after {
@@ -548,8 +549,17 @@ ul, ol {
     border-radius: 1rem;
 }
 
-.mirealogo .fill {
-    fill: var(--panel-color);
+.contacts__panellogo {
+    pointer-events: all;
+}
+
+.contacts__panellogo .clip {
+    fill: var(--accent-color);
+    transition: .5s width ease-out;
+}
+
+.contacts__panellogo:hover .clip {
+    width: 100%;
 }
 
 .mirealogotext_big {
@@ -589,8 +599,8 @@ ul, ol {
     }
 
     .radioroomlogo {
-        width: 80px;
-        height: 92px;
+        width: 172px;
+        height: 183px;
     }
 }
 
@@ -661,8 +671,8 @@ ul, ol {
     }
 
     .radioroomlogo {
-        width: 107px;
-        height: 123px;
+        width: 230px;
+        height: 245px;
     }
 }
 
@@ -747,23 +757,14 @@ ul, ol {
         padding: 4rem 0;
     }
 
-    .contacts__panellinktext {
-        font-size: 1rem;
-        margin: 0;
-    }
-
-    .contacts__panellinktext_big {
-        font-size: 1.2rem;
-    }
-
     .mirealogo {
         width: 290px;
         height: 184px;
     }
 
     .radioroomlogo {
-        width: 80px;
-        height: 92px;
+        width: 172px;
+        height: 183px;
     }
 }
 
