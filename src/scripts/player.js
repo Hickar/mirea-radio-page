@@ -71,32 +71,30 @@ class Player {
     }
 
     muteCheck() {
-        // switch (true) {
-        //     case (this.audioElement.volume === 0): {
-        //         document.getElementById("crossline").setAttribute("stroke", "#B8B8B8");
-        //         break;
-        //     }
-        //     case (this.audioElement.volume > 0 && this.audioElement.volume <= 33): {
-        //         document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
-        //         document.getElementById("v_level2").setAttribute("fill", "transparent");
-        //         document.getElementById("v_level3").setAttribute("fill", "transparent");
-        //         break;
-        //     }
-        //     case (this.audioElement.volume > 33 && this.audioElement.volume <= 66): {
-        //         document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
-        //         document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
-        //         document.getElementById("v_level3").setAttribute("fill", "transparent");
-        //         break;
-        //     }
-        //     case (this.audioElement.volume > 66 && this.audioElement.volume <= 100): {
-        //         document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
-        //         document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
-        //         document.getElementById("v_level3").setAttribute("fill", "#B8B8B8");
-        //         break;
-        //     }
-        // }
-        if (this.audioElement.volume === 0) document.getElementById("crossline").setAttribute("stroke", "#B8B8B8");
-        else document.getElementById("crossline").setAttribute("stroke", "transparent");
+        if (this.audioElement.volume === 0) {
+            document.getElementById("crossline").setAttribute("stroke", "#B8B8B8");
+            document.getElementById("v_level1").setAttribute("fill", "transparent");
+            document.getElementById("v_level2").setAttribute("fill", "transparent");
+            document.getElementById("v_level3").setAttribute("fill", "transparent");
+        } else if (0 < this.audioElement.volume * 100 && this.audioElement.volume * 100 < 33) {
+            console.log("0 < volume < 33");
+            document.getElementById("crossline").setAttribute("stroke", "transparent");
+            document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
+            document.getElementById("v_level2").setAttribute("fill", "transparent");
+            document.getElementById("v_level3").setAttribute("fill", "transparent");
+        } else if (33 < this.audioElement.volume * 100 && this.audioElement.volume * 100 < 66) {
+            console.log("33 < volume < 66");
+            document.getElementById("crossline").setAttribute("stroke", "transparent");
+            document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
+            document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
+            document.getElementById("v_level3").setAttribute("fill", "transparent");
+        } else if (66 < this.audioElement.volume * 100) {
+            console.log("66 < volume < 100");
+            document.getElementById("crossline").setAttribute("stroke", "transparent");
+            document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
+            document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
+            document.getElementById("v_level3").setAttribute("fill", "#B8B8B8");
+        }
     }
 
     updateTrackInfo() {
@@ -202,7 +200,7 @@ class Spectrum {
 const player = new Player("https://s0.radioheart.ru:8000/RH20507");
 const spectrum = new Spectrum(player);
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
     player.init();
     spectrum.init();
 });
