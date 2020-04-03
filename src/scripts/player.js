@@ -1,4 +1,4 @@
-import { drawSVG, isEmpty } from "./utils";
+import { drawSVG, drawInlineSVG, isEmpty } from "./utils";
 
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 window.requestAnimationFrame =
@@ -77,19 +77,16 @@ class Player {
             document.getElementById("v_level2").setAttribute("fill", "transparent");
             document.getElementById("v_level3").setAttribute("fill", "transparent");
         } else if (0 < this.audioElement.volume * 100 && this.audioElement.volume * 100 < 33) {
-            console.log("0 < volume < 33");
             document.getElementById("crossline").setAttribute("stroke", "transparent");
             document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
             document.getElementById("v_level2").setAttribute("fill", "transparent");
             document.getElementById("v_level3").setAttribute("fill", "transparent");
         } else if (33 < this.audioElement.volume * 100 && this.audioElement.volume * 100 < 66) {
-            console.log("33 < volume < 66");
             document.getElementById("crossline").setAttribute("stroke", "transparent");
             document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
             document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
             document.getElementById("v_level3").setAttribute("fill", "transparent");
         } else if (66 < this.audioElement.volume * 100) {
-            console.log("66 < volume < 100");
             document.getElementById("crossline").setAttribute("stroke", "transparent");
             document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
             document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
@@ -137,13 +134,12 @@ class Spectrum {
     init() {
         this.resize();
         this.draw();
+        this.canvas.classList.remove("player__canvas_hidden");
     }
 
     draw() {
-        const center = {
-            x: this.canvas.width / (2 * this.dpi),
-            y: this.canvas.height / (2 * this.dpi)
-        };
+        const cx = this.canvas.width / (2 * this.dpi),
+            cy = this.canvas.height / (2 * this.dpi);
 
         const gradient = this.ctx.createLinearGradient(-138 / 2, -138 / 2, 138 / 2, 138 / 2);
         gradient.addColorStop(.9, "hsl(40, 60%, 50%)");
@@ -154,22 +150,22 @@ class Spectrum {
             outlines = document.getElementById("outlines"),
             bottom = document.getElementById("bottom"),
             top = document.getElementById("top"),
-            central = document.getElementById("center"),
+            center = document.getElementById("center"),
             logo = document.getElementById("logo"),
             wing = document.getElementById("wing");
 
-        drawSVG(circuits, this.ctx, center.x, center.y);
-        drawSVG(outlines, this.ctx, center.x, center.y + 26);
-        drawSVG(bottom, this.ctx, center.x, center.y + (bottom.height / 2));
-        drawSVG(top, this.ctx, center.x, center.y - (top.height / 2) + 25);
+        drawInlineSVG(circuits, this.ctx, cx, cy);
+        drawInlineSVG(outlines, this.ctx, cx, cy + 26);
+        drawInlineSVG(bottom, this.ctx, cx, cy + (bottom.getBoundingClientRect().height / 2));
+        drawInlineSVG(top, this.ctx, cx, cy - (top.getBoundingClientRect().height / 2) + 25);
 
         for (let i = 40; i > 0; i -= 10) {
-            drawSVG(wing, this.ctx, center.x - (Math.cos(Math.PI * i / 180) * (this.dataArray[i * 4] + 50) / 2), center.y - (Math.sin(Math.PI * i / 180) * this.dataArray[i * 4] / 2), i);
-            drawSVG(wing, this.ctx, center.x + (Math.cos(Math.PI * -i / 180) * (this.dataArray[i * 4] + 50) / 2), center.y + (Math.sin(Math.PI * -i / 180) * this.dataArray[i * 4] / 2), -i);
+            drawInlineSVG(wing, this.ctx, cx - (Math.cos(Math.PI * i / 180) * (this.dataArray[i * 4] + 50) / 2), cy - (Math.sin(Math.PI * i / 180) * this.dataArray[i * 4] / 2), i);
+            drawInlineSVG(wing, this.ctx, cx + (Math.cos(Math.PI * -i / 180) * (this.dataArray[i * 4] + 50) / 2), cy + (Math.sin(Math.PI * -i / 180) * this.dataArray[i * 4] / 2), -i);
         }
 
-        drawSVG(central, this.ctx, center.x, center.y);
-        drawSVG(logo, this.ctx, center.x, center.y);
+        drawInlineSVG(center, this.ctx, cx, cy);
+        drawInlineSVG(logo, this.ctx, cx, cy);
     }
 
     resize() {

@@ -52,6 +52,16 @@ html {
     scroll-behavior: smooth;
 }
 
+html[data-theme="dark"] {
+    --background-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 100%);
+    --border-color: hsl(0, 0%, 72%);
+    --accent-color: hsl(330, 100%, 40%);
+    --accent-color-hover: hsl(327, 100%, 35%);
+    --panel-color: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+}
+
 svg {
     pointer-events: none;
     transition: .2s fill ease, .2s stroke ease;
@@ -60,7 +70,7 @@ svg {
     -o-transition: .2s fill ease, .2s stroke ease;
 }
 
-.text {
+.text, .link {
     transition: .2s color ease, .2s background-color ease;
     -moz-transition: .2s color ease, .2s background-color ease;
     -webkit-transition: .2s color ease, .2s background-color ease;
@@ -76,20 +86,11 @@ body, .navbar, .section {
 
 .hidden {
     display: none;
+    opacity: 0;
 }
 
 *:focus {
     outline: none;
-}
-
-html[data-theme="dark"] {
-    --background-color: hsl(0, 0%, 15%);
-    --text-color: hsl(0, 0%, 100%);
-    --border-color: hsl(0, 0%, 72%);
-    --accent-color: hsl(330, 100%, 40%);
-    --accent-color-hover: hsl(327, 100%, 35%);
-    --panel-color: hsl(0, 0%, 0%);
-    --white: hsl(0, 0%, 100%);
 }
 
 body {
@@ -118,6 +119,11 @@ button {
 ul, ol {
     padding: 0;
     cursor: default;
+}
+
+.anchor {
+    position: relative;
+    top: -3rem;
 }
 
 .flex_row {
@@ -294,6 +300,14 @@ ul, ol {
 .player__canvas {
     width: 100%;
     box-sizing: border-box;
+    opacity: 1;
+    transform: scale(1);
+    transition: 1s opacity ease, 1s transform ease;
+}
+
+.player__canvas_hidden {
+    transform: scale(.7);
+    opacity: 0;
 }
 
 .player__controls {
@@ -565,7 +579,7 @@ ul, ol {
 .mirealogotext_big {
     font-weight: 700;
     color: white;
-    font-size: 3rem;
+    font-size: 4.4rem;
 }
 
 .mirealogotext_small {

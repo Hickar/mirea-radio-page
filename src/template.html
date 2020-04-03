@@ -66,14 +66,299 @@
     <div class="section section__player">
         <div class="player">
             <div class="player__spectrum">
-                <canvas width="" height="" class="player__canvas"></canvas>
-                <img class="hidden" src="assets/circuits.svg" id="circuits" alt="">
-                <img class="hidden" src="assets/outlines.svg" id="outlines" alt="">
-                <img class="hidden" src="assets/top.svg" id="top" alt="">
-                <img class="hidden" src="assets/bottom.svg" id="bottom" alt="">
-                <img class="hidden" src="assets/center.svg" id="center" alt="">
-                <img class="hidden" src="assets/logo.svg" id="logo" alt="">
-                <img class="hidden" src="assets/wing.svg" id="wing" alt="">
+                <canvas width="" height="" class="player__canvas player__canvas_hidden"></canvas>
+<!--                <img class="hidden" src="assets/circuits.svg" id="circuits" alt="">-->
+<!--                <img class="hidden" src="assets/outlines.svg" id="outlines" alt="">-->
+<!--                <img class="hidden" src="assets/top.svg" id="top" alt="">-->
+<!--                <img class="hidden" src="assets/bottom.svg" id="bottom" alt="">-->
+<!--                <img class="hidden" src="assets/center.svg" id="center" alt="">-->
+<!--                <img class="hidden" src="assets/logo.svg" id="logo" alt="">-->
+<!--                <img class="hidden" src="assets/wing.svg" id="wing" alt="">-->
+                <svg class="player__hiddensvg" id="circuits" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="896" height="360" viewBox="0 0 896.7 360.5">
+                    <defs>
+                        <style>
+                            .circuits__lower, .circuits__upper, .circuits__rect, .circuits__middle {
+                                fill: none;
+                            }
+
+                            .circuits__lower, .circuits__upper {
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                                stroke-width: 1.5px;
+                            }
+
+                            .circuits__lower {
+                                stroke: url(#circuits-linear-gradient);
+                            }
+
+                            .circuits__upper {
+                                stroke: url(#circuits-linear-gradient-2);
+                            }
+
+                            .circuits__rect {
+                                stroke: #99004d;
+                            }
+
+                            .circuits__rect, .circuits__middle {
+                                stroke-miterlimit: 10;
+                            }
+
+                            .circuits__rect_fat {
+                                stroke-width: 3px;
+                            }
+
+                            .circuits__middle {
+                                stroke: #63153a;
+                            }
+                        </style>
+                        <linearGradient id="circuits-linear-gradient" x1="448" y1="240" x2="448" y2="360" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.8" stop-color="#63153a"/>
+                            <stop offset="1" stop-color="#2e2e2e" stop-opacity="0"/>
+                        </linearGradient>
+                        <linearGradient id="circuits-linear-gradient-2" x1="448" y1="120" x2="448" y2="0" xlink:href="#linear-gradient"/>
+                    </defs>
+                    <g class="body" data-theme="">
+                        <path class="circuits__lower" d="M55.1,354.8V309.4l7.6-7.6V283.5h7.4m0-23.4H57.7v39.8l-6.4,6.6v48.2"/>
+                        <path class="circuits__rect circuits__rect_fat" d="M71.4,254.6h11v11h-11Zm0,34.4h11V278h-11Z"/>
+                        <path class="circuits__upper" d="M12.1.8,43.9,30.1V99.3l6.3,6.3H63.3l5.1-5.1L57.1,89.1m-4,39.1L34.6,109.9V30.4L6.2,4.6m20,113.9V31.8L.8,9.8"/>
+                        <path class="circuits__rect circuits__rect_slim" d="M16.4,128.4l9.8-9.8,9.8,9.8-9.8,9.8ZM53,147.8l9.8-9.8L53,128.2,43.3,138Zm4.1-58.1,9.8-9.8-9.8-9.8-9.8,9.8Z"/>
+                        <path class="circuits__middle" d="M167.9,259.5l-17.6-17.6V122.5l31-31m46.5-19.7-56.5,56.6V234L187,249.7M203.3,81.3l-42.6,42.6V240.9l42.5,41.7"/>
+                        <path class="circuits__upper" d="M181.3,71.9V10.7m22,50.9V10.6m34.4,51.3V10.6"/>
+                        <path class="circuits__lower" d="M168.1,279.4v80.4m35.2-57.4v57.4m16.8,0V263.9l-13.6-14"/>
+                        <path class="circuits__rect circuits__rect_slim" d="M171.4,81.6l9.8-9.8,9.8,9.8-9.8,9.8Zm31.9-.5,9.8-9.8-9.8-9.8-9.8,9.8Zm34.3.5,9.8-9.8-9.8-9.8-9.8,9.8Z"/>
+                        <path class="circuits__rect circuits__rect_slim" d="M158.1,269.4l9.8-9.8,9.8,9.8-9.8,9.8Zm45,32.9,9.8-9.8-9.8-9.8-9.8,9.8Zm-6.4-42.8,9.8-9.8-9.8-9.8-9.8,9.8Z"/>
+                        <path class="circuits__lower" d="M826.6,283.5H834v18.3l7.6,7.6v45.3m3.8,0V306.5l-6.4-6.6V260.1H826.6"/>
+                        <path class="circuits__rect circuits__rect_fat" d="M825.4,265.6h-11v-11h11Zm0,12.4h-11v11h11Z"/>
+                        <path class="circuits__lower" d="M839.6,89.1l-11.3,11.3,5.1,5.1h13.1l6.3-6.3V30.1L884.7.8m5.9,3.9L862.1,30.4v79.4l-18.4,18.4M896,9.8l-25.4,22v86.8"/>
+                        <path class="circuits__rect circuits__rect_slim" d="M870.6,138.1l-9.8-9.8,9.8-9.8,9.8,9.8Zm-17.1-.2-9.8-9.8-9.8,9.8,9.8,9.8Zm-4.1-58.1-9.8-9.8-9.8,9.8,9.8,9.8Z"/>
+                        <path class="circuits__middle" d="M715.5,91.5l31,31V241.9l-17.6,17.6m-19.1-9.9L725.5,234V128.5L669,71.9m24.6,210.8,42.5-41.7V123.9L693.5,81.3"/>
+                        <path class="circuits__lower" d="M715.5,10.7V71.9m-22-61.2V61.6M659.1,10.6V61.9"/>
+                        <path class="circuits__lower" d="M728.6,359.8V279.4m-35.2,80.4V302.4m-3.2-52.4-13.6,14v95.8"/>
+                        <path class="circuits__rect circuits__rect_slim" d="M715.6,91.4l-9.8-9.8,9.8-9.8,9.8,9.8ZM703.3,71.4l-9.8-9.8-9.8,9.8,9.8,9.8Zm-34.3.5-9.8-9.8-9.8,9.8,9.8,9.8Z"/>
+                        <path class="circuits__rect circuits__rect_slim" d="M728.8,279.1l-9.8-9.8,9.8-9.8,9.8,9.8Zm-25.4,13.3-9.8-9.8-9.8,9.8,9.8,9.8Zm6.4-42.8-9.8-9.8-9.8,9.8,9.8,9.8Z"/>
+                    </g>
+                </svg>
+                <svg class="player__hiddensvg" id="outlines" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="191" height="308" viewBox="0 0 191.5 308">
+                    <defs>
+                        <style>
+                            .outline {
+                                fill: none;
+                                stroke: url(#outlines-linear-gradient);
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                                stroke-width: 1.5px;
+                            }
+                        </style>
+                        <linearGradient id="outlines-linear-gradient" x1="95" y1="290" x2="95" y2="13" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.9" stop-color="#63153a"/>
+                            <stop offset="1" stop-color="#2e2e2e" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                    <g class="body" data-theme="">
+                        <polyline class="outline" points="180.8 14.4 180.8 126.9 180.8 143.5 180.8 206.1 95.8 291.2 10.8 206.1 10.8 143.5 10.8 126.9 10.8 14.4"/>
+                        <polyline class="outline" points="0.8 0.8 0.8 123.5 0.8 142.1 0.8 212.1 95.8 307.2 190.8 212.1 190.8 142.1 190.8 123.5 190.8 0.8"/>
+                    </g>
+                </svg>
+                <svg class="player__hiddensvg" id="top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="152" viewBox="0 0 152 152">
+                    <defs>
+                        <style>
+                            .body {
+                                --background-color: url(#top-linear-gradient);
+                            }
+
+                            .body[data-theme="dark"] {
+                                --background-color: url(#top-linear-gradient-dark);
+                            }
+
+                            .top__inner {
+                                stroke: #662d91;
+                                fill: var(--background-color);
+                            }
+
+                            .top__inner, .top__polygonupper {
+                                stroke-miterlimit: 10;
+                            }
+
+                            .top__polygonupper {
+                                fill: none;
+                                stroke: #9317a3;
+                                stroke-width: 0.75px;
+                            }
+
+                            .top__polygonleft {
+                                fill: url(#top-linear-gradient-2);
+                            }
+
+                            .top__polygonright {
+                                fill: url(#top-linear-gradient-3);
+                            }
+                        </style>
+                        <linearGradient id="top-linear-gradient" x1="7465.51" y1="10362.93" x2="7520.13" y2="10417.56" gradientTransform="matrix(0.71, -0.71, -0.71, -0.71, 2124.77, 12690.23)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#303030"/>
+                            <stop offset="1" stop-color="#424242"/>
+                        </linearGradient>
+                        <linearGradient id="top-linear-gradient-dark" x1="7465.51" y1="10362.93" x2="7520.13" y2="10417.56" gradientTransform="matrix(0.71, -0.71, -0.71, -0.71, 2124.77, 12690.23)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#101010"/>
+                            <stop offset="1" stop-color="#222222"/>
+                        </linearGradient>
+                        <linearGradient id="top-linear-gradient-2" x1="-893.56" y1="10450.15" x2="-854.62" y2="10450.15" gradientTransform="matrix(0.71, -0.71, 0, -1.41, 671.29, 14149.29)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#c71798" stop-opacity="0.8"/>
+                            <stop offset="1" stop-color="#9317a3" stop-opacity="0.8"/>
+                        </linearGradient>
+                        <linearGradient id="top-linear-gradient-3" x1="2737.43" y1="8621.79" x2="2776.36" y2="8621.79" gradientTransform="matrix(-0.71, -0.71, 0, -1.41, 2058.72, 14149.29)" xlink:href="#top-linear-gradient-2"/>
+                    </defs>
+                    <g class="body" data-theme="">
+                        <polygon class="top__inner" points="0.71 76.01 76.01 0.71 151.31 76.01 76.01 151.31 0.71 76.01"/>
+                        <polygon class="top__polygonupper" points="80.91 10.81 76.01 5.91 71.21 10.71 80.91 10.81"/>
+                        <polygon class="top__polygonleft" points="66.81 21.91 31.41 57.21 31.41 51.61 66.81 16.21 66.81 21.91"/>
+                        <polygon class="top__polygonright" points="85.21 21.91 120.61 57.21 120.61 51.61 85.21 16.21 85.21 21.91"/>
+                    </g>
+                </svg>
+                <svg class="player__hiddensvg" id="bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="147" viewBox="0 0 152.3 147.2">
+                    <defs>
+                        <style>
+                            .body {
+                                --accent-color: #ff0080;
+                                --background-color: url(#bottom-linear-gradient);
+                            }
+
+                            .body[data-theme="dark"] {
+                                --background-color: url(#bottom-linear-gradient-dark);
+                            }
+
+                            .bottom__shape, .bottom__stroke {
+                                stroke: var(--accent-color);
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                            }
+
+                            .bottom__shape {
+                                stroke-width: 1.5px;
+                                fill: var(--background-color);
+                                transition: .2s fill ease;
+                            }
+
+                            .bottom__stroke {
+                                fill: none;
+                            }
+
+                            .bottom__polygon {
+                                fill: var(--accent-color);
+                            }
+                        </style>
+                        <linearGradient id="bottom-linear-gradient" x1="75" y1="150" x2="75" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#242424"/>
+                            <stop offset="1" stop-color="#2e2e2e"/>
+                        </linearGradient>
+                        <linearGradient id="bottom-linear-gradient-dark" x1="75" y1="150" x2="75" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#141414"/>
+                            <stop offset="1" stop-color="#0e0e0e"/>
+                        </linearGradient>
+                    </defs>
+                    <g class="body" data-theme="">
+                        <polygon class="bottom__shape" points="0.8 0.8 0.8 15.5 0.8 71 76.2 146.4 151.6 71 151.6 15.5 151.6 0.8 0.8 0.8"/>
+                        <path class="bottom__stroke" d="M79.1,128.8,73.3,123m0,5.8L79,123"/>
+                        <line class="bottom__stroke" x1="64.7" y1="115" x2="50.2" y2="100.5"/>
+                        <line class="bottom__stroke" x1="64.7" y1="102.7" x2="50.2" y2="88.2"/>
+                        <line class="bottom__stroke" x1="87.7" y1="115" x2="102.2" y2="100.5"/>
+                        <line class="bottom__stroke" x1="87.7" y1="102.7" x2="102.2" y2="88.2"/>
+                        <polygon class="bottom__polygon" points="143.2 74.1 147.3 70 147.3 64.2 143.2 74.1"/>
+                        <polygon class="bottom__polygon" points="9.2 74.1 5 70 5 64.2 9.2 74.1"/>
+                    </g>
+                </svg>
+                <svg class="player__hiddensvg" id="center" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="195" height="195" viewBox="0 0 195.6 195.6">
+                    <defs>
+                        <style>
+                            .body {
+                                --background-color: #262626;
+                            }
+
+                            .body[data-theme="dark"] {
+                                --background-color: #000000;
+                            }
+
+                            .center__outer {
+                                fill: url(#center-linear-gradient);
+                            }
+
+                            .center__inner {
+                                fill: var(--background-color);
+                            }
+
+                            .center__innerstroke {
+                                fill: url(#center-linear-gradient);
+                            }
+                        </style>
+                        <linearGradient id="center-linear-gradient" x1="-287.7" y1="-12469.66" x2="-287.7" y2="-12606.83" gradientTransform="translate(385.5 12634)" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#c93"/>
+                            <stop offset="0.5" stop-color="#ff0080"/>
+                            <stop offset="1" stop-color="#7e0ba1"/>
+                        </linearGradient>
+                    </defs>
+                    <g class="body" dark-theme="">
+                        <polygon class="center__outer" points="0 97.8 97.8 0 195.6 97.8 97.8 195.6 0 97.8"/>
+                        <rect class="center__inner" x="39.69" y="39.59" width="116.3" height="116.3" transform="translate(-40.46 97.81) rotate(-45)"/>
+                        <path class="center__innerstroke" d="M146.4,117.15l19.2-19.2L146.69,79,147.75,78l20,20-20.26,20.26ZM78.94,49.69l19.2-19.2L117,49.34l1.06-1.06L98.14,28.37,77.88,48.63Zm37.76,97.16L98.14,165.4,79.24,146.5l-1.06,1.06,20,20,19.62-19.62Zm-67.16-30L30.69,97.95,49.24,79.39l-1.06-1.06L28.57,97.95l19.91,19.91Z"/>
+                    </g>
+                </svg>
+                <svg class="player__hiddensvg" id="logo" xmlns="http://www.w3.org/2000/svg" width="52" height="74" viewBox="0 0 52.21 74.6">
+                    <defs>
+                        <style>
+                            .logo__circle {
+                                fill: #ff0080;
+                            }
+
+                            .logo__stroke {
+                                fill: none;
+                                stroke: #ff0080;
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                                stroke-width: 3px;
+                            }
+                        </style>
+                    </defs>
+                    <g class="body" data-theme="">
+                        <path class="logo__circle" d="M26,0A26,26,0,0,0,15.3,49.7l.6-2.4A23.62,23.62,0,0,1,36.3,4.7a23.62,23.62,0,0,1,0,42.6l.6,2.4a26,26,0,0,0,13-34.4A26.55,26.55,0,0,0,26,0Z"/>
+                        <path class="logo__circle" d="M16.9,42.7l.6-2.4a16.64,16.64,0,1,1,22.8-5.8,16.12,16.12,0,0,1-5.8,5.8l.6,2.4A19,19,0,1,0,9.3,35.1a18.55,18.55,0,0,0,7.6,7.6Z"/>
+                        <polygon class="logo__stroke" points="30.5 40.4 38.3 73.1 27.2 26.5 24.8 26.5 13.7 73 14.2 71.3 33.3 52.6 18.6 52.6 30.5 40.4"/>
+                        <circle class="logo__circle" cx="26" cy="26.1" r="3.2"/>
+                    </g>
+                </svg>
+                <svg class="player__hiddensvg" id="wing" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="168" height="30" viewBox="0 0 168 30">
+                    <defs>
+                        <style>
+                            .body {
+                                --background-color: url(#wing-linear-gradient);
+                            }
+
+                            .body[data-theme="dark"] {
+                                --background-color: url(#wing-linear-gradient-dark);
+                            }
+
+                            .wing__inner {
+                                fill: var(--background-color);
+                            }
+
+                            .wing__outer {
+                                fill: none;
+                                stroke: #662d91;
+                                stroke-miterlimit: 10;
+                            }
+                        </style>
+                        <linearGradient id="wing-linear-gradient" x1="84" y1="27" x2="84" y2="3" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#242424"/>
+                            <stop offset="1" stop-color="#2e2e2e"/>
+                        </linearGradient>
+                        <linearGradient id="wing-linear-gradient-dark" x1="84" y1="27" x2="84" y2="3" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#080808"/>
+                            <stop offset="1" stop-color="#1e1e1e"/>
+                        </linearGradient>
+                    </defs>
+                    <g class="body" data-theme="">
+                        <rect class="wing__inner" y="0.9" width="168" height="30"/>
+                        <line class="wing__outer" x1="168" y1="0.5" y2="0.5"/>
+                    </g>
+                </svg>
                 <audio id="audio" crossorigin="anonymous">
                     <source src="" type="audio/mp3">
                 </audio>
@@ -121,7 +406,38 @@
     </div>
     <div id="Schedule" class="anchor"></div>
     <div class="section section__schedule container">
-        <object class="section__delimiter" data="assets/arrows.svg" type="image/svg+xml"></object>
+        <svg class="section__delimiter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin" width="100%" height="100%">
+            <defs>
+                <style>
+                    .line {
+                        fill: url(#linear-gradient);
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        isolation: isolate;
+                    }
+
+                    .background {
+                        fill: var(--background-color);
+                        transition: .2s fill ease;
+                    }
+                </style>
+                <linearGradient id="linear-gradient" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#c60168" stop-opacity="0"/>
+                    <stop offset="0.5" stop-color="#cc005f" stop-opacity="1"/>
+                    <stop offset="1" stop-color="#c60168" stop-opacity="0"/>
+                </linearGradient>
+                <symbol id="lines">
+                    <rect class="line" width="100%" x="0" y="0%" height="1"/>
+                    <rect class="line" width="100%" x="0" y="30%" height="1" stroke="0"/>
+                </symbol>
+                <symbol preserveAspectRatio="xMidYMin" id="arrows" viewBox="0 0 84 40">
+                    <path class="background" d="M0,0 L42,27.5 L84,0 M0,12 L42,39.5 L 84,12" fill="white"/>
+                    <path d="M0,0.5 L42,28 L84,0.5 M0,12.5 L42,40 L84,12.5" fill="transparent" stroke="#cc005f"/>
+                </symbol>
+            </defs>
+            <use xlink:href="#lines"/>
+            <use xlink:href="#arrows"/>
+        </svg>
         <div class="section__panel">
             <h2 class="section__headertext text">Расписание</h2>
             <p class="schedule__text text">Передачи звучат по будням с 8.00 до 23.00 каждые десять минут:<br><br>
@@ -131,7 +447,10 @@
                 Информационный партнёр Радиорубки <a class="link" href="https://www.report-inform.ru" target="_blank">ИА Репорт-Информ</a>
             </p>
         </div>
-        <object class="section__delimiter" data="assets/arrows.svg" type="image/svg+xml"></object>
+        <svg class="section__delimiter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin" width="100%" height="100%">
+            <use xlink:href="#lines"/>
+            <use xlink:href="#arrows"/>
+        </svg>
     </div>
     <div class="section section__contacts container">
         <h2 class="section__headertext text">Переходи по ссылкам</h2>
@@ -173,10 +492,10 @@
                                 <path class="cls-1" d="M101.5,131.8a.7.7,0,0,1-.6-.3,21.3,21.3,0,1,1,37.6-14,20.4,20.4,0,0,1-5.5,14,.7.7,0,1,1-1.1-1,18.9,18.9,0,0,0,5.1-13,20.1,20.1,0,1,0-35,13,.8.8,0,0,1-.1,1.1Z"/>
                                 <path class="cls-1" d="M102.9,145.2l-1-.4a1.3,1.3,0,0,0,.4,1.3Zm28.7,0,.6,1c.4-.3.7-.9.4-1.3Zm-14.4-37.6,1-.4a1.1,1.1,0,0,0-2,0Zm-13.3,38,14.3-37.8-2-.7-14.3,37.8ZM116.2,108l14.3,37.8,2-.7-14.3-37.8Zm-13.8,38.2a29.2,29.2,0,0,0,29.7,0l-1-1.9a27.1,27.1,0,0,1-27.5,0Z"/>
                                 <path class="cls-1" d="M102.3,144.3a1.1,1.1,0,0,0,1.2,1.8ZM124.4,131l.6.9a1,1,0,0,0,.4-1.2,1.1,1.1,0,0,0-1-.7v1ZM110,131l-.6-.9a1,1,0,0,0-.4,1.2,1.1,1.1,0,0,0,1,.7v-1Zm13.1-8.2a1.1,1.1,0,0,0-1.2-1.8Zm-19.7,23.4,22.1-14.3-1.2-1.9-22.1,14.3Zm21-16.1H108.8v2.2h15.6ZM110,131.9l13-9.1-1.3-1.8-13,9.1Z"/>
-                                <text class="cls-13" x="125" y="179">МИРЭА</text>
-                                <text class="cls-4" x="129" y="197">Российский</text>
-                                <text class="cls-4" x="129" y="219">Технологический</text>
-                                <text class="cls-4" x="129" y="241">Университет</text>
+                                <text class="mirealogotext_big cls-14" x="125" y="179">МИРЭА</text>
+                                <text class="mirealogotext_small" x="129" y="197">Российский</text>
+                                <text class="mirealogotext_small" x="129" y="219">Технологический</text>
+                                <text class="mirealogotext_small" x="129" y="241">Университет</text>
                             </clipPath>
                         </defs>
                         <rect clip-path="url(#mirealogo__clip)" x="0" y="0" width="100%" height="100%" fill="white"/>
@@ -215,7 +534,10 @@
     </div>
     <div id="About" class="anchor"></div>
     <div class="section section__about">
-        <object class="section__delimiter" data="assets/arrows.svg" type="image/svg+xml"></object>
+        <svg class="section__delimiter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin" width="100%" height="100%">
+            <use xlink:href="#lines"/>
+            <use xlink:href="#arrows"/>
+        </svg>
         <div class="section__panel">
             <h2 class="section__headertext text">О нас</h2>
             <p class="about__text text">
@@ -227,7 +549,10 @@
                 Мы предоставляем студентам возможность творить и развиваться во всех областях медиа: от журналистики и дикторства, до видеопроизводства и звукорежиссёрссуры.<br>
             </p>
         </div>
-        <object class="section__delimiter" data="assets/arrows.svg" type="image/svg+xml"></object>
+        <svg class="section__delimiter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin" width="100%" height="100%">
+            <use xlink:href="#lines"/>
+            <use xlink:href="#arrows"/>
+        </svg>
     </div>
     <div class="section section__license">
         <h2 class="section__headertext text">Лицензионная информация</h2>
