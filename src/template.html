@@ -67,14 +67,7 @@
         <div class="player">
             <div class="player__spectrum">
                 <canvas width="" height="" class="player__canvas player__canvas_hidden"></canvas>
-<!--                <img class="hidden" src="assets/circuits.svg" id="circuits" alt="">-->
-<!--                <img class="hidden" src="assets/outlines.svg" id="outlines" alt="">-->
-<!--                <img class="hidden" src="assets/top.svg" id="top" alt="">-->
-<!--                <img class="hidden" src="assets/bottom.svg" id="bottom" alt="">-->
-<!--                <img class="hidden" src="assets/center.svg" id="center" alt="">-->
-<!--                <img class="hidden" src="assets/logo.svg" id="logo" alt="">-->
-<!--                <img class="hidden" src="assets/wing.svg" id="wing" alt="">-->
-                <svg class="player__hiddensvg" id="circuits" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="896" height="360" viewBox="0 0 896.7 360.5">
+                <svg class="player__canvassvg hidden" id="circuits" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="896" height="360" viewBox="0 0 896.7 360.5">
                     <defs>
                         <style>
                             .circuits__lower, .circuits__upper, .circuits__rect, .circuits__middle {
@@ -115,7 +108,7 @@
                             <stop offset="0.8" stop-color="#63153a"/>
                             <stop offset="1" stop-color="#2e2e2e" stop-opacity="0"/>
                         </linearGradient>
-                        <linearGradient id="circuits-linear-gradient-2" x1="448" y1="120" x2="448" y2="0" xlink:href="#linear-gradient"/>
+                        <linearGradient id="circuits-linear-gradient-2" x1="448" y1="120" x2="448" y2="0" xlink:href="#circuits-linear-gradient"/>
                     </defs>
                     <g class="body" data-theme="">
                         <path class="circuits__lower" d="M55.1,354.8V309.4l7.6-7.6V283.5h7.4m0-23.4H57.7v39.8l-6.4,6.6v48.2"/>
@@ -138,7 +131,7 @@
                         <path class="circuits__rect circuits__rect_slim" d="M728.8,279.1l-9.8-9.8,9.8-9.8,9.8,9.8Zm-25.4,13.3-9.8-9.8-9.8,9.8,9.8,9.8Zm6.4-42.8-9.8-9.8-9.8,9.8,9.8,9.8Z"/>
                     </g>
                 </svg>
-                <svg class="player__hiddensvg" id="outlines" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="191" height="308" viewBox="0 0 191.5 308">
+                <svg class="player__canvassvg hidden" id="outlines" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="191" height="308" viewBox="0 0 191.5 308">
                     <defs>
                         <style>
                             .outline {
@@ -159,7 +152,7 @@
                         <polyline class="outline" points="0.8 0.8 0.8 123.5 0.8 142.1 0.8 212.1 95.8 307.2 190.8 212.1 190.8 142.1 190.8 123.5 190.8 0.8"/>
                     </g>
                 </svg>
-                <svg class="player__hiddensvg" id="top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="152" viewBox="0 0 152 152">
+                <svg class="player__canvassvg hidden" id="top" data-offsetY="-46" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="152" viewBox="0 0 152 152">
                     <defs>
                         <style>
                             .body {
@@ -214,7 +207,7 @@
                         <polygon class="top__polygonright" points="85.21 21.91 120.61 57.21 120.61 51.61 85.21 16.21 85.21 21.91"/>
                     </g>
                 </svg>
-                <svg class="player__hiddensvg" id="bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="147" viewBox="0 0 152.3 147.2">
+                <svg class="player__canvassvg hidden" id="bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="147" viewBox="0 0 152.3 147.2">
                     <defs>
                         <style>
                             .body {
@@ -266,7 +259,7 @@
                         <polygon class="bottom__polygon" points="9.2 74.1 5 70 5 64.2 9.2 74.1"/>
                     </g>
                 </svg>
-                <svg class="player__hiddensvg" id="center" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="195" height="195" viewBox="0 0 195.6 195.6">
+                <svg class="player__canvassvg hidden" id="center" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="195" height="195" viewBox="0 0 195.6 195.6">
                     <defs>
                         <style>
                             .body {
@@ -301,7 +294,7 @@
                         <path class="center__innerstroke" d="M146.4,117.15l19.2-19.2L146.69,79,147.75,78l20,20-20.26,20.26ZM78.94,49.69l19.2-19.2L117,49.34l1.06-1.06L98.14,28.37,77.88,48.63Zm37.76,97.16L98.14,165.4,79.24,146.5l-1.06,1.06,20,20,19.62-19.62Zm-67.16-30L30.69,97.95,49.24,79.39l-1.06-1.06L28.57,97.95l19.91,19.91Z"/>
                     </g>
                 </svg>
-                <svg class="player__hiddensvg" id="logo" xmlns="http://www.w3.org/2000/svg" width="52" height="74" viewBox="0 0 52.21 74.6">
+                <svg class="player__canvassvg hidden" id="logo" xmlns="http://www.w3.org/2000/svg" width="52" height="74" viewBox="0 0 52.21 74.6">
                     <defs>
                         <style>
                             .logo__circle {
@@ -324,7 +317,7 @@
                         <circle class="logo__circle" cx="26" cy="26.1" r="3.2"/>
                     </g>
                 </svg>
-                <svg class="player__hiddensvg" id="wing" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="168" height="30" viewBox="0 0 168 30">
+                <svg class="player__canvassvg hidden" id="wing" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="168" height="30" viewBox="0 0 168 30">
                     <defs>
                         <style>
                             .body {

@@ -86,7 +86,6 @@ body, .navbar, .section {
 
 .hidden {
     display: none;
-    opacity: 0;
 }
 
 *:focus {

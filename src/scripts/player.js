@@ -1,4 +1,4 @@
-import { drawSVG, drawInlineSVG, isEmpty } from "./utils";
+import { drawInlineSVG, loadSVGs, isEmpty } from "./utils";
 
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 window.requestAnimationFrame =
@@ -129,16 +129,19 @@ class Spectrum {
         this.bufferLength = this.analyser.frequencyBinCount;
         this.dataArray = new Uint8Array(this.bufferLength);
         this.ctx = this.canvas.getContext("2d");
+        this.images = {};
     }
 
-    init() {
-        this.resize();
-        this.draw();
+    async init() {
+        const inlineSVGs = document.querySelectorAll(".player__canvassvg");
+        this.images = await loadSVGs(inlineSVGs);
+        await this.resize();
+        await this.draw();
         this.canvas.classList.remove("player__canvas_hidden");
     }
 
     draw() {
-        const cx = this.canvas.width / (2 * this.dpi),
+        let cx = this.canvas.width / (2 * this.dpi),
             cy = this.canvas.height / (2 * this.dpi);
 
         const gradient = this.ctx.createLinearGradient(-138 / 2, -138 / 2, 138 / 2, 138 / 2);
@@ -146,26 +149,18 @@ class Spectrum {
         gradient.addColorStop(.5, "hsl(330, 100%, 50%)");
         gradient.addColorStop(.1, "hsl(286, 87%, 34%)");
 
-        const circuits = document.getElementById("circuits"),
-            outlines = document.getElementById("outlines"),
-            bottom = document.getElementById("bottom"),
-            top = document.getElementById("top"),
-            center = document.getElementById("center"),
-            logo = document.getElementById("logo"),
-            wing = document.getElementById("wing");
-
-        drawInlineSVG(circuits, this.ctx, cx, cy);
-        drawInlineSVG(outlines, this.ctx, cx, cy + 26);
-        drawInlineSVG(bottom, this.ctx, cx, cy + (bottom.getBoundingClientRect().height / 2));
-        drawInlineSVG(top, this.ctx, cx, cy - (top.getBoundingClientRect().height / 2) + 25);
+        drawInlineSVG(this.images.circuits, this.ctx, cx, cy);
+        drawInlineSVG(this.images.outlines, this.ctx, cx, cy + 26);
+        drawInlineSVG(this.images.bottom, this.ctx, cx, cy + 74);
+        drawInlineSVG(this.images.top, this.ctx, cx, cy - 46);
 
         for (let i = 40; i > 0; i -= 10) {
-            drawInlineSVG(wing, this.ctx, cx - (Math.cos(Math.PI * i / 180) * (this.dataArray[i * 4] + 50) / 2), cy - (Math.sin(Math.PI * i / 180) * this.dataArray[i * 4] / 2), i);
-            drawInlineSVG(wing, this.ctx, cx + (Math.cos(Math.PI * -i / 180) * (this.dataArray[i * 4] + 50) / 2), cy + (Math.sin(Math.PI * -i / 180) * this.dataArray[i * 4] / 2), -i);
+            drawInlineSVG(this.images.wing, this.ctx, cx - (Math.cos(Math.PI * i / 180) * (this.dataArray[i * 4] + 50) / 2), cy - (Math.sin(Math.PI * i / 180) * this.dataArray[i * 4] / 2), i);
+            drawInlineSVG(this.images.wing, this.ctx, cx + (Math.cos(Math.PI * -i / 180) * (this.dataArray[i * 4] + 50) / 2), cy + (Math.sin(Math.PI * -i / 180) * this.dataArray[i * 4] / 2), -i);
         }
 
-        drawInlineSVG(center, this.ctx, cx, cy);
-        drawInlineSVG(logo, this.ctx, cx, cy);
+        drawInlineSVG(this.images.center, this.ctx, cx, cy);
+        drawInlineSVG(this.images.logo, this.ctx, cx, cy);
     }
 
     resize() {
@@ -179,17 +174,13 @@ class Spectrum {
     }
 
     renderFrame() {
-        try {
-            this.player.isPlaying === true ?
-                requestAnimationFrame(() => this.renderFrame()) :
-                this.stopRender();
+        this.player.isPlaying === true ?
+            requestAnimationFrame(() => this.renderFrame()) :
+            this.stopRender();
 
-            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-            this.analyser.getByteFrequencyData(this.dataArray);
-            this.draw();
-        } catch(e) {
-            console.error(e.toString());
-        }
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.analyser.getByteFrequencyData(this.dataArray);
+        this.draw();
     }
 }
 

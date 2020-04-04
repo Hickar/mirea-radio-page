@@ -1,22 +1,26 @@
-const drawSVG = (svg, ctx, x, y, degrees) => {
+const drawInlineSVG = (svg, ctx, x, y, degrees) => {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(degrees * Math.PI / 180 || 0);
     ctx.drawImage(svg, -svg.width / 2, -svg.height / 2);
-    console.log("I've been called2!");
     ctx.restore();
 };
 
-const drawInlineSVG = (svg, ctx, x, y, degrees) => {
-    const svgURL = new XMLSerializer().serializeToString(svg);
+const loadSVG = (svg) => {
+    const url = new XMLSerializer().serializeToString(svg);
     let img  = new Image();
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(degrees * Math.PI / 180 || 0);
-    img.src = "data:image/svg+xml; charset=utf8, "+encodeURIComponent(svgURL);
-    ctx.drawImage(img, -img.width / 2, -img.height / 2);
-    console.log("I've been called!");
-    ctx.restore();
+    img.src = "data:image/svg+xml; charset=utf8, "+encodeURIComponent(url);
+    return img;
+};
+
+const loadSVGs = (elements) => {
+    let images = {};
+    for (const element of elements) {
+        Object.defineProperty(images, element.id, {
+            value: loadSVG(element)
+        });
+    }
+    return images;
 };
 
 // function drawInlineSVG(rawSVG, ctx) {
@@ -52,4 +56,4 @@ const isEmpty = (str) => {
     return (!str || str !== undefined);
 };
 
-export { drawSVG, drawInlineSVG, isEmpty };
+export { drawInlineSVG, loadSVGs, isEmpty };
