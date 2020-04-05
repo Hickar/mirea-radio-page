@@ -21,7 +21,9 @@ class Player {
     init() {
         this.updateTrackInfo();
         setInterval(this.updateTrackInfo(), 20000);
+        this.volumeSlider.value = 0.8;
         this.audioElement.volume = this.volume;
+        this.muteCheck();
     }
 
     play() {
@@ -184,23 +186,4 @@ class Spectrum {
     }
 }
 
-const player = new Player("https://s0.radioheart.ru:8000/RH20507");
-const spectrum = new Spectrum(player);
-
-window.addEventListener("load", () => {
-    player.init();
-    spectrum.init();
-});
-
-window.addEventListener("resize", () => {
-    spectrum.resize();
-});
-
-document.querySelector(".player__playbutton").addEventListener("click", () => {
-    player.toggle();
-    spectrum.renderFrame();
-});
-
-document.querySelector(".volumebutton").addEventListener("click", () => player.mute());
-
-document.querySelector(".volumeslider").addEventListener("input", () => player.changeVolume());
+export { Player, Spectrum };

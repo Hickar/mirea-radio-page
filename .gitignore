@@ -7,3 +7,5 @@ yarn-error.log
 generate.sh
 private.*
 ssl.conf
+dist/assets
+dist/*.ttf

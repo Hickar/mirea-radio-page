@@ -2,21 +2,21 @@
     font-family: ProximaNova;
     font-weight: 400;
     font-display: swap;
-    src: url(../assets/ProximaNova_Regular.ttf);
+    src: url(/7ce6760d17685c466ba04d1b2c63c38b.ttf);
 }
 
 @font-face {
     font-family: ProximaNova;
     font-weight: 700;
     font-display: swap;
-    src: url(../assets/ProximaNova_Semibold.ttf);
+    src: url(/df8c626474a73ab7a8b511655597c7c4.ttf);
 }
 
 @font-face {
     font-family: ProximaNova;
     font-weight: 100;
     font-display: swap;
-    src: url(../assets/ProximaNova_Light.ttf);
+    src: url(/0188899cd3ec92cdcaa4c97ca0c75247.ttf);
 }
 
 :root {

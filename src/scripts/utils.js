@@ -23,6 +23,32 @@ const loadSVGs = (elements) => {
     return images;
 };
 
+const copyToClipboard = (text) => {
+    const el = document.createElement("textarea");
+    el.value = text;
+    el.setAttribute("readonly", "");
+    el.style.position = "absolute";
+    el.style.left = "-9999px";
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+};
+
+const showPopup = (text) => {
+    const popup = document.createElement("div"),
+        popupText = document.createElement("p");
+    popup.className = "popup no-opacity";
+    popupText.className = "popup__text";
+    popupText.innerHTML = text;
+    document.body.appendChild(popup).appendChild(popupText);
+    setTimeout(() => popup.classList.toggle("no-opacity"), 50);
+    setTimeout(() => {
+        popup.classList.toggle("no-opacity");
+        setTimeout(() => document.body.removeChild(popup), 100);
+    }, 2500);
+};
+
 // function drawInlineSVG(rawSVG, ctx) {
 //
 //     const svg = new Blob([rawSVG], {type:"image/svg+xml;charset=utf-8"}),
@@ -56,4 +82,4 @@ const isEmpty = (str) => {
     return (!str || str !== undefined);
 };
 
-export { drawInlineSVG, loadSVGs, isEmpty };
+export { drawInlineSVG, loadSVGs, isEmpty, copyToClipboard, showPopup };
