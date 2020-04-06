@@ -571,15 +571,45 @@ ul, ol {
 
 .contacts__panellogo {
     pointer-events: all;
+    /*transform: scale(1);*/
+    transition: .2s transform ease;
 }
 
-.contacts__panellogo .clip {
+/*.contacts__panellogo:hover {*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+.contacts__panellogo .textclip {
     fill: var(--accent-color);
     transition: .5s width ease-out;
 }
 
-.contacts__panellogo:hover .clip {
+.contacts__panellogo:hover .textclip {
     width: 100%;
+}
+
+.contacts__panellogo .circleclip {
+    fill: white;
+    stroke: white;
+    stroke-width: 236;
+    stroke-dashoffset: -741;
+    stroke-dasharray: 741;
+    transition: 50ms stroke ease, .5s stroke-dashoffset ease-out, .9s stroke-dasharray ease-out;
+}
+
+.contacts__panellogo:hover .circleclip {
+    stroke: var(--accent-color);
+    stroke-dashoffset: 0;
+    stroke-dasharray: 741;
+}
+
+.contacts__panellogo .roundclip {
+    fill: var(--accent-color);
+    transition: .4s r ease-out;
+}
+
+.contacts__panellogo:hover .roundclip {
+    r: 75%;
 }
 
 .mirealogotext_big {
@@ -616,6 +646,7 @@ ul, ol {
 
 .popup__text {
     margin: 0;
+    white-space: nowrap;
 }
 
 .no-opacity {
