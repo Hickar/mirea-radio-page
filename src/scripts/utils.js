@@ -14,13 +14,22 @@ const loadSVG = (svg) => {
 };
 
 const loadSVGs = (elements) => {
-    let images = {};
-    for (const element of elements) {
-        Object.defineProperty(images, element.id, {
-            value: loadSVG(element)
-        });
-    }
-    return images;
+    return new Promise(resolve => {
+        let images = {},
+            imagesLoaded = 0;
+        for (const element of elements) {
+            Object.defineProperty(images, element.id, {
+                value: loadSVG(element)
+            });
+            images[element.id].onload = () => {
+                imagesLoaded++;
+                console.log(`Loaded ${imagesLoaded} of ${elements.length}`);
+                if (imagesLoaded === elements.length) {
+                    resolve(images);
+                }
+            }
+        }
+    })
 };
 
 const copyToClipboard = (text) => {
@@ -49,34 +58,19 @@ const showPopup = (text) => {
     }, 2500);
 };
 
-// function drawInlineSVG(rawSVG, ctx) {
-//
-//     const svg = new Blob([rawSVG], {type:"image/svg+xml;charset=utf-8"}),
-//         domURL = self.URL || self.webkitURL || self,
-//         url = domURL.createObjectURL(svg),
-//         img = new Image;
-//
-//     img.onload = function () {
-//         ctx.drawImage(this, 300, 300);
-//         domURL.revokeObjectURL(url);
-//     };
-//
-//     img.src = url;
-// }
-
-const drawRect = (x, y, width, height, degrees, style, strokeStyle) => {
-    this.ctx.save();
-    this.ctx.translate(x, y);
-    this.ctx.rotate(degrees * Math.PI / 180);
-    this.ctx.fillStyle = style;
-    if (strokeStyle) {
-        this.ctx.lineWidth = 10;
-        this.ctx.strokeStyle = strokeStyle;
-        this.ctx.stroke();
-    }
-    this.ctx.fillRect(-width / 2, -height / 2, width, height);
-    this.ctx.restore();
-};
+// const drawRect = (x, y, width, height, degrees, style, strokeStyle) => {
+//     this.ctx.save();
+//     this.ctx.translate(x, y);
+//     this.ctx.rotate(degrees * Math.PI / 180);
+//     this.ctx.fillStyle = style;
+//     if (strokeStyle) {
+//         this.ctx.lineWidth = 10;
+//         this.ctx.strokeStyle = strokeStyle;
+//         this.ctx.stroke();
+//     }
+//     this.ctx.fillRect(-width / 2, -height / 2, width, height);
+//     this.ctx.restore();
+// };
 
 const isEmpty = (str) => {
     return (!str || str !== undefined);

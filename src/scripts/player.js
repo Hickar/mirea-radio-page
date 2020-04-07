@@ -135,15 +135,19 @@ class Spectrum {
     }
 
     async init() {
-        const inlineSVGs = document.querySelectorAll(".player__canvassvg");
-        this.images = await loadSVGs(inlineSVGs);
+        await this.load();
         await this.resize();
         await this.draw();
         this.canvas.classList.remove("player__canvas_hidden");
     }
 
+    async load() {
+        const inlineSVGs = document.querySelectorAll(".player__canvassvg");
+        this.images = await loadSVGs(inlineSVGs);
+    }
+
     draw() {
-        let cx = this.canvas.width / (2 * this.dpi),
+        const cx = this.canvas.width / (2 * this.dpi),
             cy = this.canvas.height / (2 * this.dpi);
 
         const gradient = this.ctx.createLinearGradient(-138 / 2, -138 / 2, 138 / 2, 138 / 2);
