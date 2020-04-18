@@ -12,7 +12,6 @@ export class LongtermKeyValue {
 	/**
 	 * @type {TValueType}
 	 */
-	// @ts-ignore
 	#defaultValue;
 
 	/**
@@ -21,6 +20,7 @@ export class LongtermKeyValue {
 	 */
 	constructor(key, defaultValue) {
 		this.#key = key;
+		this.#defaultValue = defaultValue;
 
 		if (this.get() === null) {
 			this.set(defaultValue);
