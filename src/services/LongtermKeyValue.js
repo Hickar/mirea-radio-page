@@ -1,23 +1,7 @@
-// @ts-check
-
-/**
- * @template TValueType
- */
 export class LongtermKeyValue {
-	/**
-	 * @type string
-	 */
 	#key = "";
-
-	/**
-	 * @type {TValueType}
-	 */
 	#defaultValue;
 
-	/**
-	 * @param {string} key Идемпотентный относительно сборки ключ
-	 * @param {TValueType} defaultValue
-	 */
 	constructor(key, defaultValue) {
 		this.#key = key;
 		this.#defaultValue = defaultValue;
@@ -27,24 +11,16 @@ export class LongtermKeyValue {
 		}
 	}
 
-	/**
-	 * @returns {TValueType}
-	 */
 	get = () => {
 		const localStorageValue = localStorage.getItem(this.#key);
-
 		if (localStorageValue) {
 			const storageValue = JSON.parse(localStorageValue);
-
 			return storageValue;
 		}
 
 		return this.#defaultValue;
 	};
 
-	/**
-	 * @param {TValueType} value
-	 */
 	set = value => {
 		localStorage.setItem(this.#key, JSON.stringify(value));
 	};

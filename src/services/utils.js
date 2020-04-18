@@ -57,22 +57,4 @@ const showPopup = (text) => {
     }, 2500);
 };
 
-// const drawRect = (x, y, width, height, degrees, style, strokeStyle) => {
-//     this.ctx.save();
-//     this.ctx.translate(x, y);
-//     this.ctx.rotate(degrees * Math.PI / 180);
-//     this.ctx.fillStyle = style;
-//     if (strokeStyle) {
-//         this.ctx.lineWidth = 10;
-//         this.ctx.strokeStyle = strokeStyle;
-//         this.ctx.stroke();
-//     }
-//     this.ctx.fillRect(-width / 2, -height / 2, width, height);
-//     this.ctx.restore();
-// };
-
-const isEmpty = (str) => {
-    return (!str || str !== undefined);
-};
-
-export { drawInlineSVG, loadSVGs, isEmpty, copyToClipboard, showPopup };
+export { drawInlineSVG, loadSVGs, copyToClipboard, showPopup };

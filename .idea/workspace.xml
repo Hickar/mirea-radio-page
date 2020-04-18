@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd2abd3a-a410-4860-bbf0-c8b5ad4e133e" name="Default Changelist" comment="" />
+    <list default="true" id="fd2abd3a-a410-4860-bbf0-c8b5ad4e133e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/services/Spectrum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/player.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/CallbacksPool.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/CallbacksPool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/EventChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/EventChannel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/LongtermKeyValue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/LongtermKeyValue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/Player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ThemeAPI/BaseTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ThemeAPI/BaseTheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ThemeAPI/ThemesManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ThemeAPI/ThemesManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UIManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UIManager.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="mirea-radio-page" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,6 +67,11 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/services" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
