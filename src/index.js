@@ -1,48 +1,81 @@
-import "./style.css";
-import { Player, Spectrum } from "Scripts/player.js";
-import { copyToClipboard, showPopup } from "Scripts/utils.js";
-import { Theme } from "./services/ThemeManager";
+// @ts-check
 
-const player = new Player("https://s0.radioheart.ru:8000/RH20507");
+import "./style.css";
+
+import { Player } from "./services/Player";
+import { PLAYER_URL } from "./consts";
+import { Spectrum } from "./scripts/player";
+import { Theme } from "./services/ThemeManager";
+import { UI } from "./services/UIManager";
+import { copyToClipboard, showPopup } from "./scripts/utils";
+
+const player = new Player();
+
 const spectrum = new Spectrum(player);
 
-window.addEventListener("load", () => {
-    player.init();
-    spectrum.init();
+UI.onReady(() => {
+  player.init(PLAYER_URL);
+
+  spectrum.init();
+
+  Theme.set(Theme.theme);
+
+  setInterval(UI.updateTrackMeta, 10000);
+  UI.updateTrackMeta();
+
+  const slider = UI.getVolumeSlider();
+
+  if (slider) {
+    slider.value = String(player.volume);
+  }
+
+  UI.updateMuteButton(player);
+
+  player.isMuted
+    ? UI.setCrossVisibilitylOnMuteButton(true)
+    : UI.setCrossVisibilitylOnMuteButton(false);
 });
 
-document.querySelector(".player__trackinfo").addEventListener("click", () => {
-    const artistName = document.querySelector(".player__trackartist").innerHTML,
-        trackName = document.querySelector(".player__trackname").innerHTML;
+UI.onResize(() => spectrum.resize());
 
-    copyToClipboard(artistName + " - " + trackName);
-    showPopup("Скопировано в буффер");
+UI.onVolumeChange(value => {
+  player.volume = value;
+
+  UI.updateMuteButton(player);
 });
 
-document.querySelector(".player__playbutton").addEventListener("click", () => {
-    player.toggle();
-    spectrum.renderFrame();
+UI.onThemeChange(() => {
+  Theme.setNext();
 });
 
-window.addEventListener("resize", () => {
-    spectrum.resize();
+UI.onMuteButtonClick(() => {
+  if (player.isMuted) {
+    player.unmute();
+  } else {
+    player.mute();
+  }
+
+  UI.updateMuteButton(player);
 });
 
-document.querySelector(".volumebutton").addEventListener("click", () => player.mute());
+UI.onPlayButtonClick(() => {
+  if (player.playingState === "playing") {
+    player.pause();
+  } else {
+    player.play();
+  }
+  spectrum.renderFrame();
 
-document.querySelector(".volumeslider").addEventListener("input", () => player.changeVolume());
+  UI.updatePlayButton(player);
+});
 
-document.querySelector(".navbar__darkmodebutton").addEventListener("click", Theme.setNext);
+UI.onMetaClick((trackArtist, trackName) => {
+  copyToClipboard(trackArtist + " - " + trackName);
+  showPopup("Скопировано в буффер");
+});
 
 Theme.onChange(theme => {
-    document.documentElement.dataset.theme = theme;
+  UI.setTheme(theme);
 
-    document.querySelectorAll(".player__canvassvg .body").forEach(element => {
-        element.dataset.theme = theme;
-    });
-
-    setTimeout(spectrum.init(), 200);
-})
-
-// костыль чтоб заинициализировать тему при старте
-Theme.set(Theme.theme);
+  setTimeout(() => spectrum.init(), 200);
+});

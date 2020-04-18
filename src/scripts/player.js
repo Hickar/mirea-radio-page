@@ -1,5 +1,7 @@
 import { drawInlineSVG, loadSVGs, isEmpty } from "./utils";
 
+import { Player } from '../services/Player'
+
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 window.requestAnimationFrame =
     window.requestAnimationFrame ||
@@ -7,7 +9,7 @@ window.requestAnimationFrame =
     window.webkitRequestAnimationFrame ||
     window.msRequestAnimationFrame;
 
-class Player {
+class Player_ {
     constructor(url) {
         this.audioElement = document.getElementById("audio") || new Audio(url);
         this.audioElement.src = url;
@@ -115,11 +117,11 @@ class Player {
 
 class Spectrum {
     constructor(player) {
-        this.analyser = audioContext.createAnalyser();
+        this.analyser = Player.audioContext.createAnalyser();
         this.canvas = document.querySelector("canvas");
         this.player = player;
         player.source.connect(this.analyser);
-        this.analyser.connect(audioContext.destination);
+        this.analyser.connect(Player.audioContext.destination);
 
         this.width = this.canvas.parentElement.clientWidth;
         this.height = this.canvas.parentElement.clientHeight;
@@ -134,8 +136,8 @@ class Spectrum {
 
     async init() {
         await this.load();
-        await this.resize();
-        await this.draw();
+        this.resize();
+        this.draw();
         this.canvas.classList.remove("player__canvas_hidden");
     }
 
@@ -178,7 +180,7 @@ class Spectrum {
     }
 
     renderFrame() {
-        this.player.isPlaying === true ?
+        this.player.playingState === 'playing' ?
             requestAnimationFrame(() => this.renderFrame()) :
             this.stopRender();
 
@@ -188,4 +190,4 @@ class Spectrum {
     }
 }
 
-export { Player, Spectrum };
+export { /* Player_,  */Spectrum };
