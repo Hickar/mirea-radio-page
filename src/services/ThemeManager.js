@@ -1,16 +1,14 @@
 // @ts-check
 
 import { LongtermKeyValue } from "./LongtermKeyValue";
+import { CallbacksPool } from "./CallbacksPool";
 
 /**
  * @typedef {'white' | 'dark'} Theme
  */
 
 /**
- * @type {{
-		white: "dark",
-		dark: "white"
-	}}
+ * @type {{[ Key in Theme ]: Theme}}
 */
 const NEXT_THEME_MAP = {
 	white: "dark",
@@ -19,9 +17,9 @@ const NEXT_THEME_MAP = {
 
 class ThemeManager {
 	/**
-	 * @type {Array<(theme: Theme) => void>}
+	 * @type {CallbacksPool<Theme>}
 	 */
-	#onChangeCallbacks = [];
+	#onChangeCallbacksPool = new CallbacksPool();
 
 	/**
 	 * @param {Theme} defaultTheme
@@ -59,15 +57,11 @@ class ThemeManager {
 	 * @param {(theme: Theme) => void} callback
 	 */
 	onChange = callback => {
-		this.#onChangeCallbacks.push(callback);
+		this.#onChangeCallbacksPool.add(callback);
 	};
 
 	invokeOnChangeCallbacks = () => {
-		const theme = this.theme;
-
-		for (const callback of this.#onChangeCallbacks) {
-			callback(theme);
-		}
+		this.#onChangeCallbacksPool.invoke(this.theme)
 	};
 }
 

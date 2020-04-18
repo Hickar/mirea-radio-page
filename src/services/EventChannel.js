@@ -1,8 +1,10 @@
 // @ts-check
 
+import { CallbacksPool } from "./CallbacksPool";
+
 export class EventChannel {
   /**
-   * @type {Map<string, Set<(payload: any) => void>>}
+   * @type {Map<string, CallbacksPool<any>>}
    */
   handlers = new Map();
 
@@ -12,7 +14,7 @@ export class EventChannel {
    */
   subscribe = (event, handler) => {
     if (!this.handlers.has(event)) {
-      this.handlers.set(event, new Set());
+      this.handlers.set(event, new CallbacksPool());
     }
 
     const handlers = this.handlers.get(event);
@@ -46,7 +48,7 @@ export class EventChannel {
     const handlers = this.handlers.get(event);
 
     if (handlers) {
-      handlers.forEach(handler => handler(payload));
+      handlers.invoke(payload);
     }
   };
 }
