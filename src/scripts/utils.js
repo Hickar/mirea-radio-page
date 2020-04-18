@@ -23,7 +23,6 @@ const loadSVGs = (elements) => {
             });
             images[element.id].onload = () => {
                 imagesLoaded++;
-                console.log(`Loaded ${imagesLoaded} of ${elements.length}`);
                 if (imagesLoaded === elements.length) {
                     resolve(images);
                 }

@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2abd3a-a410-4860-bbf0-c8b5ad4e133e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/main.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.bundle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.bundle.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/player.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +51,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -63,18 +68,6 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -147,12 +140,23 @@
       <workItem from="1585929242811" duration="909000" />
       <workItem from="1585990370603" duration="7888000" />
       <workItem from="1586084199461" duration="5073000" />
-      <workItem from="1586251529465" duration="6547000" />
+      <workItem from="1586251529465" duration="6628000" />
+      <workItem from="1586365535467" duration="525000" />
+      <workItem from="1586374201961" duration="280000" />
+      <workItem from="1586437112811" duration="291000" />
+      <workItem from="1586476550915" duration="2045000" />
+      <workItem from="1586543678554" duration="1344000" />
+      <workItem from="1586554767924" duration="327000" />
+      <workItem from="1586555807190" duration="9000" />
+      <workItem from="1586699355772" duration="21000" />
+      <workItem from="1586783637280" duration="106000" />
+      <workItem from="1586871467255" duration="112000" />
+      <workItem from="1587222209693" duration="221000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
@@ -173,23 +177,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="238" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579950239064">
       <screen x="0" y="23" width="1440" height="809" />
     </state>
     <state x="470" y="238" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.809@0.23.1440.809" timestamp="1579950239064" />
-    <state x="408" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579799333925">
+    <state x="408" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586374151564">
       <screen x="0" y="23" width="1440" height="809" />
     </state>
-    <state x="408" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.809@0.23.1440.809" timestamp="1579799333925" />
+    <state x="408" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1440.809@0.23.1440.809" timestamp="1586374151564" />
     <state x="458" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586087588879">
       <screen x="0" y="23" width="1440" height="809" />
     </state>
@@ -198,10 +201,6 @@
       <screen x="0" y="23" width="1440" height="809" />
     </state>
     <state x="500" y="145" key="RollbackChangesDialog/0.23.1440.809@0.23.1440.809" timestamp="1578320915692" />
-    <state x="236" y="66" key="SettingsEditor" timestamp="1577472188408">
-      <screen x="0" y="23" width="1440" height="809" />
-    </state>
-    <state x="236" y="66" key="SettingsEditor/0.23.1440.809@0.23.1440.809" timestamp="1577472188408" />
     <state x="402" y="191" width="635" height="472" key="find.popup" timestamp="1578944282162">
       <screen x="0" y="23" width="1440" height="809" />
     </state>

@@ -78,17 +78,17 @@ class Player {
             document.getElementById("v_level1").setAttribute("fill", "transparent");
             document.getElementById("v_level2").setAttribute("fill", "transparent");
             document.getElementById("v_level3").setAttribute("fill", "transparent");
-        } else if (0 < this.audioElement.volume * 100 && this.audioElement.volume * 100 < 33) {
+        } else if (this.audioElement.volume * 100 > 0 && this.audioElement.volume * 100 < 33) {
             document.getElementById("crossline").setAttribute("stroke", "transparent");
             document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
             document.getElementById("v_level2").setAttribute("fill", "transparent");
             document.getElementById("v_level3").setAttribute("fill", "transparent");
-        } else if (33 < this.audioElement.volume * 100 && this.audioElement.volume * 100 < 66) {
+        } else if (this.audioElement.volume * 100 > 33 && this.audioElement.volume * 100 < 66) {
             document.getElementById("crossline").setAttribute("stroke", "transparent");
             document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
             document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
             document.getElementById("v_level3").setAttribute("fill", "transparent");
-        } else if (66 < this.audioElement.volume * 100) {
+        } else if (this.audioElement.volume * 100 > 66) {
             document.getElementById("crossline").setAttribute("stroke", "transparent");
             document.getElementById("v_level1").setAttribute("fill", "#B8B8B8");
             document.getElementById("v_level2").setAttribute("fill", "#B8B8B8");
@@ -121,13 +121,11 @@ class Spectrum {
         player.source.connect(this.analyser);
         this.analyser.connect(audioContext.destination);
 
-        if (window.innerWidth <= 480) this.analyser.fftSize = 128;
-        else this.analyser.fftSize = 512;
-
         this.width = this.canvas.parentElement.clientWidth;
         this.height = this.canvas.parentElement.clientHeight;
         this.dpi = window.devicePixelRatio || 1;
 
+        this.analyser.fftSize = 512;
         this.bufferLength = this.analyser.frequencyBinCount;
         this.dataArray = new Uint8Array(this.bufferLength);
         this.ctx = this.canvas.getContext("2d");

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="195" height="195" viewBox="0 0 195.6 195.6">
+  <defs>
+    <style>
+      .body {
+        --background-color: #262626;
+      }
+
+      .body[data-theme="dark"] {
+        --background-color: #000000;
+      }
+
+      .center__outer {
+        fill: url(#center-linear-gradient);
+      }
+
+      .center__inner {
+        fill: var(--background-color);
+      }
+
+      .center__innerstroke {
+        fill: url(#center-linear-gradient);
+      }
+    </style>
+    <linearGradient id="center-linear-gradient" x1="-287.7" y1="-12469.66" x2="-287.7" y2="-12606.83" gradientTransform="translate(385.5 12634)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c93"/>
+      <stop offset="0.5" stop-color="#ff0080"/>
+      <stop offset="1" stop-color="#7e0ba1"/>
+    </linearGradient>
+  </defs>
+  <g class="body" dark-theme="">
+    <polygon class="center__outer" points="0 97.8 97.8 0 195.6 97.8 97.8 195.6 0 97.8"/>
+    <rect class="center__inner" x="39.69" y="39.59" width="116.3" height="116.3" transform="translate(-40.46 97.81) rotate(-45)"/>
+    <path class="center__innerstroke" d="M146.4,117.15l19.2-19.2L146.69,79,147.75,78l20,20-20.26,20.26ZM78.94,49.69l19.2-19.2L117,49.34l1.06-1.06L98.14,28.37,77.88,48.63Zm37.76,97.16L98.14,165.4,79.24,146.5l-1.06,1.06,20,20,19.62-19.62Zm-67.16-30L30.69,97.95,49.24,79.39l-1.06-1.06L28.57,97.95l19.91,19.91Z"/>
+  </g>
+</svg>

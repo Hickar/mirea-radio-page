@@ -1,5 +1,4 @@
 node_modules
-assets/*
 yarn-error.log
 .DS_Store
 .env
@@ -7,5 +6,3 @@ yarn-error.log
 generate.sh
 private.*
 ssl.conf
-dist/assets
-dist/*.ttf

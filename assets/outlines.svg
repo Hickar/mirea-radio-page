@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="191" height="308" viewBox="0 0 191.5 308">
+  <defs>
+    <style>
+      .outline {
+        fill: none;
+        stroke: url(#outlines-linear-gradient);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.5px;
+      }
+    </style>
+    <linearGradient id="outlines-linear-gradient" x1="95" y1="290" x2="95" y2="13" gradientUnits="userSpaceOnUse">
+      <stop offset="0.9" stop-color="#63153a"/>
+      <stop offset="1" stop-color="#2e2e2e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g class="body" data-theme="">
+    <polyline class="outline" points="180.8 14.4 180.8 126.9 180.8 143.5 180.8 206.1 95.8 291.2 10.8 206.1 10.8 143.5 10.8 126.9 10.8 14.4"/>
+    <polyline class="outline" points="0.8 0.8 0.8 123.5 0.8 142.1 0.8 212.1 95.8 307.2 190.8 212.1 190.8 142.1 190.8 123.5 190.8 0.8"/>
+  </g>
+</svg>
