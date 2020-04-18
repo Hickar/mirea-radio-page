@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="74" viewBox="0 0 52.21 74.6">
+  <defs>
+    <style>
+      .logo__circle {
+        fill: #ff0080;
+      }
+
+      .logo__stroke {
+        fill: none;
+        stroke: #ff0080;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g class="body" data-theme="">
+    <path class="logo__circle" d="M26,0A26,26,0,0,0,15.3,49.7l.6-2.4A23.62,23.62,0,0,1,36.3,4.7a23.62,23.62,0,0,1,0,42.6l.6,2.4a26,26,0,0,0,13-34.4A26.55,26.55,0,0,0,26,0Z"/>
+    <path class="logo__circle" d="M16.9,42.7l.6-2.4a16.64,16.64,0,1,1,22.8-5.8,16.12,16.12,0,0,1-5.8,5.8l.6,2.4A19,19,0,1,0,9.3,35.1a18.55,18.55,0,0,0,7.6,7.6Z"/>
+    <polygon class="logo__stroke" points="30.5 40.4 38.3 73.1 27.2 26.5 24.8 26.5 13.7 73 14.2 71.3 33.3 52.6 18.6 52.6 30.5 40.4"/>
+    <circle class="logo__circle" cx="26" cy="26.1" r="3.2"/>
+  </g>
+</svg>

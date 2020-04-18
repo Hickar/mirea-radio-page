@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/css" href="../main.bundle.css"?>
+<svg class="delimiter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin" width="100%" height="100%">
+  <defs>
+    <style>
+      .line {
+      fill: url(#arrows-linear-gradient);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      isolation: isolate;
+      }
+    </style>
+    <linearGradient id="arrows-linear-gradient" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c60168" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#cc005f" stop-opacity="1"/>
+      <stop offset="1" stop-color="#c60168" stop-opacity="0"/>
+    </linearGradient>
+    <svg preserveAspectRatio="xMidYMin" id="center" viewBox="0 0 84 40">
+      <path id="fill" d="M0,0 L42,27.5 L84,0 M0,12 L42,39.5 L 84,12" fill="white"/>
+      <path d="M0,0.5 L42,28 L84,0.5 M0,12.5 L42,40 L84,12.5" fill="transparent" stroke="#cc005f"/>
+    </svg>
+  </defs>
+  <rect class="line" width="100%" x="0" y="0%" height="1"/>
+  <rect class="line" width="100%" x="0" y="30%" height="1" stroke="0"/>
+  <use xlink:href="#center" />
+</svg>

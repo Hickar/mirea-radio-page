@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="168" height="30" viewBox="0 0 168 30">
+  <defs>
+    <style>
+      .body {
+        --background-color: url(#linear-gradient);
+      }
+
+      .body[data-theme="dark"] {
+        --background-color: url(#linear-gradient-dark);
+      }
+
+      .wing__inner {
+        fill: var(--background-color);
+      }
+
+      .wing__outer {
+        fill: none;
+        stroke: #662d91;
+        stroke-miterlimit: 10;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="84" y1="27" x2="84" y2="3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#242424"/>
+      <stop offset="1" stop-color="#2e2e2e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-dark" x1="84" y1="27" x2="84" y2="3" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#080808"/>
+      <stop offset="1" stop-color="#1e1e1e"/>
+    </linearGradient>
+  </defs>
+  <g class="body" data-theme="">
+    <rect class="wing__inner" y="0.9" width="168" height="30"/>
+    <line class="wing__outer" x1="168" y1="0.5" y2="0.5"/>
+  </g>
+</svg>

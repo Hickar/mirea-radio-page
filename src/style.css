@@ -782,7 +782,7 @@ ul, ol {
 
     .player__spectrum {
         height: 320px;
-        margin: 0 1rem 2.25rem 1rem;
+        margin: 0 0 2.25rem 0;
     }
 
     .player__controlsinnerleft {

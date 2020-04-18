@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="152" viewBox="0 0 152 152">
+  <defs>
+    <style>
+      .body {
+        --background-color: url(#top-linear-gradient);
+      }
+
+      .body[data-theme="dark"] {
+        --background-color: url(#top-linear-gradient-dark);
+      }
+
+      .top__inner {
+        stroke: #662d91;
+        fill: var(--background-color);
+      }
+
+      .top__inner, .top__polygonupper {
+        stroke-miterlimit: 10;
+      }
+
+      .top__polygonupper {
+        fill: none;
+        stroke: #9317a3;
+        stroke-width: 0.75px;
+      }
+
+      .top__polygonleft {
+        fill: url(#top-linear-gradient-2);
+      }
+
+      .top__polygonright {
+        fill: url(#top-linear-gradient-3);
+      }
+    </style>
+    <linearGradient id="top-linear-gradient" x1="7465.51" y1="10362.93" x2="7520.13" y2="10417.56" gradientTransform="matrix(0.71, -0.71, -0.71, -0.71, 2124.77, 12690.23)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#303030"/>
+      <stop offset="1" stop-color="#424242"/>
+    </linearGradient>
+    <linearGradient id="top-linear-gradient-dark" x1="7465.51" y1="10362.93" x2="7520.13" y2="10417.56" gradientTransform="matrix(0.71, -0.71, -0.71, -0.71, 2124.77, 12690.23)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101010"/>
+      <stop offset="1" stop-color="#222222"/>
+    </linearGradient>
+    <linearGradient id="top-linear-gradient-2" x1="-893.56" y1="10450.15" x2="-854.62" y2="10450.15" gradientTransform="matrix(0.71, -0.71, 0, -1.41, 671.29, 14149.29)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c71798" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#9317a3" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="top-linear-gradient-3" x1="2737.43" y1="8621.79" x2="2776.36" y2="8621.79" gradientTransform="matrix(-0.71, -0.71, 0, -1.41, 2058.72, 14149.29)" xlink:href="#top-linear-gradient-2"/>
+  </defs>
+  <g class="body" data-theme="">
+    <polygon class="top__inner" points="0.71 76.01 76.01 0.71 151.31 76.01 76.01 151.31 0.71 76.01"/>
+    <polygon class="top__polygonupper" points="80.91 10.81 76.01 5.91 71.21 10.71 80.91 10.81"/>
+    <polygon class="top__polygonleft" points="66.81 21.91 31.41 57.21 31.41 51.61 66.81 16.21 66.81 21.91"/>
+    <polygon class="top__polygonright" points="85.21 21.91 120.61 57.21 120.61 51.61 85.21 16.21 85.21 21.91"/>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="152" height="147" viewBox="0 0 152.3 147.2">
+  <defs>
+    <style>
+      .body {
+        --accent-color: #ff0080;
+        --background-color: url(#bottom-linear-gradient);
+      }
+
+      .body[data-theme="dark"] {
+        --background-color: url(#bottom-linear-gradient-dark);
+      }
+
+      .bottom__shape, .bottom__stroke {
+      stroke: var(--accent-color);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      }
+
+      .bottom__shape {
+        stroke-width: 1.5px;
+        fill: var(--background-color);
+        transition: .2s fill ease;
+      }
+
+      .bottom__stroke {
+        fill: none;
+      }
+
+      .bottom__polygon {
+        fill: var(--accent-color);
+      }
+    </style>
+    <linearGradient id="bottom-linear-gradient" x1="75" y1="150" x2="75" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#242424"/>
+      <stop offset="1" stop-color="#2e2e2e"/>
+    </linearGradient>
+    <linearGradient id="bottom-linear-gradient-dark" x1="75" y1="150" x2="75" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#141414"/>
+      <stop offset="1" stop-color="#0e0e0e"/>
+    </linearGradient>
+  </defs>
+  <g class="body" data-theme="">
+    <polygon class="bottom__shape" points="0.8 0.8 0.8 15.5 0.8 71 76.2 146.4 151.6 71 151.6 15.5 151.6 0.8 0.8 0.8"/>
+    <path class="bottom__stroke" d="M79.1,128.8,73.3,123m0,5.8L79,123"/>
+    <line class="bottom__stroke" x1="64.7" y1="115" x2="50.2" y2="100.5"/>
+    <line class="bottom__stroke" x1="64.7" y1="102.7" x2="50.2" y2="88.2"/>
+    <line class="bottom__stroke" x1="87.7" y1="115" x2="102.2" y2="100.5"/>
+    <line class="bottom__stroke" x1="87.7" y1="102.7" x2="102.2" y2="88.2"/>
+    <polygon class="bottom__polygon" points="143.2 74.1 147.3 70 147.3 64.2 143.2 74.1"/>
+    <polygon class="bottom__polygon" points="9.2 74.1 5 70 5 64.2 9.2 74.1"/>
+  </g>
+</svg>
