@@ -1,7 +1,7 @@
 import "./style.css";
 import { Player, Spectrum } from "Scripts/player.js";
-import darkmodeButtonHandler from "Scripts/darkmodeButton.js";
 import { copyToClipboard, showPopup } from "Scripts/utils.js";
+import { Theme } from "./services/ThemeManager";
 
 const player = new Player("https://s0.radioheart.ru:8000/RH20507");
 const spectrum = new Spectrum(player);
@@ -32,7 +32,17 @@ document.querySelector(".volumebutton").addEventListener("click", () => player.m
 
 document.querySelector(".volumeslider").addEventListener("input", () => player.changeVolume());
 
-document.querySelector(".navbar__darkmodebutton").addEventListener("click", () => {
-    darkmodeButtonHandler();
+document.querySelector(".navbar__darkmodebutton").addEventListener("click", Theme.setNext);
+
+Theme.onChange(theme => {
+    document.documentElement.dataset.theme = theme;
+
+    document.querySelectorAll(".player__canvassvg .body").forEach(element => {
+        element.dataset.theme = theme;
+    });
+
     setTimeout(spectrum.init(), 200);
-});
+})
+
+// костыль чтоб заинициализировать тему при старте
+Theme.set(Theme.theme);

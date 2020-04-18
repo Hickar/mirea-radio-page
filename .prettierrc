@@ -1,6 +1,6 @@
-printWidth: 80
-useTabs: true
-semi: true
-singleQuote: false
-allowParens: true
-parser: "babel"
+{
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "arrowParens": "avoid"
+}
