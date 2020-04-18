@@ -73,7 +73,7 @@ export class Player {
   init = src => {
     this.audioElement.src = src;
 
-    this.volume = this.volume;
+    this.audioElement.volume = this.volume;
   };
 
   play = () => {
