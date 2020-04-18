@@ -10,19 +10,25 @@ export class LongtermKeyValue {
 	#key = "";
 
 	/**
-	 * @param {string} key Идемпотентный относительно сборки ключ
-	 * @param {TValueType} initialValue
+	 * @type {TValueType}
 	 */
-	constructor(key, initialValue) {
+	// @ts-ignore
+	#defaultValue;
+
+	/**
+	 * @param {string} key Идемпотентный относительно сборки ключ
+	 * @param {TValueType} defaultValue
+	 */
+	constructor(key, defaultValue) {
 		this.#key = key;
 
 		if (this.get() === null) {
-			this.set(initialValue);
+			this.set(defaultValue);
 		}
 	}
 
 	/**
-	 * @returns {TValueType | null}
+	 * @returns {TValueType}
 	 */
 	get = () => {
 		const localStorageValue = localStorage.getItem(this.#key);
@@ -33,7 +39,7 @@ export class LongtermKeyValue {
 			return storageValue;
 		}
 
-		return null;
+		return this.#defaultValue;
 	};
 
 	/**
