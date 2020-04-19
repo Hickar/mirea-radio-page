@@ -11,9 +11,6 @@ export class Player {
 
   static audioContext = new AudioContext();
 
-  #longtermVolume = Longterm.extract("volume");
-  #longtermIsMuted = Longterm.extract("isMuted");
-
   /**
    * @type {'idle' | 'playing' | 'pause'}
    */
@@ -38,11 +35,11 @@ export class Player {
   }
 
   get volume() {
-    return this.#longtermVolume.get();
+    return Longterm.get("volume");
   }
 
   set volume(value) {
-    this.#longtermVolume.set(value);
+    Longterm.set("volume", value);
 
     this.audioElement.volume = value;
 
@@ -50,7 +47,7 @@ export class Player {
   }
 
   get isMuted() {
-    return this.#longtermIsMuted.get();
+    return Longterm.get("isMuted");
   }
 
   set isMuted(value) {
@@ -60,7 +57,7 @@ export class Player {
       this.audioElement.volume = this.volume;
     }
 
-    this.#longtermIsMuted.set(value);
+    Longterm.set("isMuted", value);
   }
 
   get playingState() {
