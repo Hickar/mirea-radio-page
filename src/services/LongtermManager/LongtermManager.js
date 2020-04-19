@@ -1,6 +1,6 @@
 // @ts-check
 
-import { LongtermKeyValue } from "../LongtermKeyValue";
+import { LongtermKeyValue } from "./LongtermKeyValue";
 
 /**
  * @template {{[s: string]: LongtermKeyValue<any>}} TMap

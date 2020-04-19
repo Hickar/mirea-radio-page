@@ -2,13 +2,9 @@
 
 import { SiteTheme } from "./SiteTheme";
 import { ThemesManager } from "../ThemeAPI/ThemesManager";
-import { LongtermKeyValue } from "../LongtermKeyValue";
+import { Longterm } from "../LongtermManager/LongtermManager";
 
-/**
- * @type {LongtermKeyValue<'white' | 'dark'>}
- */
-// @ts-ignore
-const longterm = new LongtermKeyValue("__THEME__", "white");
+const longterm = Longterm.extract("theme");
 
 export const SiteThemeManager = new ThemesManager(
   {

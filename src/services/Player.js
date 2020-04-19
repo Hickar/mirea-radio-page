@@ -1,6 +1,6 @@
 // @ts-check
 
-import { LongtermKeyValue } from "./LongtermKeyValue";
+import { Longterm } from "./LongtermManager/LongtermManager";
 
 //@ts-ignore
 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -11,8 +11,8 @@ export class Player {
 
   static audioContext = new AudioContext();
 
-  #longtermVolume = new LongtermKeyValue("__VOLUME__", 0.5);
-  #longtermIsMuted = new LongtermKeyValue("__IS_MUTED__", false);
+  #longtermVolume = Longterm.extract("volume");
+  #longtermIsMuted = Longterm.extract("isMuted");
 
   /**
    * @type {'idle' | 'playing' | 'pause'}

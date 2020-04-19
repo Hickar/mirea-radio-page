@@ -1,7 +1,7 @@
 // @ts-check
 
 import { BaseTheme } from "../ThemeAPI/BaseTheme";
-import { LongtermKeyValue } from "../LongtermKeyValue";
+import { LongtermKeyValue } from "../LongtermManager/LongtermKeyValue";
 
 /**
  * @template {string} TTheme
