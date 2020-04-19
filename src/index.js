@@ -2,12 +2,12 @@
 
 import "./style.css";
 
+import { copyToClipboard, showPopup } from "./scripts/utils";
 import { Player } from "./services/Player";
 import { PLAYER_URL } from "./consts";
+import { SiteThemeManager } from "./services/SiteThemeManager/SiteThemeManager";
 import { Spectrum } from "./scripts/player";
-import { Theme } from "./services/ThemeManager";
 import { UI } from "./services/UIManager";
-import { copyToClipboard, showPopup } from "./scripts/utils";
 
 const player = new Player();
 
@@ -18,7 +18,7 @@ UI.onReady(() => {
 
   spectrum.init();
 
-  Theme.set(Theme.theme);
+  SiteThemeManager.set(SiteThemeManager.currentTheme);
 
   setInterval(UI.updateTrackMeta, 10000);
   UI.updateTrackMeta();
@@ -44,8 +44,8 @@ UI.onVolumeChange(value => {
   UI.updateMuteButton(player);
 });
 
-UI.onThemeChange(() => {
-  Theme.setNext();
+UI.onThemeChangeButtonClick(() => {
+  SiteThemeManager.setNext();
 });
 
 UI.onMuteButtonClick(() => {
@@ -74,7 +74,7 @@ UI.onMetaClick((trackArtist, trackName) => {
   showPopup("Скопировано в буффер");
 });
 
-Theme.onChange(theme => {
+SiteThemeManager.onThemeChanged(theme => {
   UI.setTheme(theme);
 
   setTimeout(() => spectrum.init(), 200);

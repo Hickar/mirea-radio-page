@@ -81,7 +81,7 @@ class UIManager {
   /**
    * @param {() =>  void} callback
    */
-  onThemeChange = callback => {
+  onThemeChangeButtonClick = callback => {
     document
       .querySelector(".navbar__darkmodebutton")
       ?.addEventListener("click", () => {
