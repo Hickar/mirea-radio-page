@@ -242,7 +242,7 @@ ul, ol {
     position: relative;
     padding: 0 1rem;
     border-radius: .5rem;
-    box-shadow: 6px 6px 6px rgba(55, 55, 55, .2), -6px -6px 6px rgba(210, 210, 210, .2);
+    /* box-shadow: 6px 6px 6px rgba(55, 55, 55, .2), -6px -6px 6px rgba(210, 210, 210, .2); */
 }
 
 .section__delimiter {
@@ -310,12 +310,14 @@ ul, ol {
 }
 
 .player__controls {
+    position: relative;
+    justify-content: space-between;
     padding: 0 1rem;
     min-height: 5rem;
     height: 1px;
 }
 
-.player__controlsinnerleft {
+/* .player__controlsinnerleft {
     width: calc(50% + 2.5rem);
     justify-content: space-between;
 }
@@ -323,7 +325,7 @@ ul, ol {
 .player__controlsinnerright {
     justify-content: flex-end;
     margin: 0 0 0 auto;
-}
+} */
 
 .player__trackinfo {
     vertical-align: middle;
@@ -362,7 +364,7 @@ ul, ol {
 
 .volumebutton {
     position: relative;
-    margin-left: 1rem;
+    margin-right: .5rem;
     flex: 0 0 auto;
 }
 
@@ -473,7 +475,6 @@ ul, ol {
 .player__playbutton {
     position: relative;
     padding: 0 1rem;
-    margin-left: auto;
 }
 
 .player__playbutton_active .play {
@@ -785,15 +786,15 @@ ul, ol {
         margin: 0 0 2.25rem 0;
     }
 
-    .player__controlsinnerleft {
+    /* .player__controlsinnerleft {
         width: calc(50% + 2.25rem);
-    }
+    } */
 
     .player__trackinfo {
         width: 100%;
         position: absolute;
         text-align: center;
-        margin-top: -1.5rem;
+        margin-top: -2rem;
         left: 0;
         max-width: none;
     }
@@ -809,6 +810,9 @@ ul, ol {
     }
 
     .player__volume {
+        position: absolute;
+        left: 0;
+        top: 22px;
         padding-left: 0;
     }
 
@@ -818,6 +822,10 @@ ul, ol {
 
     .volumebutton {
         margin-left: 0;
+    }
+
+    .player__playbutton {
+        margin: auto;
     }
 
     .player__playbutton svg {

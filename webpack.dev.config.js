@@ -12,11 +12,11 @@ module.exports = {
   devServer: {
     contentBase: "./dist",
     hot: true,
-    https: {
-      key: fs.readFileSync("private.key"),
-      cert: fs.readFileSync("private.crt"),
-      ca: fs.readFileSync("private.pem")
-    }
+    // https: {
+    //   key: fs.readFileSync("private.key"),
+    //   cert: fs.readFileSync("private.crt"),
+    //   ca: fs.readFileSync("private.pem")
+    // }
   },
   resolve: {
     alias: {
